@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code local config (personal, not for repo)
+.claude/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Source docs (kept locally, not for production)
+Defensive_Pedal_Funding_Source_of_Truth_v1.0.md
+oldsite.md
+
+# Local server caches
+__pycache__/
+*.pyc
+
+# Logs
+*.log
