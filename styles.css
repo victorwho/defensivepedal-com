@@ -202,7 +202,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .nav__lang a:hover { color: var(--c-white); }
 .nav__lang a[aria-current="page"] {
   background: var(--c-yellow);
-  color: var(--c-navy);
+  color: var(--c-white);
 }
 
 .nav__toggle {
