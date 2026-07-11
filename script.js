@@ -102,9 +102,32 @@
   /* ---------- Count-up animation for numbers ---------- */
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Decimal multipliers like "2.1x" / "2,1x" — one leading number, a decimal
+  // separator, a single decimal digit, then a non-digit suffix.
+  const DECIMAL_VALUE = /^(\d+)([.,])(\d)(\D*)$/;
+
   function countUp(el) {
     const original = (el.dataset.original || el.textContent).trim();
     el.dataset.original = original;
+
+    if (reducedMotion) { el.textContent = original; return; }
+
+    const decMatch = original.match(DECIMAL_VALUE);
+    if (decMatch) {
+      // Animate in tenths (e.g. 0,0x → 2,1x), keeping the original separator.
+      const target = parseInt(decMatch[1], 10) * 10 + parseInt(decMatch[3], 10);
+      const fmt = (n) => Math.floor(n / 10) + decMatch[2] + (n % 10) + decMatch[4];
+      const start = performance.now();
+      const ease = (t) => 1 - Math.pow(1 - t, 3);
+      el.textContent = fmt(0);
+      function tickDecimal(now) {
+        const p = Math.min(1, (now - start) / 1200);
+        el.textContent = fmt(Math.round(ease(p) * target));
+        if (p < 1) requestAnimationFrame(tickDecimal);
+      }
+      requestAnimationFrame(tickDecimal);
+      return;
+    }
 
     const numMatch = original.replace(/,/g, '').match(/\d+/);
     if (!numMatch) return;
@@ -114,8 +137,6 @@
     const cleaned = original.replace(/,/g, '');
     const prefix = cleaned.slice(0, numMatch.index);
     const suffix = cleaned.slice(numMatch.index + numMatch[0].length);
-
-    if (reducedMotion) { el.textContent = original; return; }
 
     const fmt = (n) => prefix + (hasComma ? n.toLocaleString('en-US') : String(n)) + suffix;
     const duration = target > 1000 ? 1600 : 1200;
@@ -140,6 +161,11 @@
     // Snapshot originals, then reset to "0" while still off-screen
     countables.forEach((el) => {
       el.dataset.original = el.textContent.trim();
+      const dec = el.dataset.original.match(DECIMAL_VALUE);
+      if (dec) {
+        el.textContent = '0' + dec[2] + '0' + dec[4];
+        return;
+      }
       const cleaned = el.dataset.original.replace(/,/g, '');
       const match = cleaned.match(/\d+/);
       if (match) {
@@ -172,65 +198,21 @@
     });
   });
 
-  /* ---------- Hero "iPhone? Join the waitlist" → opens the FAQ item ---------- */
-  const iosLink = $('.hero__ios');
-  const iosItem = $('#ios');
-  if (iosLink && iosItem) {
-    iosLink.addEventListener('click', () => {
-      iosItem.open = true;
-    });
-  }
-
-  /* ---------- iOS waitlist form (Kit / ConvertKit, AJAX) ---------- */
-  const iosForm = $('.ios-form');
-  const iosThanks = $('#iosThanks');
-  if (iosForm) {
-    iosForm.addEventListener('submit', async (e) => {
-      const action = iosForm.getAttribute('action') || '';
-      if (action.includes('YOUR_KIT_FORM_ID')) {
-        // Placeholder still in place — don't submit, remind the developer.
-        e.preventDefault();
-        alert('Email form not yet configured — set your Kit form ID in index.html.');
-        return;
-      }
-      e.preventDefault();
-      const submitBtn = iosForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      // Kit returns CORS headers on this endpoint, so we use a normal fetch
-      // and check the real status code. 10s timeout guards against hangs.
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-      const fail = (reason) => {
-        clearTimeout(timeoutId);
-        console.error('Kit submission failed:', reason);
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-        alert('Something went wrong. Please try again.');
-      };
-
-      try {
-        const formData = new FormData(iosForm);
-        const res = await fetch(action, {
-          method: 'POST',
-          body: formData,
-          headers: { Accept: 'application/json' },
-          signal: controller.signal,
-        });
-        clearTimeout(timeoutId);
-
-        if (res.ok) {
-          iosForm.hidden = true;
-          if (iosThanks) iosThanks.hidden = false;
-        } else {
-          fail(`HTTP ${res.status} ${res.statusText}`);
-        }
-      } catch (err) {
-        fail(err && err.name === 'AbortError' ? 'timeout' : err);
-      }
+  /* ---------- Platform-aware store links (nav button + sticky mobile CTA) ---------- */
+  // Hero and final CTA show both stores explicitly; single-slot CTAs point to
+  // Google Play by default and switch to the App Store on iOS devices.
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS reports as Mac
+  if (isIOS) {
+    $$('a[data-ios-href]').forEach((link) => {
+      link.href = link.dataset.iosHref;
+      if (link.dataset.iosAriaLabel) link.setAttribute('aria-label', link.dataset.iosAriaLabel);
+      const label = $('[data-ios-label]', link);
+      if (label) label.textContent = label.dataset.iosLabel;
+      const playIcon = $('.store-icon--play', link);
+      const appleIcon = $('.store-icon--apple', link);
+      if (playIcon) playIcon.style.display = 'none';
+      if (appleIcon) appleIcon.style.display = '';
     });
   }
 
