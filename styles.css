@@ -1128,3 +1128,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   .risk-bar__fill { width: var(--fill-w); }
   .reveal-on-scroll { opacity: 1; transform: none; }
 }
+
+.footer__cities { margin-top: 18px; font-size: 14px; color: var(--c-ink-3); line-height: 1.6; }
+.footer__cities strong { color: var(--c-ink); }
+.footer__cities a { color: var(--c-ink-2); text-underline-offset: 3px; }
+.footer__cities a:hover { color: var(--c-ink); }
