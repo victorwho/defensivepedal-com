@@ -1133,3 +1133,34 @@ ul { list-style: none; padding: 0; margin: 0; }
 .footer__cities strong { color: var(--c-ink); }
 .footer__cities a { color: var(--c-ink-2); text-underline-offset: 3px; }
 .footer__cities a:hover { color: var(--c-ink); }
+
+/* =========================================================
+   COPY REFRESH (Sep 2026): hero note, proof, ranking, share
+   ========================================================= */
+.hero__note { margin: -8px 0 24px; font-size: 14px; color: rgba(255,255,255,.6); }
+
+.proof { background: var(--c-white); padding: 100px 0; }
+.proof__note {
+  max-width: 760px; margin: 40px auto 0;
+  text-align: center; font-size: 15px; color: var(--c-ink-3);
+}
+
+.ranking { background: var(--c-off); padding: 100px 0; }
+.ranking .section-head { margin-bottom: 0; }
+.ranking .btn { margin-top: 12px; }
+
+.testimonials__grid--3 { grid-template-columns: 1.2fr 1fr 1fr; }
+.avatar--c { background: linear-gradient(135deg, #FFE680, #F2C30F); }
+
+.final-cta__share {
+  margin-top: 36px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.final-cta .final-cta__share p { margin: 0; font-size: 17px; font-weight: 600; color: var(--c-navy); }
+
+@media (max-width: 1024px) {
+  .testimonials__grid--3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .proof, .ranking { padding: 72px 0; }
+}

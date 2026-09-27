@@ -261,4 +261,16 @@
     }, { rootMargin: '50px 0px' });
     idleAnimated.forEach((el) => pauseIO.observe(el));
   }
+
+  /* ---------- Share button: native share sheet, WhatsApp fallback ---------- */
+  $$('[data-share]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const { shareText: text, shareUrl: url } = btn.dataset;
+      if (navigator.share) {
+        try { await navigator.share({ text, url }); } catch (_) { /* user closed the share sheet */ }
+        return;
+      }
+      window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank', 'noopener');
+    });
+  });
 })();
