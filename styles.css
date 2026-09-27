@@ -1130,9 +1130,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .footer__cities { margin-top: 18px; font-size: 14px; color: var(--c-ink-3); line-height: 1.6; }
-.footer__cities strong { color: var(--c-ink); }
-.footer__cities a { color: var(--c-ink-2); text-underline-offset: 3px; }
-.footer__cities a:hover { color: var(--c-ink); }
+.footer__cities strong { display: inline-block; margin-bottom: 4px; color: var(--c-yellow); font-weight: 700; }
+.footer__cities a { color: rgba(255,255,255,.88); text-decoration: underline; text-underline-offset: 3px; }
+.footer__cities a:hover { color: var(--c-yellow); }
 
 /* =========================================================
    COPY REFRESH (Sep 2026): hero note, proof, ranking, share
