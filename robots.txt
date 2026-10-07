@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://defensivepedal.com/sitemap.xml
+Sitemap: https://www.defensivepedal.com/sitemap.xml
