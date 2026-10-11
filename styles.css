@@ -344,6 +344,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .stat-card h3 { margin-bottom: 12px; color: var(--c-ink); }
 .stat-card p { color: var(--c-ink-3); margin: 0; }
+.stat-card p a { text-decoration: underline; text-underline-offset: 2px; }
 
 .stat-card--accent {
   background: var(--c-navy);
