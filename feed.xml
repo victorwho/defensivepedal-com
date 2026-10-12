@@ -5,8 +5,16 @@
     <link>https://www.defensivepedal.com/</link>
     <description>What changed on defensivepedal.com and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 18:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 20:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.defensivepedal.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Question-style headings and a cross-page links block on every page</title>
+      <link>https://www.defensivepedal.com/#how</link>
+      <guid isPermaLink="false">defensivepedal-2026-10-12-headings</guid>
+      <pubDate>Mon, 12 Oct 2026 20:00:00 GMT</pubDate>
+      <description>The homepage, privacy policy and terms now use question headings ("How does Defensive Pedal pick your route?", "Who is responsible for your data?"), open with a one-sentence definition of the app, and end with a links block to every page in both languages plus this feed. Same changes on the Romanian pages.</description>
+    </item>
 
     <item>
       <title>Methodology page: how the risk score works and how it was validated</title>
