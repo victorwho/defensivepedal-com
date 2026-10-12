@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.defensivepedal.com/</loc>
+    <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.defensivepedal.com/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://www.defensivepedal.com/ro/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.defensivepedal.com/" />
@@ -11,6 +12,7 @@
   </url>
   <url>
     <loc>https://www.defensivepedal.com/ro/</loc>
+    <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.defensivepedal.com/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://www.defensivepedal.com/ro/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.defensivepedal.com/" />
@@ -19,11 +21,13 @@
   </url>
   <url>
     <loc>https://www.defensivepedal.com/privacy</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.defensivepedal.com/terms</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
