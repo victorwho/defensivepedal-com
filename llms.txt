@@ -1,6 +1,6 @@
 # Defensive Pedal
 
-> Defensive Pedal is a free cycling navigation app for Android and iPhone, made by Defensive Pedal SRL in Romania. It rates every street for risk using 100+ road-risk factors and routes cyclists around fast traffic, tricky junctions and dooring zones. Available in 31 European countries: all EU member states, the United Kingdom, Switzerland, Norway and Iceland.
+> Defensive Pedal is a free cycling navigation app for Android and iPhone, made by Antifragil SRL in Romania. It rates every street for risk using 100+ road-risk factors and routes cyclists around fast traffic, tricky junctions and dooring zones. Available in 31 European countries: all EU member states, the United Kingdom, Switzerland, Norway and Iceland.
 
 ## Key facts
 

@@ -13,7 +13,7 @@
   <meta property="og:description" content="Terms of use for the Defensive Pedal cycling navigation app and website: safety disclaimer, licence to use the app, user content, limitation of liability and contact details." />
   <meta property="og:url" content="https://www.defensivepedal.com/terms" />
   <meta property="og:image" content="https://www.defensivepedal.com/feature%20graphic_8May26.png" />
-  <meta name="last-modified" content="2026-10-07" />
+  <meta name="last-modified" content="2026-10-12" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
 {
@@ -23,7 +23,7 @@
       "@type": "Organization",
       "@id": "https://www.defensivepedal.com/#organization",
       "name": "Defensive Pedal",
-      "legalName": "Defensive Pedal SRL",
+      "legalName": "Antifragil SRL",
       "url": "https://www.defensivepedal.com/",
       "logo": "https://www.defensivepedal.com/app_icon_23Apr26_v1.png",
       "founder": {
@@ -58,7 +58,7 @@
       "isPartOf": {
         "@id": "https://www.defensivepedal.com/#website"
       },
-      "dateModified": "2026-10-07"
+      "dateModified": "2026-10-12"
     }
   ]
 }
@@ -72,6 +72,11 @@
     .legal-doc p, .legal-doc li { color: var(--c-ink-2); font-size: 16px; line-height: 1.65; }
     .legal-doc ul { padding-left: 20px; list-style: disc; }
     .legal-doc a { color: var(--c-navy); border-bottom: 1px dashed var(--c-ink-4); }
+    .legal-doc table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0 20px; }
+    .legal-doc th, .legal-doc td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--c-ink-4); vertical-align: top; }
+    .legal-doc th { color: var(--c-ink); font-weight: 600; }
+    .legal-doc mark.todo { background: #fff3b0; color: var(--c-ink); padding: 0 4px; border-radius: 3px; font-weight: 600; }
+    @media (max-width: 640px) { .legal-doc table, .legal-doc thead, .legal-doc tbody, .legal-doc tr, .legal-doc th, .legal-doc td { display: block; } .legal-doc thead { display: none; } .legal-doc td { border-bottom: 0; padding: 4px 0; } .legal-doc tr { border-bottom: 1px solid var(--c-ink-4); padding: 10px 0; } }
   </style>
 
   <!-- Umami analytics --><script defer src="https://cloud.umami.is/script.js" data-website-id="2201d96e-6770-41c0-a4e4-58438afda362"></script>
@@ -91,30 +96,78 @@
   <main class="legal">
     <article class="legal-doc">
       <h1>Terms of Use</h1>
-      <p class="meta">Last updated: <em>[date]</em></p>
+      <p class="meta">Last updated: <time datetime="2026-10-12">12 October 2026</time> · Applies to the Defensive Pedal app (Android and iOS) and defensivepedal.com</p>
 
-      <p><strong>This is a placeholder.</strong> Replace this content with your final, legally reviewed terms of use before launch. Below is a starting outline.</p>
+      <p>These terms are the agreement between you and Antifragil SRL, the company that makes Defensive Pedal, for using the Defensive Pedal app and website. By creating an account or using the app you accept them. If you do not agree, do not use the app. Please read section 4 in particular: Defensive Pedal suggests routes, and you remain responsible for how you ride.</p>
 
-      <h2>1. Acceptance</h2>
-      <p>By using the Defensive Pedal mobile application or defensivepedal.com, you agree to these Terms.</p>
+      <h2>1. Who we are</h2>
+      <p>Antifragil SRL is a company registered in Romania (registered office: <mark class="todo">[NEED: registered office address]</mark>; trade register no. <mark class="todo">[NEED: J number]</mark>; tax ID (CUI) 38619226). Contact: <a href="mailto:hello@defensivepedal.com">hello@defensivepedal.com</a>.</p>
 
-      <h2>2. Safety disclaimer</h2>
-      <p>Defensive Pedal provides route suggestions based on safety-weighted analysis of available data. Routes are advisory, not guarantees. <strong>You are responsible for your own safety on the road</strong>: obey traffic laws, stay aware of your surroundings, and use appropriate protective equipment.</p>
+      <h2>2. What the service is</h2>
+      <p>Defensive Pedal is a cycling navigation app. It gives every street in its coverage area a risk rating built from more than 100 road-risk factors, plans routes that favour lower-risk streets, explains why a route was chosen, and flags hazards reported by other riders and weather conditions along the way. Core safety routing is free. Some features are part of a paid Premium subscription (section 5).</p>
+      <p>Coverage currently includes 31 European countries: all EU member states, the United Kingdom, Switzerland, Norway and Iceland. The level of detail depends on local map data and is strongest in large cities.</p>
 
-      <h2>3. License to use the app</h2>
-      <p>We grant you a personal, non-exclusive, non-transferable license to use Defensive Pedal for non-commercial purposes, subject to these Terms.</p>
+      <h2>3. Your account</h2>
+      <ul>
+        <li>You need an account to use the app. You must be at least 16 years old.</li>
+        <li>Give us accurate information and keep your password to yourself. You are responsible for what happens under your account until you tell us it has been compromised.</li>
+        <li>One account per person. You may not sell, lend or transfer your account.</li>
+        <li>You can delete your account at any time in Settings. Deleting the account ends these terms, except for the parts that by their nature continue (sections 6, 9 and 10).</li>
+      </ul>
 
-      <h2>4. User content</h2>
-      <p>Hazard reports and feedback you submit may be used (in aggregated, anonymised form) to improve the safety model and provide insights to institutional partners.</p>
+      <h2>4. Safety: what the app can and cannot do</h2>
+      <p><strong>Route suggestions are advice, not a guarantee.</strong> The risk ratings are statistical. They describe how streets compare with each other based on road characteristics, traffic data and crash records. We have checked the model against national crash registers in five countries and found that serious injuries are more common on streets it rates as high risk, but that is an association across many riders and many streets. It says nothing certain about any single ride, and a lower-risk route can still be dangerous on a given day.</p>
+      <p>By using the app you agree that:</p>
+      <ul>
+        <li>You obey traffic law and follow the instructions of the police and road signs, which take precedence over anything the app shows.</li>
+        <li>You keep your eyes on the road. Set up your route before you start and use audio guidance or a handlebar mount rather than handling the phone while riding.</li>
+        <li>You judge conditions yourself. Roadworks, weather, surface damage, traffic and lighting change faster than any map, and our data can be wrong, incomplete or out of date.</li>
+        <li>Hazard reports come from other riders. We do not verify them before they appear, and they may be inaccurate or no longer current.</li>
+        <li>You use suitable equipment for the conditions, including lights and, where required by law, a helmet.</li>
+      </ul>
 
-      <h2>5. Limitation of liability</h2>
-      <p>To the maximum extent permitted by law, Defensive Pedal SRL is not liable for any direct or consequential damages arising from your use of the service.</p>
+      <h2>5. Free and Premium</h2>
+      <p><strong>Free.</strong> Safety routing, risk ratings, route explanations, hazard alerts and community reporting are free with no limit on rides.</p>
+      <p><strong>Premium</strong> adds Cool Routing (shaded routes on hot days), e-bike routing, unlimited saved routes and offline navigation. We may add, change or remove Premium features; if we remove a feature that was a material part of your subscription, you can cancel and ask for a pro-rated refund for the rest of the paid period.</p>
+      <p><strong>Buying and renewing.</strong> Premium is sold as a subscription through Google Play or the Apple App Store. The price, currency and billing period are shown in the store before you confirm. Subscriptions renew automatically at the end of each period until you cancel. Cancel at least 24 hours before the renewal date in your Google Play or Apple account settings; the store, not the app, manages billing, so uninstalling the app does not cancel the subscription. There is no free trial at the moment. If we introduce one, the store will show its length before you start it, and it will turn into a paid subscription unless you cancel before it ends.</p>
+      <p><strong>Refunds and your right of withdrawal.</strong> If you live in the EU or UK you have a 14-day right to withdraw from a purchase of digital content. Because Premium starts immediately when you buy it, you acknowledge when you confirm the purchase that the service begins right away and that the right of withdrawal is lost once performance has fully begun; where the store's own refund policy is more generous, that policy applies. Refund requests go through Google Play or Apple, whichever you bought from. Nothing in this section limits your statutory rights as a consumer, including your right to a remedy if Premium does not work as described.</p>
+      <p><strong>Price changes.</strong> If we change the Premium price, the new price applies from your next renewal after we have notified you through the store or the app, and you can cancel before then.</p>
 
-      <h2>6. Changes</h2>
-      <p>We may update these Terms. Material changes will be announced through the app or website.</p>
+      <h2>6. Your content</h2>
+      <p>You keep ownership of hazard reports, feedback and anything else you submit. You give Antifragil SRL a worldwide, royalty-free, non-exclusive licence to use, store, reproduce, adapt and display that content to run and improve the service, including showing hazard reports to other riders and including them in aggregated, anonymised insights we share with cities and partners. This licence lasts for as long as the content is useful to the service and survives deletion of your account for content that has already been aggregated.</p>
+      <p>You promise that you have the right to submit what you submit, and that it is not unlawful, abusive, misleading or submitted to manipulate the map. We may remove content and suspend accounts that break this rule.</p>
 
-      <h2>7. Contact</h2>
-      <p>Defensive Pedal SRL, Romania. Email: <a href="mailto:hello@defensivepedal.com">hello@defensivepedal.com</a>.</p>
+      <h2>7. Acceptable use</h2>
+      <p>You may use the app for personal, non-commercial cycling. You may not:</p>
+      <ul>
+        <li>copy, scrape, extract or resell our risk ratings, routes, map data or hazard reports, or build a competing dataset from them;</li>
+        <li>reverse engineer, decompile or interfere with the app, its servers or its security;</li>
+        <li>submit false hazard reports or otherwise try to distort the data other riders rely on;</li>
+        <li>use automated tools to access the service except through an interface we have published for that purpose;</li>
+        <li>use the app in a way that breaks the law or infringes anyone's rights.</li>
+      </ul>
+
+      <h2>8. Intellectual property and third-party data</h2>
+      <p>The app, the safety model, the risk ratings and the Defensive Pedal name and logo belong to Antifragil SRL and are protected by copyright, trademark and database rights. These terms give you a personal, revocable, non-transferable licence to install and use the app on devices you own; they do not transfer any other rights.</p>
+      <p>Map data is &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, available under the Open Database Licence. Maps are rendered with Mapbox and are subject to <a href="https://www.mapbox.com/legal/tos" target="_blank" rel="noopener">Mapbox's terms</a>. Road safety statistics come from public European and national sources credited in the app and on the website.</p>
+
+      <h2>9. Availability, changes and ending the service</h2>
+      <p>We work to keep the app available but cannot promise it will always work, be error-free or be uninterrupted. We may change, suspend or stop any part of the service. If we stop a paid feature or the service entirely, we will give reasonable notice where we can and refund any prepaid Premium period that you cannot use. We may suspend or close your account if you break these terms, with notice unless the breach is serious or the law prevents notice.</p>
+
+      <h2>10. Liability</h2>
+      <p>Nothing in these terms excludes or limits liability that cannot be excluded under the law that applies to you, including liability for death or personal injury caused by our negligence, for gross negligence or wilful misconduct, for fraud, or your statutory rights as a consumer.</p>
+      <p>Subject to that, Antifragil SRL is not liable for loss or damage that results from your riding decisions, from inaccurate or out-of-date map, traffic, weather or hazard data, from the actions of other road users, or from events outside our reasonable control. Where liability is not excluded, our total liability to you for all claims in any 12-month period is limited to the amount you paid us for Premium in that period, or EUR 50 if you paid nothing.</p>
+      <p>The app is provided "as is" to the extent consumer law allows. It is not a substitute for your own judgement on the road.</p>
+
+      <h2>11. Governing law and disputes</h2>
+      <p>These terms are governed by Romanian law. If you are a consumer living in another EU or EEA country or the UK, you also keep the protection of the mandatory consumer rules of that country, and you may bring a claim in its courts.</p>
+      <p>If you have a complaint, write to us first and we will try to resolve it. Consumers in Romania may contact the National Authority for Consumer Protection (ANPC, <a href="https://anpc.ro" target="_blank" rel="noopener">anpc.ro</a>) and may use the alternative dispute resolution procedure under Government Ordinance 38/2015. Consumers anywhere in the EU may use the European Commission's online dispute resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+
+      <h2>12. Changes to these terms</h2>
+      <p>We may update these terms. We will show the new date at the top and, for material changes, notify you in the app at least 30 days before they take effect. If you keep using the app after that date you accept the updated terms; if you do not agree, delete your account before then and, for Premium, cancel through the store.</p>
+
+      <h2>13. Contact</h2>
+      <p>Antifragil SRL, <mark class="todo">[NEED: registered office address]</mark>, Romania.<br>Email: <a href="mailto:hello@defensivepedal.com">hello@defensivepedal.com</a></p>
       <p class="meta">See also: <a href="/">Home</a> · <a href="/privacy">Privacy Policy</a> · <a href="/ro/" lang="ro" hreflang="ro">Română</a></p>
     </article>
   </main>
