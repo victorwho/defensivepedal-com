@@ -5,8 +5,16 @@
     <link>https://www.defensivepedal.com/</link>
     <description>What changed on defensivepedal.com and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 20:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 21:00:00 GMT</lastBuildDate>
     <atom:link href="https://www.defensivepedal.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Homepage validation figure aligned with the published study</title>
+      <link>https://www.defensivepedal.com/#why</link>
+      <guid isPermaLink="false">defensivepedal-2026-10-12-twice</guid>
+      <pubDate>Mon, 12 Oct 2026 21:00:00 GMT</pubDate>
+      <description>The homepage and llms.txt now state the validation result the way the open-access study does: about twice as many serious injuries per ride on streets rated High risk as on streets rated Safer. The earlier "1 in 5 million vs 1 in 2 million" card is retired. Same change on the Romanian homepage.</description>
+    </item>
 
     <item>
       <title>Question-style headings and a cross-page links block on every page</title>
