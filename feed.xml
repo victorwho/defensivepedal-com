@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Defensive Pedal updates</title>
+    <link>https://www.defensivepedal.com/</link>
+    <description>What changed on defensivepedal.com and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.defensivepedal.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Privacy policy and terms of use published in English and Romanian</title>
+      <link>https://www.defensivepedal.com/privacy</link>
+      <guid isPermaLink="false">defensivepedal-2026-10-12-legal</guid>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Full GDPR privacy policy and consumer terms for the app and website: what the app collects and why, retention periods, processors, GDPR rights, Premium billing and the 14-day withdrawal right. Romanian versions at /ro/privacy and /ro/terms.</description>
+    </item>
+
+    <item>
+      <title>Homepage figures updated: 3,984 installs and ETSC 2026 road safety data</title>
+      <link>https://www.defensivepedal.com/#why</link>
+      <guid isPermaLink="false">defensivepedal-2026-10-11-figures</guid>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Install count updated to 3,984 across Android and iOS as of October 2026. Safety context now cites ETSC PIN Flash 50 (2026): cyclists are 10% of all people killed on EU roads, 1,926 in 2024, and cyclist deaths fell 8% between 2014 and 2024 while deaths of drivers and passengers fell four times faster.</description>
+    </item>
+
+    <item>
+      <title>European Cycling Risk Ranking of 117 cities linked from the site</title>
+      <link>https://victorwho.github.io/european-cycling-risk-ranking/</link>
+      <guid isPermaLink="false">defensivepedal-2026-09-15-ranking</guid>
+      <pubDate>Tue, 15 Sep 2026 12:00:00 GMT</pubDate>
+      <description>A ranking of 117 European cities by modelled cycling risk, built from the same street-level safety model that powers the app, with a contact block for municipalities on the homepage.</description>
+    </item>
+
+    <item>
+      <title>Defensive Pedal launches on the iOS App Store</title>
+      <link>https://apps.apple.com/ro/app/defensive-pedal/id6778694757</link>
+      <guid isPermaLink="false">defensivepedal-2026-07-11-ios</guid>
+      <pubDate>Sat, 11 Jul 2026 12:00:00 GMT</pubDate>
+      <description>The app is now available for iPhone alongside Android. Safety routing is free on both platforms.</description>
+    </item>
+  </channel>
+</rss>
