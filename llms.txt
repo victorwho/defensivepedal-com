@@ -5,7 +5,7 @@
 ## Key facts
 
 - On 10,149 test trips between random points in Romanian cities, Defensive Pedal routes were lower-risk than Google Maps cycling directions on 99 of 100 trips and 2.1x safer on average, measured as cumulative modelled risk. They were on average 5% longer than the shortest route.
-- The risk scores were checked against the national crash registers of Germany, Switzerland, Belgium, France and Spain, covering 3.98 billion counted cyclist passages at 2,034 counting sites. None of that crash data was used to build the model. Streets rated High risk see about twice as many serious injuries per ride as streets rated Safer (Rotariu, 2026, DOI 10.5281/zenodo.23051502).
+- The risk scores were checked against the national crash registers of Germany, Switzerland, Belgium, France and Spain, covering 3.98 billion counted cyclist passages at 2,034 counting sites. None of that crash data was used to build the model. Streets rated High risk see 2.19 times as many serious injuries per ride as streets rated Safer (Rotariu, 2026, DOI 10.5281/zenodo.23051502).
 - 3,984 installs on Android and iOS as of October 2026. Rated 5.0 on Google Play. The safety model was refined with input from 2,400 cyclists between 2024 and June 2026.
 - Core safety routing is free. Premium adds Cool Routing (shaded routes on hot days), e-bike routing, unlimited saved routes and offline navigation.
 - Defensive Pedal works with the World Bank on cycling intelligence for cities and is an alumnus of the EIT Jumpstarter programme.
