@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Victor Rotariu" />
+  <meta name="theme-color" content="#1A1A2E" />
+
+  <!-- Unlisted investor page: keep it out of search while the raise is live -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>Defensive Pedal — Investor pitch</title>
+  <meta name="description" content="Defensive Pedal is the road-risk data layer for cycling: a crash-validated risk score across 67.8M road segments in 32 countries, a live app growing at €0 paid acquisition, and a €300,000 SAFE round." />
+
+  <link rel="icon" href="app_icon_23Apr26_v1.png" type="image/png" />
+  <link rel="apple-touch-icon" href="app_icon_23Apr26_v1.png" />
+  <link rel="canonical" href="https://www.defensivepedal.com/pitch" />
+
+  <!-- Open Graph (works for a privately shared link even while noindex) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Defensive Pedal — the road-risk data layer for cycling" />
+  <meta property="og:description" content="Crash-validated risk score, a live app growing at €0 paid acquisition, and a €300,000 SAFE round." />
+  <meta property="og:image" content="https://www.defensivepedal.com/feature%20graphic_8May26.png" />
+  <meta property="og:url" content="https://www.defensivepedal.com/pitch" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ---- Pitch-only additions, built on the site's tokens ---- */
+    .hero__visual--pitch { min-height: 460px; }
+    .pitch-mascot {
+      position: relative; z-index: 2;
+      width: clamp(220px, 26vw, 320px);
+      filter: drop-shadow(0 28px 60px rgba(0,0,0,.45));
+      animation: phoneFloat 5.5s ease-in-out infinite;
+    }
+    .btn--ghost {
+      background: transparent; color: var(--c-white);
+      box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.32);
+    }
+    .btn--ghost:hover { background: rgba(255,255,255,.08); }
+
+    /* Section intro text under a section-head */
+    .lead-note { max-width: 760px; margin: 28px auto 0; text-align: center; font-size: 15px; color: var(--c-ink-3); }
+    .lead-note--dark { color: rgba(255,255,255,.6); }
+    .lead-note a { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Validation evidence grid */
+    .validation { background: var(--c-white); padding: 100px 0; }
+    .validation__hero { display: grid; grid-template-columns: .9fr 1.4fr; gap: 48px; align-items: center; }
+    .big-stat { text-align: left; }
+    .big-stat__num { font-size: clamp(72px, 11vw, 128px); font-weight: 800; line-height: .9; letter-spacing: -.05em; color: var(--c-navy); }
+    .big-stat__num .accent { color: var(--c-yellow); }
+    .big-stat__label { font-size: 20px; font-weight: 700; color: var(--c-ink); margin-top: 8px; }
+    .evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .evidence__item { background: var(--c-off); border: 1px solid var(--c-line); border-radius: var(--radius-lg); padding: 24px; }
+    .evidence__item b { display: block; font-size: 26px; font-weight: 800; color: var(--c-navy); letter-spacing: -.02em; line-height: 1; margin-bottom: 8px; }
+    .evidence__item span { color: var(--c-ink-3); font-size: 15px; line-height: 1.5; }
+
+    /* Price tag inside revenue feature cards */
+    .price-tag { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--c-line); }
+    .price-tag small { display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink-3); margin-bottom: 4px; }
+    .price-tag strong { font-size: 20px; font-weight: 800; color: var(--c-navy); letter-spacing: -.02em; }
+    .feature__tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink-3); margin-bottom: 14px; }
+
+    /* Competitor table: players as rows, 4 columns */
+    .compare--pitch .compare__row { grid-template-columns: 1.7fr 1.3fr 1.2fr 1.3fr; }
+
+    /* Go-to-market two tracks */
+    .gtm { background: var(--c-off); padding: 120px 0; }
+    .gtm__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .track { background: var(--c-white); border: 1px solid var(--c-line); border-radius: var(--radius-xl); padding: 36px 32px; box-shadow: var(--shadow-1); }
+    .track__label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-yellow); margin-bottom: 6px; }
+    .track__label--dark { color: #b1880e; }
+    .track h3 { margin-bottom: 18px; }
+    .track ul { display: grid; gap: 14px; }
+    .track li { position: relative; padding-left: 26px; color: var(--c-ink-2); font-size: 15px; line-height: 1.5; }
+    .track li::before { content: ""; position: absolute; left: 6px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--c-yellow); }
+
+    /* Vision band */
+    .vision { background: var(--c-navy); color: var(--c-white); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
+    .vision::before { content: ""; position: absolute; inset: 0; background: radial-gradient(700px 400px at 50% 20%, rgba(242,195,15,.14), transparent 60%); pointer-events: none; }
+    .vision__inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .vision h2 { margin-bottom: 20px; }
+    .vision p { font-size: 20px; color: var(--c-yellow); font-weight: 700; margin: 0; }
+
+    /* The ask milestones */
+    .miles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 920px; margin: 8px auto 0; counter-reset: m; }
+    .mile { background: var(--c-white); border: 1px solid rgba(26,26,46,.14); border-radius: var(--radius-lg); padding: 24px 22px; text-align: left; }
+    .mile::before { counter-increment: m; content: counter(m); display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 50%; background: var(--c-navy); color: var(--c-yellow); font-weight: 800; font-size: 15px; margin-bottom: 14px; }
+    .mile p { margin: 0; font-weight: 700; color: var(--c-navy); font-size: 15px; line-height: 1.4; }
+
+    /* team__stats reused on navy sections: numbers must read on dark */
+    .team__stats--dark { border-top-color: rgba(255,255,255,.12) !important; }
+    .team__stats--dark strong { color: var(--c-yellow); }
+    .team__stats--dark span { color: rgba(255,255,255,.7); }
+
+    /* Growth strip under traction stats */
+    .growth { margin-top: 44px; background: var(--c-navy-2); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-3); }
+    .growth svg { width: 100%; height: auto; display: block; }
+    .growth__cap { margin: 16px 0 0; font-size: 14px; color: rgba(255,255,255,.6); }
+
+    @media (max-width: 1024px) {
+      .validation__hero { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 860px) {
+      .gtm__cols { grid-template-columns: 1fr; }
+      .miles { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .evidence { grid-template-columns: 1fr; }
+      .miles { grid-template-columns: 1fr; }
+      .validation, .gtm, .vision { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" aria-label="Defensive Pedal home">
+        <img src="logo_yellow.png" alt="Defensive Pedal" width="160" height="40" />
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#proof">Proof</a>
+        <a href="#traction">Traction</a>
+        <a href="#business">Business</a>
+        <a href="#ask">The ask</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="https://play.google.com/store/apps/details?id=com.defensivepedal.mobile&pcampaignid=web_share"
+           class="btn btn--install btn--sm"
+           target="_blank" rel="noopener"
+           aria-label="Try Defensive Pedal on Google Play"
+           data-ios-href="https://apps.apple.com/ro/app/defensive-pedal/id6778694757"
+           data-ios-aria-label="Try Defensive Pedal on the App Store">
+          <svg class="btn__icon store-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2.2v19.6c0 .5.6.8 1 .5l11.5-9.8c.3-.3.3-.7 0-1L4 1.7c-.4-.3-1 0-1 .5z" fill="currentColor"/></svg>
+          <svg class="btn__icon store-icon--apple" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="currentColor"/></svg>
+          <span>Try the app</span>
+        </a>
+
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" hidden>
+      <a href="#problem">Problem</a>
+      <a href="#proof">Proof</a>
+      <a href="#traction">Traction</a>
+      <a href="#business">Business</a>
+      <a href="#ask">The ask</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow">Seed round · 2026</span>
+          <h1 class="hero__title">The risk-data layer for cycling.</h1>
+          <p class="hero__sub">
+            <strong>234 million Europeans</strong> would cycle but fear being hit. Defensive Pedal
+            routes them around the danger, and sells the risk map to the cities rebuilding their streets.
+          </p>
+          <p class="hero__note">€300,000 SAFE · €2.3M cap · closing early 2027</p>
+          <div class="hero__cta">
+            <a href="#problem" class="btn btn--install btn--lg">Read the pitch</a>
+            <a href="#ask" class="btn btn--ghost btn--lg" id="hero-mail">victor@defensivepedal.com</a>
+          </div>
+          <div class="hero__trust">
+            <p><strong>Live in 31 European countries.</strong> 3,999 installs and €0 paid acquisition.</p>
+          </div>
+        </div>
+        <div class="hero__visual hero__visual--pitch">
+          <img class="pitch-mascot" src="mascot/pedal-map.png" alt="Pedal, the Defensive Pedal mascot, reading a route map" width="320" height="400" />
+          <div class="hero__glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="problem" id="problem">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">The problem</span>
+          <h2>Despite money and determination, cities have the same problem.</h2>
+          <p class="section-sub">Billions go into cycling infrastructure with no score for where it belongs.</p>
+        </div>
+        <div class="problem__grid">
+          <div class="stat-card">
+            <div class="stat-card__num">€B</div>
+            <h3>High effort, high cost</h3>
+            <p>Cities invest heavily in cycling networks, guided by intuition rather than a measured risk score.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">Years</div>
+            <h3>Data is late</h3>
+            <p>Crash data arrives years after the fact and is incomplete, so decisions are made in the dark.</p>
+          </div>
+          <div class="stat-card stat-card--accent">
+            <div class="stat-card__num">0%</div>
+            <h3>Danger holds</h3>
+            <p>In the decade to 2019, cyclist deaths fell 5% while overall road deaths fell 24%. Cycling is not getting safer.</p>
+          </div>
+        </div>
+      </div>
+      <img class="problem__mascot" src="mascot/pedal-sad.png" alt="" aria-hidden="true" width="140" height="175" />
+    </section>
+
+    <!-- ============ THE RESULT (reveal) ============ -->
+    <section class="reveal" id="proof">
+      <div class="container reveal__inner">
+        <div class="reveal__copy">
+          <span class="eyebrow">The result</span>
+          <h2>Routes that carry half the risk, to the same place.</h2>
+          <div class="big-number">
+            <span class="big-number__value">2×</span>
+            <span class="big-number__label">lower risk<br>than Google Maps</span>
+          </div>
+          <p>A score-on-score comparison across <strong>10,149 Romanian routes</strong> between random points. The crash-data test is below.</p>
+        </div>
+        <div class="reveal__viz">
+          <div class="risk-bar risk-bar--default">
+            <span class="risk-bar__label">Typical fastest route</span>
+            <div class="risk-bar__track"><div class="risk-bar__fill risk-bar__fill--high"></div></div>
+            <span class="risk-bar__value">High exposure to fast traffic and junctions</span>
+          </div>
+          <div class="risk-bar risk-bar--safe">
+            <span class="risk-bar__label">Defensive Pedal route</span>
+            <div class="risk-bar__track"><div class="risk-bar__fill risk-bar__fill--low"></div></div>
+            <span class="risk-bar__value">Quiet streets and protected lanes, same destination</span>
+          </div>
+          <img class="reveal__mascot" src="mascot/pedal-point.png" alt="" aria-hidden="true" width="110" height="137" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VALIDATION ============ -->
+    <section class="validation">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">The validation</span>
+          <h2>The score predicts serious injuries, tested on real crashes.</h2>
+        </div>
+        <div class="validation__hero">
+          <div class="big-stat">
+            <div class="big-stat__num"><span class="accent">2.19×</span></div>
+            <div class="big-stat__label">higher serious-injury rate on segments we score high risk versus low risk</div>
+          </div>
+          <div class="evidence">
+            <div class="evidence__item"><b>10,399</b><span>crashes and 1,169 serious injuries across 5 national registers: Germany, Switzerland, Belgium, France, Spain.</span></div>
+            <div class="evidence__item"><b>2,034</b><span>count sites in 13 regions, with 3.98 billion measured cyclist passages.</span></div>
+            <div class="evidence__item"><b>p &lt; 10⁻⁵</b><span>injury rate rises with every risk level. 95% confidence interval 1.30–3.69.</span></div>
+            <div class="evidence__item"><b>Open</b><span>Published open-access (DOI 10.5281/zenodo.23051502), in preparation for peer review, negatives published.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RISK MODEL ============ -->
+    <section class="compare">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The risk model</span>
+          <h2>A continental risk layer, refined by its riders.</h2>
+          <p class="section-sub">The score comes from open data and research; the app makes it current and sells it.</p>
+        </div>
+        <div class="team__stats team__stats--dark" style="max-width:900px;margin:0 auto;border:0;padding:0;">
+          <div><strong>67.8M</strong><span>road segments scored</span></div>
+          <div><strong>32</strong><span>countries covered</span></div>
+          <div><strong>100+</strong><span>road &amp; junction factors</span></div>
+          <div><strong>2,400+</strong><span>testers iterating the model</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY NOW ============ -->
+    <section class="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">Why now</span>
+          <h2>The target is set, the data is finally buildable, the market is unserved.</h2>
+        </div>
+        <div class="features__grid">
+          <div class="feature">
+            <span class="feature__tag">The target</span>
+            <h3>Every EU country must halve road deaths by 2030</h3>
+            <p>A binding policy commitment, and cycling is the part that refuses to improve.</p>
+          </div>
+          <div class="feature">
+            <span class="feature__tag">The data</span>
+            <h3>Buildable by one person in 2026</h3>
+            <p>OpenStreetMap, open crash registers in five countries, LiDAR elevation and cheap compute made a continental risk layer possible.</p>
+          </div>
+          <div class="feature">
+            <span class="feature__tag">The market</span>
+            <h3>Nobody sells where riding is dangerous</h3>
+            <p>Strava raised at $2.2B in 2025 and gives cities ride counts free. Komoot sold to Bending Spoons. The risk layer is open.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRACTION ============ -->
+    <section class="reveal" id="traction">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Traction</span>
+          <h2>Growing at AI speed, at €0 paid acquisition.</h2>
+        </div>
+        <div class="team__stats team__stats--dark" style="max-width:900px;margin:0 auto;border:0;padding:0;">
+          <div><strong>3,999</strong><span>installs in a couple of months</span></div>
+          <div><strong>643</strong><span>monthly active users</span></div>
+          <div><strong>€0</strong><span>paid acquisition cost</span></div>
+          <div><strong>7.7</strong><span>new features a week since April</span></div>
+        </div>
+        <div class="growth">
+          <svg viewBox="0 0 640 220" role="img" aria-label="Installs grew from zero in late April 2026 to about 3,999 by early October 2026.">
+            <line x1="52" y1="176" x2="614" y2="176" stroke="rgba(255,255,255,.14)" stroke-width="1" />
+            <line x1="52" y1="28" x2="52" y2="176" stroke="rgba(255,255,255,.14)" stroke-width="1" />
+            <text x="44" y="34" text-anchor="end" font-size="12" fill="rgba(255,255,255,.55)">3,999</text>
+            <text x="44" y="180" text-anchor="end" font-size="12" fill="rgba(255,255,255,.55)">0</text>
+            <path d="M52 176 L140 170 L212 162 L288 148 L352 128 L412 104 L472 78 L532 54 L600 32"
+              fill="none" stroke="#F2C30F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M52 176 L140 170 L212 162 L288 148 L352 128 L412 104 L472 78 L532 54 L600 32 L600 176 L52 176 Z"
+              fill="#F2C30F" opacity="0.12" />
+            <circle cx="600" cy="32" r="5" fill="#F2C30F" />
+            <text x="52" y="198" font-size="12" fill="rgba(255,255,255,.55)">24 Apr</text>
+            <text x="320" y="198" text-anchor="middle" font-size="12" fill="rgba(255,255,255,.55)">RO &amp; EU launch · premium · UK</text>
+            <text x="600" y="198" text-anchor="end" font-size="12" fill="rgba(255,255,255,.55)">4 Oct</text>
+          </svg>
+          <p class="growth__cap">One founder. Every rider came through the app stores and the community, with nothing spent on acquisition.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUSINESS MODEL ============ -->
+    <section class="features" id="business">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">The business</span>
+          <h2>A road-risk data company. The app refines the data and brings the buyers.</h2>
+          <p class="section-sub">Validated on five national crash registers, so it sells without millions of riders. Riders add what registers cannot: today's hazards and the routes people actually take.</p>
+        </div>
+        <div class="features__grid">
+          <div class="feature">
+            <span class="feature__tag">Selling now · cities</span>
+            <h3>Cities &amp; planners</h3>
+            <p>Cities pay €45K–70K for one consultant audit of their network. Our algorithm automates it: a per-project license through masterplan consultancies, no tender, then a yearly license refreshed with rider data.</p>
+            <div class="price-tag"><small>Target</small><strong>€15K a year</strong></div>
+          </div>
+          <div class="feature">
+            <span class="feature__tag">Opening discussion</span>
+            <h3>Insurers, OEMs, fleets</h3>
+            <p>First insurer conversation opened October 2026: can street-level risk price cycling and e-bike cover. Not funded in this round; nothing in the plan depends on it.</p>
+            <div class="price-tag"><small>Assumed</small><strong>€50K–200K a year</strong></div>
+          </div>
+          <div class="feature">
+            <span class="feature__tag">Live · riders</span>
+            <h3>Pedal Plus</h3>
+            <p>€3.59 a month for shade routing, e-bike routing and unlimited saved routes. Safety routing stays free: free riders make the map. 229 subscribers would cover today's servers.</p>
+            <div class="price-tag"><small>Net per subscriber / month</small><strong>€2.41</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PIPELINE ============ -->
+    <section class="problem">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">Pipeline</span>
+          <h2>One paid programme, one national plan, one offer out.</h2>
+        </div>
+        <div class="problem__grid">
+          <div class="stat-card">
+            <div class="stat-card__num">2026</div>
+            <h3>World Bank programme</h3>
+            <p>Risk maps and corridor analysis for three Romanian cities, delivered by the founder as a World Bank short-term consultant. We keep all rights to the algorithm.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">Cyprus</div>
+            <h3>Island Spatial Plan</h3>
+            <p>The risk algorithm is used in the Island Spatial Plan for Cyprus, an EU Technical Support Instrument project (ref. REFORM/IM2025/17). First use at country scale.</p>
+          </div>
+          <div class="stat-card stat-card--accent">
+            <div class="stat-card__num">€7K</div>
+            <h3>Velo Masterplan offer</h3>
+            <p>Written offer out for a city risk map and audit, €7,000 one-off, decision pending. The first sale into a real masterplan budget.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARKET ============ -->
+    <section class="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">The market</span>
+          <h2>Three customers: riders, cities and their consultants, and businesses.</h2>
+        </div>
+        <div class="problem__grid">
+          <div class="stat-card">
+            <div class="stat-card__num">234M</div>
+            <h3>Riders</h3>
+            <p>Europeans who cycle or would if it felt safe: the 'interested but concerned' share of Europe's urban population.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">€25M</div>
+            <h3>Cities, per year</h3>
+            <p>About 1,000 European cities above 50,000 at €25K a year; €100M worldwide at 4,000 cities.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">€23B</div>
+            <h3>Location intelligence</h3>
+            <p>The global location-intelligence market, growing 13–16% a year. Street-level cycling risk is a new slice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPETITION ============ -->
+    <section class="compare">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Competition</span>
+          <h2>Everyone routes bikes. Nobody else has crash-tested a risk score.</h2>
+        </div>
+        <div class="compare__table compare--pitch">
+          <div class="compare__row compare__row--head">
+            <div class="compare__cell compare__cell--label">Player</div>
+            <div class="compare__cell">Optimises for</div>
+            <div class="compare__cell">Sells to cities</div>
+            <div class="compare__cell">Crash-tested score</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Google, Apple Maps</div>
+            <div class="compare__cell" data-label="Optimises for">Fastest route</div>
+            <div class="compare__cell" data-label="Sells to cities"><span class="x">✕</span></div>
+            <div class="compare__cell" data-label="Crash-tested"><span class="x">✕</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Strava</div>
+            <div class="compare__cell" data-label="Optimises for">Popularity, performance</div>
+            <div class="compare__cell" data-label="Sells to cities">Metro, free</div>
+            <div class="compare__cell" data-label="Crash-tested"><span class="x">✕</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Komoot</div>
+            <div class="compare__cell" data-label="Optimises for">Scenic, 'quiet routes'</div>
+            <div class="compare__cell" data-label="Sells to cities"><span class="x">✕</span></div>
+            <div class="compare__cell" data-label="Crash-tested"><span class="x">✕</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label">Cyclers, Geovelo</div>
+            <div class="compare__cell" data-label="Optimises for">Comfort, some safety inputs</div>
+            <div class="compare__cell" data-label="Sells to cities">Geovelo: usage data</div>
+            <div class="compare__cell" data-label="Crash-tested">None published</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__cell compare__cell--label compare__cell--us">Defensive Pedal</div>
+            <div class="compare__cell compare__cell--us" data-label="Optimises for">Lowest injury risk</div>
+            <div class="compare__cell compare__cell--us" data-label="Sells to cities"><span class="check">✓</span></div>
+            <div class="compare__cell compare__cell--us" data-label="Crash-tested"><span class="check">✓</span></div>
+          </div>
+        </div>
+        <p class="lead-note lead-note--dark">What can be copied: the app and a superficial score from open data. What cannot be shortcut: the 2,034-site exposure panel, a validation published with its negatives, and the rider data. Positioning from public pages, September 2026.</p>
+      </div>
+    </section>
+
+    <!-- ============ GO TO MARKET ============ -->
+    <section class="gtm">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--dark">Go to market</span>
+          <h2>Cities through the people who write their plans; riders one dense city at a time.</h2>
+        </div>
+        <div class="gtm__cols">
+          <div class="track">
+            <div class="track__label track__label--dark">Cities · both founders selling</div>
+            <h3>Inside the plan, before the tender</h3>
+            <ul>
+              <li>The 250-city risk index is the lead list: every ranked city gets its position and an audit offer.</li>
+              <li>Sell through masterplan consultancies and funded programmes first: a per-project license needs no tender.</li>
+              <li>Direct city audits follow the first contract, priced against the €45K–70K consultant version.</li>
+            </ul>
+          </div>
+          <div class="track">
+            <div class="track__label track__label--dark">Riders · one city at a time</div>
+            <h3>Density is the retention mechanism</h3>
+            <ul>
+              <li>Bucharest first: riders are already there and the launch playbook has been run once.</li>
+              <li>Then London, Berlin and Madrid, where riders ride year-round.</li>
+              <li>Hazard alerts, community and leaderboards only work with enough riders per city. The launches test exactly that.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="team">
+      <div class="container team__inner">
+        <div class="team__copy">
+          <span class="eyebrow eyebrow--dark">The team</span>
+          <h2>Victor built and validated the model. Oana is the rider it is built for.</h2>
+          <p><strong>Victor Rotariu, CEO &amp; CTO.</strong> Full-time, unpaid; the round pays him. Built the product, the 67.8M-segment model and the five-register validation. World Bank short-term consultant on cycling-safety intelligence, with 18 years in strategy and innovation.</p>
+          <p><strong>Oana Leta, CMO &amp; Partnerships.</strong> Full-time from month 2. Six years in marketing and business, UK Country Manager at iRobot. Owns the city launches and local-authority relationships. Does not cycle in traffic because she is afraid to: the rider it is built for.</p>
+          <p style="font-size:14px;color:var(--c-ink-3);margin-top:20px;">Gaps we name: no engineer on payroll (fractional CTO, two days a week, from month 2); no public-procurement experience (advisor to recruit).</p>
+          <div class="team__stats">
+            <div><strong>2</strong><span>co-founders</span></div>
+            <div><strong>18</strong><span>years in strategy</span></div>
+            <div><strong>7.7</strong><span>features a week</span></div>
+            <div><strong>5</strong><span>crash registers validated</span></div>
+          </div>
+        </div>
+        <img class="team__mascot" src="mascot/pedal-study.png" alt="Pedal, the Defensive Pedal mascot, studying" width="340" height="425" />
+      </div>
+    </section>
+
+    <!-- ============ VISION ============ -->
+    <section class="vision">
+      <div class="container vision__inner">
+        <span class="eyebrow">In five years</span>
+        <h2>The risk-data layer for all human mobility in Europe and the US.</h2>
+        <p>Riders ride on it. Cities buy it.</p>
+      </div>
+    </section>
+
+    <!-- ============ THE ASK ============ -->
+    <section class="final-cta" id="ask">
+      <div class="container final-cta__inner">
+        <img class="final-cta__mascot" src="mascot/pedal-trophy.png" alt="" aria-hidden="true" width="140" height="175" />
+        <h2>€300,000 SAFE. €2.3M cap. Closing early 2027.</h2>
+        <p>Eighteen months and four things.</p>
+        <div class="miles">
+          <div class="mile"><p>Fractional CTO; founders sell</p></div>
+          <div class="mile"><p>1,000 paying subscribers</p></div>
+          <div class="mile"><p>Three paid cities</p></div>
+          <div class="mile"><p>Marketing &amp; sales for B2C and B2B</p></div>
+        </div>
+        <div class="final-cta__buttons" style="margin-top:36px;">
+          <a href="#" class="btn btn--install btn--xl" id="ask-mail">victor@defensivepedal.com</a>
+        </div>
+        <p class="final-cta__small">Detailed budget and milestones available on request.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="logo_yellow.png" alt="Defensive Pedal" width="160" height="40" />
+        <p>The Google Maps for cyclist safety.</p>
+        <p class="footer__cities"><strong>For cities &amp; municipalities</strong><br>
+        Street-level cycling intelligence for your city. See the
+        <a href="https://victorwho.github.io/european-cycling-risk-ranking/" target="_blank" rel="noopener">European Cycling Risk Ranking</a>.<br>
+        <a id="cities-mail" href="#">victor [at] defensivepedal.com</a></p>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://www.facebook.com/defensive.pedal/" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.2.3-2 2-2h2V2h-3c-3 0-5 1.8-5 5v3H6v4h3v8h4z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/defensive-pedal/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v4H4zm0 6h4v10H4zm6 0h4v1.5c.7-1 2-1.8 3.5-1.8 3 0 4.5 2 4.5 5V20h-4v-5c0-1.5-.5-2.5-2-2.5s-2 1-2 2.5v5h-4z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.instagram.com/defensive.pedal/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10c2.8 0 5 2.2 5 5v10c0 2.8-2.2 5-5 5H7c-2.8 0-5-2.2-5-5V7c0-2.8 2.2-5 5-5zm0 2C5.3 4 4 5.3 4 7v10c0 1.7 1.3 3 3 3h10c1.7 0 3-1.3 3-3V7c0-1.7-1.3-3-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.5-3a1 1 0 110 2 1 1 0 010-2z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Antifragil SRL. All rights reserved.</p>
+      <p class="footer__credit">Alumni of the <strong>EIT Jumpstarter</strong> programme</p>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <a href="#ask" class="mobile-cta" id="mobileCta" aria-label="Jump to the ask" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    <span>The ask</span>
+  </a>
+
+  <script src="script.js" defer></script>
+  <script>
+    (function () {
+      var a = "victor" + "@" + "defensivepedal.com";
+      var cities = document.getElementById("cities-mail");
+      if (cities) {
+        cities.href = "mailto:" + a + "?subject=" + encodeURIComponent("Cycling intelligence for [your city]");
+        cities.textContent = a;
+      }
+      ["hero-mail", "ask-mail"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.href = "mailto:" + a + "?subject=" + encodeURIComponent("Defensive Pedal — seed round");
+          el.textContent = a;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
