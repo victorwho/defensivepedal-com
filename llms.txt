@@ -13,23 +13,23 @@
 
 ## Pages
 
-- [Home, English](https://www.defensivepedal.com/)
-- [Acasă, Română](https://www.defensivepedal.com/ro/)
+- [Home, English](https://defensivepedal.tech/)
+- [Acasă, Română](https://defensivepedal.tech/ro/)
 - [European Cycling Risk Ranking of 117 cities](https://victorwho.github.io/european-cycling-risk-ranking/)
 - [Defensive Pedal on Google Play](https://play.google.com/store/apps/details?id=com.defensivepedal.mobile)
 - [Defensive Pedal on the App Store](https://apps.apple.com/ro/app/defensive-pedal/id6778694757)
 
 ## Methodology
 
-- [How Defensive Pedal scores street risk](https://www.defensivepedal.com/methodology): 100+ factors in seven families (motor traffic, road type, cycling infrastructure, geometry and surface, legal access, intersections, special features); data from OpenStreetMap, an own traffic model calibrated on congestion data, a road-marking model, LiDAR/GEDTM30 elevation and rider reports. Validated on 2,034 counting sites in 5 countries and 13 regions, about 4 billion passages, 10,000+ crashes, 1,169 serious injuries: serious-injury rate rises with each risk level (p < 10^-5), about 2x per passage on the highest-risk streets; the score predicts severity, not crash frequency. Published: Rotariu, V. (2026), Severity Without Frequency: A Multi-Country Validation of a Cycling Routing Risk Score, Zenodo, CC BY 4.0, https://doi.org/10.5281/zenodo.23051502
-- [Romanian version](https://www.defensivepedal.com/ro/methodology)
+- [How Defensive Pedal scores street risk](https://defensivepedal.tech/methodology): 100+ factors in seven families (motor traffic, road type, cycling infrastructure, geometry and surface, legal access, intersections, special features); data from OpenStreetMap, an own traffic model calibrated on congestion data, a road-marking model, LiDAR/GEDTM30 elevation and rider reports. Validated on 2,034 counting sites in 5 countries and 13 regions, about 4 billion passages, 10,000+ crashes, 1,169 serious injuries: serious-injury rate rises with each risk level (p < 10^-5), about 2x per passage on the highest-risk streets; the score predicts severity, not crash frequency. Published: Rotariu, V. (2026), Severity Without Frequency: A Multi-Country Validation of a Cycling Routing Risk Score, Zenodo, CC BY 4.0, https://doi.org/10.5281/zenodo.23051502
+- [Romanian version](https://defensivepedal.tech/ro/methodology)
 
 ## Policies
 
-- [Privacy Policy](https://www.defensivepedal.com/privacy)
-- [Terms of Use](https://www.defensivepedal.com/terms)
-- [Politica de confidențialitate (Romanian)](https://www.defensivepedal.com/ro/privacy)
-- [Termeni și condiții (Romanian)](https://www.defensivepedal.com/ro/terms)
+- [Privacy Policy](https://defensivepedal.tech/privacy)
+- [Terms of Use](https://defensivepedal.tech/terms)
+- [Politica de confidențialitate (Romanian)](https://defensivepedal.tech/ro/privacy)
+- [Termeni și condiții (Romanian)](https://defensivepedal.tech/ro/terms)
 
 ## Contact
 

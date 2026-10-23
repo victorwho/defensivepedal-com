@@ -2,15 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Defensive Pedal updates</title>
-    <link>https://www.defensivepedal.com/</link>
-    <description>What changed on defensivepedal.com and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
+    <link>https://defensivepedal.tech/</link>
+    <description>What changed on defensivepedal.tech and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 22:00:00 GMT</lastBuildDate>
-    <atom:link href="https://www.defensivepedal.com/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://defensivepedal.tech/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>The website moved to defensivepedal.tech</title>
+      <link>https://defensivepedal.tech/</link>
+      <guid isPermaLink="false">defensivepedal-2026-10-23-domain</guid>
+      <pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Defensive Pedal's website now lives at defensivepedal.tech. Every old defensivepedal.com address permanently redirects to the same page on the new domain, in English and Romanian. Email addresses are unchanged.</description>
+    </item>
 
     <item>
       <title>Homepage validation figure aligned with the published study</title>
-      <link>https://www.defensivepedal.com/#why</link>
+      <link>https://defensivepedal.tech/#why</link>
       <guid isPermaLink="false">defensivepedal-2026-10-12-twice</guid>
       <pubDate>Mon, 12 Oct 2026 21:00:00 GMT</pubDate>
       <description>The homepage, methodology page and llms.txt now state the validation result with the exact ratio from the analysis: 2.19 times as many serious injuries per ride on streets rated High risk as on streets rated Safer. The earlier "1 in 5 million vs 1 in 2 million" card is retired. Same change on the Romanian homepage.</description>
@@ -18,7 +26,7 @@
 
     <item>
       <title>Question-style headings and a cross-page links block on every page</title>
-      <link>https://www.defensivepedal.com/#how</link>
+      <link>https://defensivepedal.tech/#how</link>
       <guid isPermaLink="false">defensivepedal-2026-10-12-headings</guid>
       <pubDate>Mon, 12 Oct 2026 20:00:00 GMT</pubDate>
       <description>The homepage, privacy policy and terms now use question headings ("How does Defensive Pedal pick your route?", "Who is responsible for your data?"), open with a one-sentence definition of the app, and end with a links block to every page in both languages plus this feed. Same changes on the Romanian pages.</description>
@@ -26,7 +34,7 @@
 
     <item>
       <title>Methodology page: how the risk score works and how it was validated</title>
-      <link>https://www.defensivepedal.com/methodology</link>
+      <link>https://defensivepedal.tech/methodology</link>
       <guid isPermaLink="false">defensivepedal-2026-10-12-methodology</guid>
       <pubDate>Mon, 12 Oct 2026 18:00:00 GMT</pubDate>
       <description>The seven factor families behind the 100+ risk factors, the data sources, and the validation against crash records at 2,034 sites in five countries: serious-injury rate rises with each risk level, 2.19 times as high on the highest-risk streets. Links the open-access analysis on Zenodo. Also in Romanian at /ro/methodology.</description>
@@ -34,7 +42,7 @@
 
     <item>
       <title>Privacy policy and terms of use published in English and Romanian</title>
-      <link>https://www.defensivepedal.com/privacy</link>
+      <link>https://defensivepedal.tech/privacy</link>
       <guid isPermaLink="false">defensivepedal-2026-10-12-legal</guid>
       <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
       <description>Full GDPR privacy policy and consumer terms for the app and website: what the app collects and why, retention periods, processors, GDPR rights, Premium billing and the 14-day withdrawal right. Romanian versions at /ro/privacy and /ro/terms.</description>
@@ -42,7 +50,7 @@
 
     <item>
       <title>Homepage figures updated: 3,984 installs and ETSC 2026 road safety data</title>
-      <link>https://www.defensivepedal.com/#why</link>
+      <link>https://defensivepedal.tech/#why</link>
       <guid isPermaLink="false">defensivepedal-2026-10-11-figures</guid>
       <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
       <description>Install count updated to 3,984 across Android and iOS as of October 2026. Safety context now cites ETSC PIN Flash 50 (2026): cyclists are 10% of all people killed on EU roads, 1,926 in 2024, and cyclist deaths fell 8% between 2014 and 2024 while deaths of drivers and passengers fell four times faster.</description>
