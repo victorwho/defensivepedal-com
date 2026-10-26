@@ -15,7 +15,7 @@
 
 - [Home, English](https://defensivepedal.tech/)
 - [Acasă, Română](https://defensivepedal.tech/ro/)
-- [European Cycling Risk Ranking of 117 cities](https://victorwho.github.io/european-cycling-risk-ranking/)
+- [European Cycling Risk Ranking of 219 cities](https://victorwho.github.io/european-cycling-risk-ranking/)
 - [Defensive Pedal on Google Play](https://play.google.com/store/apps/details?id=com.defensivepedal.mobile)
 - [Defensive Pedal on the App Store](https://apps.apple.com/ro/app/defensive-pedal/id6778694757)
 
