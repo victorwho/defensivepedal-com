@@ -1,12 +1,12 @@
 # Defensive Pedal
 
-> Defensive Pedal is a free cycling navigation app for Android and iPhone, made by Antifragil SRL in Romania. It rates every street for risk using 100+ road-risk factors and routes cyclists around fast traffic, tricky junctions and dooring zones. Available in 31 European countries: all EU member states, the United Kingdom, Switzerland, Norway and Iceland.
+> Defensive Pedal is a free cycling navigation app for Android and iPhone, made by Defensive Pedal SRL in Romania. It rates every street for risk using 100+ road-risk factors and routes cyclists around fast traffic, tricky junctions and dooring zones. Available in 31 European countries: all EU member states, the United Kingdom, Switzerland, Norway and Iceland.
 
 ## Key facts
 
 - On 10,149 test trips between random points in Romanian cities, Defensive Pedal routes were lower-risk than Google Maps cycling directions on 99 of 100 trips and 2.1x safer on average, measured as cumulative modelled risk. They were on average 5% longer than the shortest route.
 - The risk scores were checked against the national crash registers of Germany, Switzerland, Belgium, France and Spain, covering 3.98 billion counted cyclist passages at 2,034 counting sites. None of that crash data was used to build the model. Streets rated High risk see 2.19 times as many serious injuries per ride as streets rated Safer (Rotariu, 2026, DOI 10.5281/zenodo.23051502).
-- 3,984 installs on Android and iOS as of October 2026. Rated 5.0 on Google Play. The safety model was refined with input from 2,400 cyclists between 2024 and June 2026.
+- 4,100+ installs on Android and iOS as of October 2026. Rated 5.0 on Google Play. The safety model was refined with input from 2,400 cyclists between 2024 and June 2026.
 - Core safety routing is free. Premium adds Cool Routing (shaded routes on hot days), e-bike routing, unlimited saved routes and offline navigation.
 - Defensive Pedal works with the World Bank on cycling intelligence for cities and is an alumnus of the EIT Jumpstarter programme.
 - Founder: Victor Rotariu, who built the routing engine and both apps.
@@ -15,7 +15,9 @@
 
 - [Home, English](https://defensivepedal.tech/)
 - [Acasă, Română](https://defensivepedal.tech/ro/)
-- [European Cycling Risk Ranking of 300 cities](https://victorwho.github.io/european-cycling-risk-ranking/)
+- [Pedalability Index: Cycling Risk — ranking of 300 European cities](https://victorwho.github.io/pedalability-index/)
+- [For cities: street-level cycling risk reviews](https://defensivepedal.tech/cities)
+- [For consultancies: white-label cycling risk layer](https://defensivepedal.tech/partners)
 - [Defensive Pedal on Google Play](https://play.google.com/store/apps/details?id=com.defensivepedal.mobile)
 - [Defensive Pedal on the App Store](https://apps.apple.com/ro/app/defensive-pedal/id6778694757)
 

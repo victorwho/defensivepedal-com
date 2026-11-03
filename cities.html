@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street-level cycling risk and planning simulator for cities — Defensive Pedal</title>
+  <meta name="description" content="Predicted cycling risk for every street segment in your city, at a fraction of the cost of a survey, plus a simulator that shows what any planning change does to the whole network. Same model across 300 European cities." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://defensivepedal.tech/cities" />
+  <link rel="icon" href="app_icon_23Apr26_v1.png" type="image/png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Street-level cycling risk and planning simulator for cities — Defensive Pedal" />
+  <meta property="og:description" content="Cycling risk for every street in your city, and a simulator to test any plan before you build it." />
+  <meta property="og:url" content="https://defensivepedal.tech/cities" />
+  <meta property="og:image" content="https://defensivepedal.tech/feature%20graphic_8May26.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://defensivepedal.tech/#organization",
+      "name": "Defensive Pedal",
+      "legalName": "Defensive Pedal SRL",
+      "url": "https://defensivepedal.tech/",
+      "logo": "https://defensivepedal.tech/app_icon_23Apr26_v1.png"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://defensivepedal.tech/cities#service",
+      "name": "Street Risk Review",
+      "serviceType": "Cycling risk assessment for municipalities",
+      "provider": { "@id": "https://defensivepedal.tech/#organization" },
+      "areaServed": "Europe",
+      "url": "https://defensivepedal.tech/cities"
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="b2b.css?v=7" />
+  <!-- Umami analytics --><script defer src="https://cloud.umami.is/script.js" data-website-id="2201d96e-6770-41c0-a4e4-58438afda362"></script>
+</head>
+<body>
+  <header class="nav is-scrolled">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" aria-label="Defensive Pedal home">
+        <img src="logo_yellow.png" alt="Defensive Pedal" width="160" height="40" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/cities" aria-current="page">Cities</a>
+        <a href="/partners">Consultancies</a>
+        <a href="/street-risk-index">Pedalability Index</a>
+        <a href="/methodology">Methodology</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#briefing" class="btn btn--brief btn--sm" data-umami-event="cities-nav-briefing">Free Demo and Audit</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="b2b">
+    <div class="container b2b-wide">
+      <section class="b2b-hero b2b-split">
+        <div>
+        <span class="eyebrow eyebrow--dark">For cities</span>
+        <h1>Predict cycling risk on every street, then test your plan before you build it.</h1>
+        <p class="lead">Crash data tells you where people got hurt last year. We predict cycling risk for every street segment in your city from road data, at a fraction of the cost of a survey. Our planning simulator then shows what any change does to the whole network: which calm areas it joins up, how much safer everyday trips get, and how far your city&rsquo;s pedalability moves. Your budget goes where it does the most.</p>
+        <div class="b2b-ctas">
+          <a href="#briefing" class="btn btn--brief btn--lg" data-umami-event="cities-hero-briefing">Free Demo and Audit</a>
+          <a href="/street-risk-index" class="btn btn--grey btn--lg" data-umami-event="cities-to-index">Find your city in the Pedalability Index: Cycling Risk →</a>
+        </div>
+        <p class="b2b-small">Works with the World Bank on cycling intelligence for cities · Same model across 300 European cities</p>
+        </div>
+        <figure class="b2b-map">
+          <img src="b2b/map_barcelona.webp" width="1680" height="1008" alt="Street-level cycling risk map of central Barcelona: most streets rated Safer or Typical, with High-risk segments on the busiest roads" />
+          <figcaption><strong>Example output: central Barcelona</strong><span class="b2b-key b2b-key--safer">Safer</span><span class="b2b-key b2b-key--typical">Typical</span><span class="b2b-key b2b-key--high">High risk</span></figcaption>
+        </figure>
+      </section>
+    </div>
+
+    <div class="container b2b-doc">
+      <section class="b2b-card">
+        <h2>Test any change before a single sign goes up</h2>
+        <p>Edit the network the way you plan to build it, and the simulator re-scores the whole city. A short link that joins two calm areas can do more than a long lane that joins nothing. The simulator shows you which is which.</p>
+        <div class="b2b-three">
+          <figure>
+            <svg class="b2b-svg" viewBox="0 0 200 120" role="img" aria-label="Two calm-street areas cut apart by a busy road">
+              <rect class="zone" x="14" y="14" width="76" height="92" rx="14"/>
+              <rect class="zone" x="110" y="14" width="76" height="92" rx="14"/>
+              <path class="safer" d="M26 40H78M26 80H78M52 26V94M122 40H174M122 80H174M148 26V94"/>
+              <path class="high" d="M100 8V112"/>
+            </svg>
+            <figcaption><h3>Your network today</h3><p>Two calm areas, cut apart by one busy road.</p></figcaption>
+          </figure>
+          <figure>
+            <svg class="b2b-svg" viewBox="0 0 200 120" role="img" aria-label="A new protected link drawn across the busy road">
+              <rect class="zone" x="14" y="14" width="76" height="92" rx="14"/>
+              <rect class="zone" x="110" y="14" width="76" height="92" rx="14"/>
+              <path class="safer" d="M26 40H78M26 80H78M52 26V94M122 40H174M122 80H174M148 26V94"/>
+              <path class="high" d="M100 8V112"/>
+              <path class="trip" d="M78 60H122"/>
+            </svg>
+            <figcaption><h3>Draw the change</h3><p>Add the lane or crossing you are considering, or close a street to through traffic.</p></figcaption>
+          </figure>
+          <figure>
+            <svg class="b2b-svg" viewBox="0 0 200 120" role="img" aria-label="The two calm areas joined into one">
+              <rect class="zone" x="14" y="14" width="172" height="92" rx="14"/>
+              <path class="safer" d="M26 40H78M26 80H78M52 26V94M122 40H174M122 80H174M148 26V94M78 60H122"/>
+              <path class="high" d="M100 8V48M100 72V112"/>
+            </svg>
+            <figcaption><h3>See the whole-city effect</h3><p>Risk on every street, your Network, Commute and Island Effect scores, and the likely range, before you build.</p></figcaption>
+          </figure>
+        </div>
+        <p>Compare options side by side, take the strongest one to council with its numbers, and re-run it when the plan changes.</p>
+      </section>
+
+      <section class="b2b-card">
+        <h2>The index goes public in early November. It is the same model, run on 300 cities.</h2>
+        <p>The Pedalability Index: Cycling Risk applies our street model to 300 European cities and scores each on three things residents feel every day. Journalists and councillors may ask where your city stands. Every city gets a likely rank range from 2,000 recalculations, so small gaps are never over-read.</p>
+        <div class="b2b-three">
+          <figure>
+            <svg class="b2b-svg" viewBox="0 0 200 120" role="img" aria-label="A street grid with streets coloured by risk">
+              <path class="safer" d="M20 20H180M20 60H100M20 100H180M60 20V100M140 60V100"/>
+              <path class="typical" d="M100 60H180M140 20V60M100 20V100"/>
+              <path class="high" d="M20 20V100M180 20V100"/>
+            </svg>
+            <figcaption><h3>The Network</h3><p>The risk of every street in the city, weighted by its length.</p></figcaption>
+          </figure>
+          <figure>
+            <svg class="b2b-svg" viewBox="0 0 200 120" role="img" aria-label="An everyday trip from A to B on the safest available route">
+              <path class="road" d="M20 20H180M20 60H180M20 100H180M60 20V100M100 20V100M140 20V100"/>
+              <path class="trip" d="M30 100H60V60H140V20H170"/>
+              <path class="high" d="M100 60H140"/>
+              <circle class="pin" cx="30" cy="100" r="11"/><text class="pin-label" x="30" y="104" text-anchor="middle">A</text>
+              <circle class="pin" cx="170" cy="20" r="11"/><text class="pin-label" x="170" y="24" text-anchor="middle">B</text>
+            </svg>
+            <figcaption><h3>The Commute</h3><p>How risky an everyday trip is, even when people take the safest route. We test 210 trips per city.</p></figcaption>
+          </figure>
+          <figure>
+            <svg class="b2b-svg" viewBox="0 0 200 120" role="img" aria-label="Two calm-street areas cut apart by a busy road">
+              <rect class="zone" x="14" y="14" width="76" height="92" rx="14"/>
+              <rect class="zone" x="110" y="14" width="76" height="92" rx="14"/>
+              <path class="safer" d="M26 40H78M26 80H78M52 26V94M122 40H174M122 80H174M148 26V94"/>
+              <path class="high" d="M100 8V112"/>
+            </svg>
+            <figcaption><h3>The Island Effect</h3><p>How far people get on calm streets before a busy road stops them.</p></figcaption>
+          </figure>
+        </div>
+        <p><a href="/street-risk-index" data-umami-event="cities-to-index">Look up your city&rsquo;s rank →</a> Then book a briefing and we&rsquo;ll show you what holds it back and which changes would move it most.</p>
+      </section>
+
+      <section class="b2b-card">
+        <h2>You know where you want to build. Council wants proof.</h2>
+        <ul>
+          <li>Crash data arrives late and counts only what has already gone wrong.</li>
+          <li>Bike counts show where people already ride, not the streets they avoid.</li>
+          <li>A lane that joins nothing up is hard to defend at the next budget round. Council wants a reason for <em>this</em> link, <em>this</em> year.</li>
+          <li>Until a scheme is built, nobody can show what it will change across the network.</li>
+        </ul>
+        <p>We score the roads themselves, so you have evidence for every street today, including the ones nobody dares ride yet. And you can simulate a plan before you commit the budget.</p>
+      </section>
+
+      <section class="b2b-card">
+        <h2>What you get</h2>
+        <div class="b2b-ladder" aria-hidden="true">
+          <div style="--h:64px">Briefing<small>Free</small></div>
+          <div style="--h:92px">Street Risk Review</div>
+          <div style="--h:120px">Pilot</div>
+          <div style="--h:148px">Planning Platform<small>Yearly</small></div>
+        </div>
+        <table class="b2b-offers">
+          <thead><tr><th>Offer</th><th>What it is</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Briefing</strong></td><td>20 minutes, no obligation. Your city&rsquo;s rank, what holds it back, and three streets worth a closer look.</td><td>Free</td></tr>
+            <tr><td><strong>Street Risk Review</strong></td><td>A street-level risk map, the barrier links that cut your calm areas apart, one planned change run through the simulator, a peer-city comparison, and a short report ready for council.</td><td>On request</td></tr>
+            <tr><td><strong>Pilot</strong></td><td>A Review plus your whole plan run through the simulator, and a before-and-after check on a scheme you are building, so you can show council what it changed.</td><td>On request</td></tr>
+            <tr><td><strong>Planning Platform</strong></td><td>The simulator for your team, to test as many options as you like, plus a yearly re-score of your network so every budget round starts with evidence of progress.</td><td>On request</td></tr>
+          </tbody>
+        </table>
+        <p class="b2b-small" style="margin-top:14px">Already working with a consultancy? We deliver through them. <a href="/partners">See how we work with consultancies →</a></p>
+      </section>
+
+      <section class="b2b-card">
+        <h2>Safer streets, fewer serious injuries</h2>
+        <div class="b2b-evidence">
+          <div>
+            <span class="b2b-eyebrow">Between cities</span>
+            <div class="b2b-big">&minus;22%</div>
+            <p>riders killed or seriously injured per bike trip, for every 10 index points, across 18 cities.</p>
+          </div>
+          <div>
+            <span class="b2b-eyebrow">Between streets · serious injuries per passage</span>
+            <div class="b2b-bars">
+              <div class="b2b-bar"><span>Safer</span><i style="--w:45.7%;--k:var(--risk-safer)">1&times;</i></div>
+              <div class="b2b-bar"><span>High risk</span><i style="--w:100%;--k:var(--risk-high)">2.19&times;</i></div>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li>Cities with safer streets see fewer serious cycling injuries. Across 18 European cities with bike counters, every 10 index points goes with about <strong>22% fewer riders killed or seriously injured per bike trip</strong>.</li>
+          <li>On the streets we rate High risk, serious injuries are <strong>more than twice as likely per passage</strong> as on the streets we rate Safer, across 2,034 counting sites in five countries. <a href="/methodology">How the street score works →</a></li>
+          <li>Small print: the city link is an association between countries, not proof of cause, and is too weak to detect within a country. The street model predicts injury severity, not crash frequency. City results are open data under CC BY 4.0. Method: preprint with DOI <a href="https://doi.org/10.5281/zenodo.23507613" target="_blank" rel="noopener">10.5281/zenodo.23507613</a>, not yet peer reviewed.</li>
+        </ul>
+      </section>
+
+      <section class="b2b-card">
+        <h2>Questions cities ask</h2>
+        <h3>What changes can the simulator test?</h3>
+        <p>Any change you can draw on the street network, such as a new or upgraded lane or a street closed to through traffic. We re-run the model and show the effect on every street, on your three index scores and on the likely range.</p>
+        <h3>OpenStreetMap is incomplete in our city. Does that skew the result?</h3>
+        <p>We checked 45 cities against official bike-infrastructure figures. OpenStreetMap was typically close, and where it fell short, adding the missing lanes moved no city out of its likely rank range. In a Review we correct your network by hand first.</p>
+        <h3>Is the method peer reviewed?</h3>
+        <p>Not yet. It is a public preprint with a DOI, the city data is open and the factors are published with the direction each one pushes. The exact weights stay private, because they are the core of the product.</p>
+        <h3>How much should we trust a single rank?</h3>
+        <p>Trust the tier, not the decimal. Cities a few places apart are effectively tied, which is why we publish a likely range for every city.</p>
+        <h3>We already work with a consultancy.</h3>
+        <p>Good. We work through consultancies and can supply the risk layer for their report. <a href="/partners">Partner details →</a></p>
+        <h3>What about personal data?</h3>
+        <p>City work uses road data. Anything drawn from app riders is aggregated and anonymised, and personal data is never sold. <a href="/privacy">Privacy policy</a>.</p>
+      </section>
+
+      <section class="b2b-card b2b-card--dark" id="briefing">
+        <h2>Free Demo and Audit</h2>
+        <p>Tell us your city and what&rsquo;s coming up: a budget round, a cycling plan, a question from council. Victor Rotariu, the founder, built the road model behind the index and runs every briefing himself, in English or Romanian. It&rsquo;s free and there&rsquo;s no obligation. You leave with three streets worth a closer look. Send the short form and you can pick a time for a call straight away.</p>
+        <div id="lead-form" data-tally="EqKZDo" data-role="City" data-event="cities-briefing-submit" data-subject="Briefing request" data-fallback="Free Demo and Audit"></div>
+        <p class="b2b-small">Prefer email? <a href="mailto:victor@defensivepedal.com" style="color:inherit;text-decoration:underline;text-underline-offset:3px">victor@defensivepedal.com</a></p>
+      </section>
+
+    </div>
+    <p class="b2b-foot b2b-small container">© 2026 Defensive Pedal SRL · <a href="/">Home</a> · <a href="/partners">Consultancies</a> · <a href="/street-risk-index">Pedalability Index: Cycling Risk</a> · <a href="/methodology">Methodology</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </main>
+  <script src="lead-form.js" defer></script>
+</body>
+</html>
