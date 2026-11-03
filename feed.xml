@@ -10,10 +10,10 @@
 
     <item>
       <title>City ranking renamed: Pedalability Index: Cycling Risk</title>
-      <link>https://victorwho.github.io/pedalability-index/</link>
+      <link>https://defensivepedal.tech/pedalability-index/</link>
       <guid isPermaLink="false">defensivepedal-2026-11-03-pedalability-index</guid>
       <pubDate>Tue, 03 Nov 2026 12:00:00 GMT</pubDate>
-      <description>The 300-city European ranking is now called the Pedalability Index: Cycling Risk and lives at a new address. The ranking itself is unchanged; the old link redirects.</description>
+      <description>The 300-city European ranking is now called the Pedalability Index: Cycling Risk and now lives on defensivepedal.tech/pedalability-index. The ranking itself is unchanged; old links redirect.</description>
     </item>
 
     <item>
@@ -66,7 +66,7 @@
 
     <item>
       <title>European Cycling Risk Ranking of 300 cities linked from the site</title>
-      <link>https://victorwho.github.io/pedalability-index/</link>
+      <link>https://defensivepedal.tech/pedalability-index/</link>
       <guid isPermaLink="false">defensivepedal-2026-09-15-ranking</guid>
       <pubDate>Tue, 15 Sep 2026 12:00:00 GMT</pubDate>
       <description>A ranking of 300 European cities by modelled cycling risk, built from the same street-level safety model that powers the app, with a contact block for municipalities on the homepage.</description>

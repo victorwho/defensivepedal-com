@@ -15,7 +15,7 @@
 
 - [Home, English](https://defensivepedal.tech/)
 - [Acasă, Română](https://defensivepedal.tech/ro/)
-- [Pedalability Index: Cycling Risk — ranking of 300 European cities](https://victorwho.github.io/pedalability-index/)
+- [Pedalability Index: Cycling Risk — ranking of 300 European cities](https://defensivepedal.tech/pedalability-index/)
 - [For cities: street-level cycling risk reviews](https://defensivepedal.tech/cities)
 - [For consultancies: white-label cycling risk layer](https://defensivepedal.tech/partners)
 - [For fleets: route-risk audit for courier and e-bike fleets in Bucharest](https://defensivepedal.tech/fleets)
