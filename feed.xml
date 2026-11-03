@@ -5,8 +5,16 @@
     <link>https://defensivepedal.tech/</link>
     <description>What changed on defensivepedal.tech and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:00:00 GMT</lastBuildDate>
     <atom:link href="https://defensivepedal.tech/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Planning simulator demo video on the cities page</title>
+      <link>https://defensivepedal.tech/cities</link>
+      <guid isPermaLink="false">defensivepedal-2026-11-03-cities-video</guid>
+      <pubDate>Tue, 03 Nov 2026 20:00:00 GMT</pubDate>
+      <description>The cities page now shows a 17-second recording of the planning simulator: a 30 km/h plan for the proposed zero-emission zone in Iași, typed in plain words and re-scored street by street.</description>
+    </item>
 
     <item>
       <title>City ranking renamed: Pedalability Index: Cycling Risk</title>
