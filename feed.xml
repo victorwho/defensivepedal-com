@@ -5,8 +5,16 @@
     <link>https://defensivepedal.tech/</link>
     <description>What changed on defensivepedal.tech and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://defensivepedal.tech/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Ranking page headline: Pedalability Index 2026: Cycling Risk</title>
+      <link>https://defensivepedal.tech/pedalability-index/</link>
+      <guid isPermaLink="false">defensivepedal-2026-11-04-index-headline</guid>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 GMT</pubDate>
+      <description>The ranking page now leads with its name, Pedalability Index 2026: Cycling Risk, under the line Data, not Reputation. The ranking itself is unchanged.</description>
+    </item>
 
     <item>
       <title>Planning simulator demo video on the cities page</title>
