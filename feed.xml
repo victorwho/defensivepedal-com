@@ -5,8 +5,16 @@
     <link>https://defensivepedal.tech/</link>
     <description>What changed on defensivepedal.tech and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 14:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://defensivepedal.tech/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Pedalability Index now in the main menu</title>
+      <link>https://defensivepedal.tech/pedalability-index/</link>
+      <guid isPermaLink="false">defensivepedal-2026-11-20-index-in-menu</guid>
+      <pubDate>Fri, 20 Nov 2026 12:00:00 GMT</pubDate>
+      <description>The home page menu now links straight to the Pedalability Index, marked in blue. The same blue marks the link on the cities and consultancies pages.</description>
+    </item>
 
     <item>
       <title>Stockholm now scored on the city's measured traffic counts</title>
