@@ -37,7 +37,7 @@ Also written: `sitemap.xml` (an index) with `sitemap-core.xml`, `sitemap-cities.
 
 ### `content/city_notes.csv`
 
-`slug` is the `slug` column of the index CSV. `human_line` is one sentence a person wrote or checked.
+`slug` is the `slug` column of the index CSV (`thehague`); the page URL uses the city name (`/netherlands/the-hague/`). `human_line` is one sentence a person wrote or checked.
 `arterials` and `calm_areas` are free text. `peers` is a `;`-separated list of slugs; if empty, the
 three cities nearest in rank from the same country are used. Quote any cell that contains a comma.
 

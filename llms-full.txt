@@ -78,7 +78,7 @@ The analysis is published with open access as Rotariu, V. (2026). Severity Witho
 
 - It compares streets with each other. It says nothing certain about any single trip, and a Safer street can still be dangerous on a given day.
 
-- Cycling is safe overall. Serious injuries are rare on every street in the panel; the score tells you where they are rarer still.
+- Serious injuries are rare on every street in the panel; the score tells you where they are rarer still.
 
 - Hazards reported by riders are shown before we verify them, and map, traffic and surface data can be out of date.
 

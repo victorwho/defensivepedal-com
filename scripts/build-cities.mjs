@@ -20,7 +20,11 @@ const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
 const list = (cell) => cell.split(';').map((s) => s.trim()).filter(Boolean);
 const countryOf = (c) => { const [name, slug, inName] = COUNTRIES[c.iso2]; return { name, slug, inName: inName || name }; };
 const countryUrl = (c) => `/pedalability-index/${countryOf(c).slug}/`;
-const cityUrl = (c) => `${countryUrl(c)}${c.slug}/`;
+// URL slug from the city name ("the-hague"); the CSV slug ("thehague") stays the key in city_notes.csv.
+const FOLD = { ł: 'l', ø: 'o', ß: 'ss', đ: 'd', æ: 'ae' };
+const pathSlug = (c) => c.city.toLowerCase().replace(/[łøßđæ]/g, (ch) => FOLD[ch]).normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const cityUrl = (c) => `${countryUrl(c)}${pathSlug(c)}/`;
 const linked = (c) => (pageExists(cityUrl(c)) ? `<a href="${cityUrl(c)}">${esc(c.city)}</a>` : esc(c.city));
 
 function loadCities() {
@@ -140,8 +144,8 @@ export function plan(texts) {
     });
   });
   const cityPages = built.map((c) => register({
-    url: cityUrl(c), file: `pedalability-index/${countryOf(c).slug}/${c.slug}/index.html`, lang: 'en',
-    key: `index/${countryOf(c).slug}/${c.slug}`, group: 'cities', title: fill(texts.city.h1, { city: c.city }), city: c,
+    url: cityUrl(c), file: `${cityUrl(c).slice(1)}index.html`, lang: 'en',
+    key: cityUrl(c), group: 'cities', title: fill(texts.city.h1, { city: c.city }), city: c,
   }));
 
   const allAvg = mean(cities.map((c) => Number(c.index))).toFixed(1);
