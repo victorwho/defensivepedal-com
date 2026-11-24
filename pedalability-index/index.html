@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pedalability Index: Cycling Risk</title>
 <meta name="description" content="300 European cities ranked by cycling risk, measured from 74 million road segments and validated against 1,169 serious injuries. Stockholm first, Amsterdam 2nd, Copenhagen 10th — and where the famous rankings disagree, the injury data picks a side.">
-<link rel="canonical" href="https://defensivepedal.tech/pedalability-index/">
+<link rel="canonical" href="https://defensivepedal.tech/pedalability-index/" />
+  <link rel="alternate" hreflang="en" href="https://defensivepedal.tech/pedalability-index/" />
+  <link rel="alternate" hreflang="x-default" href="https://defensivepedal.tech/pedalability-index/" />
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pedalability Index: Cycling Risk">
 <meta property="og:description" content="300 European cities ranked by cycling risk, measured from 74 million road segments and validated against 1,169 serious injuries. Stockholm first, Amsterdam 2nd, Copenhagen 10th — and where the famous rankings disagree, the injury data picks a side.">
@@ -23,6 +25,142 @@
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <style>img{max-width:100%}</style>
   <!-- Umami analytics --><script defer src="https://cloud.umami.is/script.js" data-website-id="2201d96e-6770-41c0-a4e4-58438afda362"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://defensivepedal.tech/#organization",
+      "name": "Defensive Pedal",
+      "legalName": "Defensive Pedal SRL",
+      "url": "https://defensivepedal.tech/",
+      "logo": "https://defensivepedal.tech/app_icon_23Apr26_v1.png",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://defensivepedal.tech/#founder",
+        "name": "Victor Rotariu",
+        "sameAs": [
+          "https://www.linkedin.com/in/victorrotariu/"
+        ]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/defensive-pedal/",
+        "https://www.instagram.com/defensive.pedal/",
+        "https://www.facebook.com/defensive.pedal/",
+        "https://play.google.com/store/apps/details?id=com.defensivepedal.mobile",
+        "https://apps.apple.com/ro/app/defensive-pedal/id6778694757"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://defensivepedal.tech/#website",
+      "url": "https://defensivepedal.tech/",
+      "name": "Defensive Pedal",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://defensivepedal.tech/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://defensivepedal.tech/pedalability-index/#webpage",
+      "url": "https://defensivepedal.tech/pedalability-index/",
+      "name": "Pedalability Index: Cycling Risk",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://defensivepedal.tech/#website"
+      },
+      "dateModified": "2026-11-24"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://defensivepedal.tech/pedalability-index/#dataset",
+      "name": "Pedalability Index 2026: Cycling Risk",
+      "description": "Cycling risk of the street networks of 300 European cities: rank, index score (0–100, higher = lower assessed risk), 90% rank interval, tier and share of street length rated High risk. Built from 74 million scored road segments.",
+      "url": "https://defensivepedal.tech/pedalability-index/",
+      "creator": {
+        "@id": "https://defensivepedal.tech/#organization"
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "identifier": "https://doi.org/10.5281/zenodo.22771452",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Europe"
+      },
+      "temporalCoverage": "2026",
+      "variableMeasured": [
+        "Rank among 300 European cities",
+        "Index score (0–100, higher = lower assessed risk)",
+        "Likely rank range",
+        "Tier",
+        "Share of street length rated High risk"
+      ],
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://defensivepedal.tech/pedalability-index/data/eu300_city_index.csv"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://defensivepedal.tech/pedalability-index/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the most bike-friendly cities in Europe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measured by the risk of their streets rather than by reputation, the lowest-risk European cities for cycling are Stockholm, Amsterdam, Helsinki, The Hague and Antwerp, the top five of 300 in the Pedalability Index 2026. Copenhagen ranks 10th."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which European city is lowest-risk for cycling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stockholm ranks first of 300 in the Pedalability Index 2026, with a score of 98.9 out of 100 and a likely rank between 1st and 8th. Higher score = lower assessed risk. Cities with overlapping likely ranges are a tie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Pedalability Index?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Pedalability Index 2026 ranks 300 European cities by the cycling risk of their street networks. Every scored road segment of the Defensive Pedal risk model is aggregated per city across three pillars: street network risk, the risk of 210 simulated journeys, and low-stress accessibility. Higher score = lower assessed risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a high score mean a city is safe to cycle in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The score compares cities with each other. It predicts how badly a crash ends (injury severity), not whether one happens, and it has no signal at junctions. A score of 0.0 means the lowest of the 300 cities, not an absence of safety."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://defensivepedal.tech/pedalability-index/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://defensivepedal.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pedalability Index",
+          "item": "https://defensivepedal.tech/pedalability-index/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -260,10 +398,13 @@ tr.grp td { font-weight:800; padding-top:22px; border-bottom:2px solid var(--ink
 risk model validated against 1,169 serious cycling injuries — then ranked every city, 1st to last.
 No votes. No policy points. Just the streets as they are built.</p>
 
+<!-- build:answer -->
+<p class="dek">Measured by the risk of their streets rather than by reputation, the lowest-risk European cities for cycling are <b>Stockholm, Amsterdam, Helsinki, The Hague and Antwerp</b>, the top five of 300 in the Pedalability Index 2026. Copenhagen ranks 10th. Surveys such as Time Out's rank cities by what residents think; this index scores 74 million street segments with a model checked against official crash records. <b>Higher score = lower assessed risk.</b></p>
+<!-- /build:answer -->
 <div class="figure"><svg viewBox="0 0 940 240" role="img" aria-label="Index value for all 300 cities, ranked, coloured by tier"><rect class="bar s1-0" x="8.00" y="31.94" width="2.58" height="174.06" data-n="1. Stockholm" data-v="index 99 · interval 1–8"/><rect class="bar s1-0" x="11.08" y="33.70" width="2.58" height="172.30" data-n="2. Amsterdam" data-v="index 98 · interval 2–15"/><rect class="bar s1-0" x="14.16" y="33.70" width="2.58" height="172.30" data-n="3. Helsinki" data-v="index 98 · interval 1–11"/><rect class="bar s1-0" x="17.24" y="33.87" width="2.58" height="172.13" data-n="4. The Hague" data-v="index 98 · interval 2–14"/><rect class="bar s1-0" x="20.32" y="34.05" width="2.58" height="171.95" data-n="5. Antwerp" data-v="index 98 · interval 3–15"/><rect class="bar s1-0" x="23.40" y="34.93" width="2.58" height="171.07" data-n="6. Vantaa" data-v="index 97 · interval 2–11"/><rect class="bar s1-0" x="26.48" y="35.10" width="2.58" height="170.90" data-n="7. Leiden" data-v="index 97 · interval 2–12"/><rect class="bar s1-0" x="29.56" y="35.98" width="2.58" height="170.02" data-n="8. Haarlem" data-v="index 97 · interval 1–14"/><rect class="bar s1-0" x="32.64" y="37.92" width="2.58" height="168.08" data-n="9. Espoo" data-v="index 96 · interval 3–16"/><rect class="bar s1-0" x="35.72" y="38.80" width="2.58" height="167.20" data-n="10. Copenhagen" data-v="index 95 · interval 4–22"/><rect class="bar s1-0" x="38.80" y="40.38" width="2.58" height="165.62" data-n="11. Tampere" data-v="index 94 · interval 4–18"/><rect class="bar s1-0" x="41.88" y="40.91" width="2.58" height="165.09" data-n="12. Eindhoven" data-v="index 94 · interval 10–26"/><rect class="bar s1-0" x="44.96" y="41.09" width="2.58" height="164.91" data-n="13. Paris" data-v="index 94 · interval 6–19"/><rect class="bar s1-0" x="48.04" y="41.44" width="2.58" height="164.56" data-n="14. Utrecht" data-v="index 94 · interval 10–24"/><rect class="bar s1-0" x="51.12" y="41.97" width="2.58" height="164.03" data-n="15. Rotterdam" data-v="index 93 · interval 9–23"/><rect class="bar s1-0" x="54.20" y="42.14" width="2.58" height="163.86" data-n="16. Barcelona" data-v="index 93 · interval 8–22"/><rect class="bar s1-0" x="57.28" y="44.78" width="2.58" height="161.22" data-n="17. Brussels" data-v="index 92 · interval 3–26"/><rect class="bar s1-0" x="60.36" y="46.72" width="2.58" height="159.28" data-n="18. Nijmegen" data-v="index 90 · interval 15–30"/><rect class="bar s1-0" x="63.44" y="47.07" width="2.58" height="158.93" data-n="19. San Sebastián" data-v="index 90 · interval 18–31"/><rect class="bar s1-0" x="66.52" y="48.30" width="2.58" height="157.70" data-n="20. Turku" data-v="index 90 · interval 6–26"/><rect class="bar s1-0" x="69.60" y="49.36" width="2.58" height="156.64" data-n="21. Hanover" data-v="index 89 · interval 19–32"/><rect class="bar s1-0" x="72.68" y="51.12" width="2.58" height="154.88" data-n="22. Arnhem" data-v="index 88 · interval 19–36"/><rect class="bar s1-0" x="75.76" y="51.12" width="2.58" height="154.88" data-n="23. Munich" data-v="index 88 · interval 21–36"/><rect class="bar s1-0" x="78.84" y="53.41" width="2.58" height="152.59" data-n="24. Ghent" data-v="index 87 · interval 23–41"/><rect class="bar s1-0" x="81.92" y="53.58" width="2.58" height="152.42" data-n="25. Bremen" data-v="index 87 · interval 20–41"/><rect class="bar s1-1" x="85.00" y="55.17" width="2.58" height="150.83" data-n="26. Lyon" data-v="index 86 · interval 13–38"/><rect class="bar s1-1" x="88.08" y="56.05" width="2.58" height="149.95" data-n="27. Braunschweig" data-v="index 85 · interval 25–42"/><rect class="bar s1-1" x="91.16" y="56.40" width="2.58" height="149.60" data-n="28. Lübeck" data-v="index 85 · interval 23–44"/><rect class="bar s1-1" x="94.24" y="57.10" width="2.58" height="148.90" data-n="29. Almere" data-v="index 85 · interval 14–43"/><rect class="bar s1-1" x="97.32" y="58.34" width="2.58" height="147.66" data-n="30. Bilbao" data-v="index 84 · interval 15–54"/><rect class="bar s1-1" x="100.40" y="58.86" width="2.58" height="147.14" data-n="31. Montpellier" data-v="index 84 · interval 27–46"/><rect class="bar s1-1" x="103.48" y="59.04" width="2.58" height="146.96" data-n="32. Groningen" data-v="index 84 · interval 28–43"/><rect class="bar s1-1" x="106.56" y="59.92" width="2.58" height="146.08" data-n="33. Toulouse" data-v="index 83 · interval 29–50"/><rect class="bar s1-1" x="109.64" y="60.45" width="2.58" height="145.55" data-n="34. Albacete" data-v="index 83 · interval 32–48"/><rect class="bar s1-1" x="112.72" y="60.45" width="2.58" height="145.55" data-n="35. Grenoble" data-v="index 83 · interval 23–48"/><rect class="bar s1-1" x="115.80" y="61.86" width="2.58" height="144.14" data-n="36. Salamanca" data-v="index 82 · interval 27–50"/><rect class="bar s1-1" x="118.88" y="62.38" width="2.58" height="143.62" data-n="37. Oldenburg" data-v="index 82 · interval 33–54"/><rect class="bar s1-1" x="121.96" y="62.91" width="2.58" height="143.09" data-n="38. Strasbourg" data-v="index 81 · interval 16–59"/><rect class="bar s1-1" x="125.04" y="63.44" width="2.58" height="142.56" data-n="39. Tilburg" data-v="index 81 · interval 32–53"/><rect class="bar s1-1" x="128.12" y="64.14" width="2.58" height="141.86" data-n="40. Nantes" data-v="index 81 · interval 29–61"/><rect class="bar s1-1" x="131.20" y="65.02" width="2.58" height="140.98" data-n="41. Las Rozas de Madrid" data-v="index 80 · interval 37–55"/><rect class="bar s1-1" x="134.28" y="66.08" width="2.58" height="139.92" data-n="42. Málaga" data-v="index 80 · interval 33–60"/><rect class="bar s1-1" x="137.36" y="66.78" width="2.58" height="139.22" data-n="43. Malmö" data-v="index 79 · interval 15–65"/><rect class="bar s1-1" x="140.44" y="66.78" width="2.58" height="139.22" data-n="44. Münster" data-v="index 79 · interval 41–59"/><rect class="bar s1-1" x="143.52" y="67.31" width="2.58" height="138.69" data-n="45. Bologna" data-v="index 79 · interval 28–58"/><rect class="bar s1-1" x="146.60" y="67.84" width="2.58" height="138.16" data-n="46. Seville" data-v="index 78 · interval 32–67"/><rect class="bar s1-1" x="149.68" y="69.07" width="2.58" height="136.93" data-n="47. Valencia" data-v="index 78 · interval 18–83"/><rect class="bar s1-1" x="152.76" y="69.25" width="2.58" height="136.75" data-n="48. Freiburg" data-v="index 78 · interval 42–66"/><rect class="bar s1-1" x="155.84" y="69.25" width="2.58" height="136.75" data-n="49. Tours" data-v="index 78 · interval 36–77"/><rect class="bar s1-1" x="158.92" y="69.95" width="2.58" height="136.05" data-n="50. Valladolid" data-v="index 77 · interval 42–69"/><rect class="bar s1-2" x="162.00" y="70.48" width="2.58" height="135.52" data-n="51. Sabadell" data-v="index 77 · interval 24–77"/><rect class="bar s1-2" x="165.08" y="71.89" width="2.58" height="134.11" data-n="52. Vitoria-Gasteiz" data-v="index 76 · interval 46–67"/><rect class="bar s1-2" x="168.16" y="72.24" width="2.58" height="133.76" data-n="53. Duisburg" data-v="index 76 · interval 43–72"/><rect class="bar s1-2" x="171.24" y="72.42" width="2.58" height="133.58" data-n="54. Pamplona" data-v="index 76 · interval 46–74"/><rect class="bar s1-2" x="174.32" y="73.12" width="2.58" height="132.88" data-n="55. Burgos" data-v="index 76 · interval 48–78"/><rect class="bar s1-2" x="177.40" y="73.47" width="2.58" height="132.53" data-n="56. Palma" data-v="index 75 · interval 51–67"/><rect class="bar s1-2" x="180.48" y="74.35" width="2.58" height="131.65" data-n="57. Lille" data-v="index 75 · interval 51–79"/><rect class="bar s1-2" x="183.56" y="74.70" width="2.58" height="131.30" data-n="58. Mannheim" data-v="index 75 · interval 45–84"/><rect class="bar s1-2" x="186.64" y="74.70" width="2.58" height="131.30" data-n="59. Vienna" data-v="index 75 · interval 42–88"/><rect class="bar s1-2" x="189.72" y="76.29" width="2.58" height="129.71" data-n="60. Zaragoza" data-v="index 74 · interval 60–75"/><rect class="bar s1-2" x="192.80" y="77.17" width="2.58" height="128.83" data-n="61. Oulu" data-v="index 73 · interval 12–86"/><rect class="bar s1-2" x="195.88" y="77.34" width="2.58" height="128.66" data-n="62. Córdoba" data-v="index 73 · interval 49–82"/><rect class="bar s1-2" x="198.96" y="78.05" width="2.58" height="127.95" data-n="63. Nancy" data-v="index 73 · interval 39–116"/><rect class="bar s1-2" x="202.04" y="78.58" width="2.58" height="127.42" data-n="64. Berlin" data-v="index 72 · interval 50–83"/><rect class="bar s1-2" x="205.12" y="79.10" width="2.58" height="126.90" data-n="65. Sant Cugat del Vallès" data-v="index 72 · interval 51–100"/><rect class="bar s1-2" x="208.20" y="79.46" width="2.58" height="126.54" data-n="66. Bonn" data-v="index 72 · interval 49–102"/><rect class="bar s1-2" x="211.28" y="79.63" width="2.58" height="126.37" data-n="67. Augsburg" data-v="index 72 · interval 58–82"/><rect class="bar s1-2" x="214.36" y="79.63" width="2.58" height="126.37" data-n="68. Magdeburg" data-v="index 72 · interval 64–84"/><rect class="bar s1-2" x="217.44" y="80.51" width="2.58" height="125.49" data-n="69. Trondheim" data-v="index 71 · interval 53–86"/><rect class="bar s1-2" x="220.52" y="80.69" width="2.58" height="125.31" data-n="70. Apeldoorn" data-v="index 71 · interval 55–100"/><rect class="bar s1-2" x="223.60" y="81.57" width="2.58" height="124.43" data-n="71. Milton Keynes" data-v="index 71 · interval 12–98"/><rect class="bar s1-2" x="226.68" y="81.57" width="2.58" height="124.43" data-n="72. Düsseldorf" data-v="index 71 · interval 66–96"/><rect class="bar s1-2" x="229.76" y="81.74" width="2.58" height="124.26" data-n="73. Graz" data-v="index 71 · interval 65–89"/><rect class="bar s1-2" x="232.84" y="81.74" width="2.58" height="124.26" data-n="74. Oslo" data-v="index 71 · interval 46–98"/><rect class="bar s1-2" x="235.92" y="81.74" width="2.58" height="124.26" data-n="75. Breda" data-v="index 71 · interval 59–101"/><rect class="bar s1-3" x="239.00" y="82.10" width="2.58" height="123.90" data-n="76. Odense" data-v="index 70 · interval 41–96"/><rect class="bar s1-3" x="242.08" y="82.27" width="2.58" height="123.73" data-n="77. Maribor" data-v="index 70 · interval 57–91"/><rect class="bar s1-3" x="245.16" y="82.27" width="2.58" height="123.73" data-n="78. Kiel" data-v="index 70 · interval 69–93"/><rect class="bar s1-3" x="248.24" y="83.86" width="2.58" height="122.14" data-n="79. Gijón" data-v="index 69 · interval 55–99"/><rect class="bar s1-3" x="251.32" y="83.86" width="2.58" height="122.14" data-n="80. Elche" data-v="index 69 · interval 74–90"/><rect class="bar s1-3" x="254.40" y="84.38" width="2.58" height="121.62" data-n="81. Szeged" data-v="index 69 · interval 73–93"/><rect class="bar s1-3" x="257.48" y="85.62" width="2.58" height="120.38" data-n="82. Alicante" data-v="index 68 · interval 78–96"/><rect class="bar s1-3" x="260.56" y="85.79" width="2.58" height="120.21" data-n="83. Rennes" data-v="index 68 · interval 65–115"/><rect class="bar s1-3" x="263.64" y="85.97" width="2.58" height="120.03" data-n="84. Reggio Emilia" data-v="index 68 · interval 13–129"/><rect class="bar s1-3" x="266.72" y="86.14" width="2.58" height="119.86" data-n="85. Aarhus" data-v="index 68 · interval 52–106"/><rect class="bar s1-3" x="269.80" y="86.50" width="2.58" height="119.50" data-n="86. Oberhausen" data-v="index 68 · interval 57–125"/><rect class="bar s1-3" x="272.88" y="86.50" width="2.58" height="119.50" data-n="87. Murcia" data-v="index 68 · interval 69–104"/><rect class="bar s1-3" x="275.96" y="87.90" width="2.58" height="118.10" data-n="88. Cologne" data-v="index 67 · interval 74–118"/><rect class="bar s1-3" x="279.04" y="87.90" width="2.58" height="118.10" data-n="89. A Coruña" data-v="index 67 · interval 72–116"/><rect class="bar s1-3" x="282.12" y="88.61" width="2.58" height="117.39" data-n="90. Santander" data-v="index 67 · interval 87–102"/><rect class="bar s1-3" x="285.20" y="88.96" width="2.58" height="117.04" data-n="91. Białystok" data-v="index 66 · interval 70–118"/><rect class="bar s1-3" x="288.28" y="90.37" width="2.58" height="115.63" data-n="92. Luxembourg" data-v="index 66 · interval 83–118"/><rect class="bar s1-3" x="291.36" y="90.72" width="2.58" height="115.28" data-n="93. Wrocław" data-v="index 66 · interval 84–117"/><rect class="bar s1-3" x="294.44" y="90.90" width="2.58" height="115.10" data-n="94. Halle (Saale)" data-v="index 65 · interval 79–120"/><rect class="bar s1-3" x="297.52" y="91.42" width="2.58" height="114.58" data-n="95. Karlsruhe" data-v="index 65 · interval 86–133"/><rect class="bar s1-3" x="300.60" y="93.01" width="2.58" height="112.99" data-n="96. Ljubljana" data-v="index 64 · interval 88–121"/><rect class="bar s1-3" x="303.68" y="93.36" width="2.58" height="112.64" data-n="97. Ludwigshafen am Rhein" data-v="index 64 · interval 78–144"/><rect class="bar s1-3" x="306.76" y="94.24" width="2.58" height="111.76" data-n="98. Orléans" data-v="index 64 · interval 98–120"/><rect class="bar s1-3" x="309.84" y="94.94" width="2.58" height="111.06" data-n="99. Castellón de la Plana" data-v="index 63 · interval 81–153"/><rect class="bar s1-3" x="312.92" y="95.12" width="2.58" height="110.88" data-n="100. Uppsala" data-v="index 63 · interval 23–161"/><rect class="bar s2-0" x="316.00" y="95.47" width="2.58" height="110.53" data-n="101. Bergen" data-v="index 63 · interval 80–139"/><rect class="bar s2-0" x="319.08" y="96.00" width="2.58" height="110.00" data-n="102. Leverkusen" data-v="index 62 · interval 100–143"/><rect class="bar s2-0" x="322.16" y="96.18" width="2.58" height="109.82" data-n="103. Krefeld" data-v="index 62 · interval 96–148"/><rect class="bar s2-0" x="325.24" y="96.18" width="2.58" height="109.82" data-n="104. Almería" data-v="index 62 · interval 103–129"/><rect class="bar s2-0" x="328.32" y="96.35" width="2.58" height="109.65" data-n="105. Gelsenkirchen" data-v="index 62 · interval 99–149"/><rect class="bar s2-0" x="331.40" y="96.53" width="2.58" height="109.47" data-n="106. Hamburg" data-v="index 62 · interval 84–154"/><rect class="bar s2-0" x="334.48" y="96.53" width="2.58" height="109.47" data-n="107. Vigo" data-v="index 62 · interval 81–161"/><rect class="bar s2-0" x="337.56" y="97.23" width="2.58" height="108.77" data-n="108. Gdańsk" data-v="index 62 · interval 106–132"/><rect class="bar s2-0" x="340.64" y="97.23" width="2.58" height="108.77" data-n="109. Terrassa" data-v="index 62 · interval 94–152"/><rect class="bar s2-0" x="343.72" y="97.41" width="2.58" height="108.59" data-n="110. Stavanger" data-v="index 62 · interval 91–140"/><rect class="bar s2-0" x="346.80" y="97.94" width="2.58" height="108.06" data-n="111. Hamm" data-v="index 61 · interval 99–154"/><rect class="bar s2-0" x="349.88" y="98.29" width="2.58" height="107.71" data-n="112. Mainz" data-v="index 61 · interval 103–159"/><rect class="bar s2-0" x="352.96" y="98.29" width="2.58" height="107.71" data-n="113. Nuremberg" data-v="index 61 · interval 111–145"/><rect class="bar s2-0" x="356.04" y="98.82" width="2.58" height="107.18" data-n="114. Rostock" data-v="index 61 · interval 89–156"/><rect class="bar s2-0" x="359.12" y="98.82" width="2.58" height="107.18" data-n="115. Angers" data-v="index 61 · interval 79–170"/><rect class="bar s2-0" x="362.20" y="98.82" width="2.58" height="107.18" data-n="116. Debrecen" data-v="index 61 · interval 93–143"/><rect class="bar s2-0" x="365.28" y="99.17" width="2.58" height="106.83" data-n="117. Toruń" data-v="index 61 · interval 102–156"/><rect class="bar s2-0" x="368.36" y="99.34" width="2.58" height="106.66" data-n="118. Łódź" data-v="index 61 · interval 109–135"/><rect class="bar s2-0" x="371.44" y="99.52" width="2.58" height="106.48" data-n="119. Alkmaar" data-v="index 60 · interval 94–169"/><rect class="bar s2-0" x="374.52" y="100.22" width="2.58" height="105.78" data-n="120. Leipzig" data-v="index 60 · interval 94–153"/><rect class="bar s2-0" x="377.60" y="100.22" width="2.58" height="105.78" data-n="121. Clermont-Ferrand" data-v="index 60 · interval 110–155"/><rect class="bar s2-0" x="380.68" y="100.40" width="2.58" height="105.60" data-n="122. Jerez de la Frontera" data-v="index 60 · interval 115–140"/><rect class="bar s2-0" x="383.76" y="100.75" width="2.58" height="105.25" data-n="123. Tallinn" data-v="index 60 · interval 69–157"/><rect class="bar s2-0" x="386.84" y="100.75" width="2.58" height="105.25" data-n="124. Granada" data-v="index 60 · interval 103–175"/><rect class="bar s2-0" x="389.92" y="101.10" width="2.58" height="104.90" data-n="125. Budapest" data-v="index 60 · interval 103–151"/><rect class="bar s2-1" x="393.00" y="101.63" width="2.58" height="104.37" data-n="126. Potsdam" data-v="index 59 · interval 99–177"/><rect class="bar s2-1" x="396.08" y="102.16" width="2.58" height="103.84" data-n="127. Linz" data-v="index 59 · interval 101–175"/><rect class="bar s2-1" x="399.16" y="102.51" width="2.58" height="103.49" data-n="128. Bordeaux" data-v="index 59 · interval 114–170"/><rect class="bar s2-1" x="402.24" y="102.51" width="2.58" height="103.49" data-n="129. Bern" data-v="index 59 · interval 75–198"/><rect class="bar s2-1" x="405.32" y="102.69" width="2.58" height="103.31" data-n="130. Aachen" data-v="index 59 · interval 103–182"/><rect class="bar s2-1" x="408.40" y="102.69" width="2.58" height="103.31" data-n="131. Warsaw" data-v="index 59 · interval 83–172"/><rect class="bar s2-1" x="411.48" y="102.86" width="2.58" height="103.14" data-n="132. Liège" data-v="index 59 · interval 91–176"/><rect class="bar s2-1" x="414.56" y="103.04" width="2.58" height="102.96" data-n="133. Geneva" data-v="index 58 · interval 108–166"/><rect class="bar s2-1" x="417.64" y="103.04" width="2.58" height="102.96" data-n="134. Venice" data-v="index 58 · interval 66–174"/><rect class="bar s2-1" x="420.72" y="103.22" width="2.58" height="102.78" data-n="135. Bedford" data-v="index 58 · interval 90–175"/><rect class="bar s2-1" x="423.80" y="103.39" width="2.58" height="102.61" data-n="136. Mönchengladbach" data-v="index 58 · interval 114–175"/><rect class="bar s2-1" x="426.88" y="103.57" width="2.58" height="102.43" data-n="137. Gdynia" data-v="index 58 · interval 130–160"/><rect class="bar s2-1" x="429.96" y="103.57" width="2.58" height="102.43" data-n="138. Edinburgh" data-v="index 58 · interval 88–163"/><rect class="bar s2-1" x="433.04" y="103.57" width="2.58" height="102.43" data-n="139. Madrid" data-v="index 58 · interval 110–161"/><rect class="bar s2-1" x="436.12" y="104.27" width="2.58" height="101.73" data-n="140. Reykjavik" data-v="index 58 · interval 115–177"/><rect class="bar s2-1" x="439.20" y="104.45" width="2.58" height="101.55" data-n="141. Mülheim an der Ruhr" data-v="index 58 · interval 126–177"/><rect class="bar s2-1" x="442.28" y="104.62" width="2.58" height="101.38" data-n="142. Frankfurt" data-v="index 58 · interval 123–173"/><rect class="bar s2-1" x="445.36" y="104.98" width="2.58" height="101.02" data-n="143. Valletta" data-v="index 57 · interval 75–210"/><rect class="bar s2-1" x="448.44" y="105.33" width="2.58" height="100.67" data-n="144. Peterborough" data-v="index 57 · interval 85–174"/><rect class="bar s2-1" x="451.52" y="105.68" width="2.58" height="100.32" data-n="145. Aalborg" data-v="index 57 · interval 98–171"/><rect class="bar s2-1" x="454.60" y="105.68" width="2.58" height="100.32" data-n="146. Manchester" data-v="index 57 · interval 117–166"/><rect class="bar s2-1" x="457.68" y="105.86" width="2.58" height="100.14" data-n="147. York" data-v="index 57 · interval 112–171"/><rect class="bar s2-1" x="460.76" y="106.03" width="2.58" height="99.97" data-n="148. Oviedo" data-v="index 57 · interval 76–207"/><rect class="bar s2-1" x="463.84" y="106.56" width="2.58" height="99.44" data-n="149. Poznań" data-v="index 56 · interval 130–177"/><rect class="bar s2-1" x="466.92" y="106.74" width="2.58" height="99.26" data-n="150. Florence" data-v="index 56 · interval 114–172"/><rect class="bar s2-2" x="470.00" y="107.62" width="2.58" height="98.38" data-n="151. Lublin" data-v="index 56 · interval 119–175"/><rect class="bar s2-2" x="473.08" y="107.97" width="2.58" height="98.03" data-n="152. Bristol" data-v="index 56 · interval 117–181"/><rect class="bar s2-2" x="476.16" y="108.32" width="2.58" height="97.68" data-n="153. Gothenburg" data-v="index 56 · interval 125–189"/><rect class="bar s2-2" x="479.24" y="108.85" width="2.58" height="97.15" data-n="154. Rouen" data-v="index 55 · interval 110–212"/><rect class="bar s2-2" x="482.32" y="109.02" width="2.58" height="96.98" data-n="155. Dortmund" data-v="index 55 · interval 124–186"/><rect class="bar s2-2" x="485.40" y="109.38" width="2.58" height="96.62" data-n="156. Kraków" data-v="index 55 · interval 140–173"/><rect class="bar s2-2" x="488.48" y="109.55" width="2.58" height="96.45" data-n="157. Brighton and Hove" data-v="index 55 · interval 136–179"/><rect class="bar s2-2" x="491.56" y="109.90" width="2.58" height="96.10" data-n="158. Mulhouse" data-v="index 55 · interval 144–191"/><rect class="bar s2-2" x="494.64" y="110.26" width="2.58" height="95.74" data-n="159. Dublin" data-v="index 54 · interval 124–187"/><rect class="bar s2-2" x="497.72" y="110.43" width="2.58" height="95.57" data-n="160. Modena" data-v="index 54 · interval 75–219"/><rect class="bar s2-2" x="500.80" y="110.78" width="2.58" height="95.22" data-n="161. Bielefeld" data-v="index 54 · interval 135–191"/><rect class="bar s2-2" x="503.88" y="110.96" width="2.58" height="95.04" data-n="162. Nottingham" data-v="index 54 · interval 150–187"/><rect class="bar s2-2" x="506.96" y="111.31" width="2.58" height="94.69" data-n="163. Stuttgart" data-v="index 54 · interval 134–208"/><rect class="bar s2-2" x="510.04" y="112.02" width="2.58" height="93.98" data-n="164. Darmstadt" data-v="index 53 · interval 129–217"/><rect class="bar s2-2" x="513.12" y="112.19" width="2.58" height="93.81" data-n="165. Bratislava" data-v="index 53 · interval 160–180"/><rect class="bar s2-2" x="516.20" y="112.37" width="2.58" height="93.63" data-n="166. Rzeszów" data-v="index 53 · interval 158–183"/><rect class="bar s2-2" x="519.28" y="112.90" width="2.58" height="93.10" data-n="167. Linköping" data-v="index 53 · interval 138–208"/><rect class="bar s2-2" x="522.36" y="113.78" width="2.58" height="92.22" data-n="168. Swindon" data-v="index 52 · interval 104–199"/><rect class="bar s2-2" x="525.44" y="113.95" width="2.58" height="92.05" data-n="169. Kassel" data-v="index 52 · interval 126–223"/><rect class="bar s2-2" x="528.52" y="113.95" width="2.58" height="92.05" data-n="170. Zurich" data-v="index 52 · interval 143–210"/><rect class="bar s2-2" x="531.60" y="114.13" width="2.58" height="91.87" data-n="171. Dresden" data-v="index 52 · interval 132–207"/><rect class="bar s2-2" x="534.68" y="114.13" width="2.58" height="91.87" data-n="172. Reims" data-v="index 52 · interval 157–202"/><rect class="bar s2-2" x="537.76" y="114.48" width="2.58" height="91.52" data-n="173. Metz" data-v="index 52 · interval 154–207"/><rect class="bar s2-2" x="540.84" y="114.66" width="2.58" height="91.34" data-n="174. Bydgoszcz" data-v="index 52 · interval 154–197"/><rect class="bar s2-2" x="543.92" y="114.66" width="2.58" height="91.34" data-n="175. Bergamo" data-v="index 52 · interval 140–191"/><rect class="bar s2-3" x="547.00" y="114.66" width="2.58" height="91.34" data-n="176. Plzeň" data-v="index 52 · interval 109–199"/><rect class="bar s2-3" x="550.08" y="114.83" width="2.58" height="91.17" data-n="177. Toulon" data-v="index 52 · interval 139–205"/><rect class="bar s2-3" x="553.16" y="114.83" width="2.58" height="91.17" data-n="178. Turin" data-v="index 52 · interval 39–223"/><rect class="bar s2-3" x="556.24" y="115.18" width="2.58" height="90.82" data-n="179. Portsmouth" data-v="index 52 · interval 168–193"/><rect class="bar s2-3" x="559.32" y="115.18" width="2.58" height="90.82" data-n="180. Parma" data-v="index 52 · interval 81–218"/><rect class="bar s2-3" x="562.40" y="115.71" width="2.58" height="90.29" data-n="181. Essen" data-v="index 51 · interval 161–204"/><rect class="bar s2-3" x="565.48" y="115.89" width="2.58" height="90.11" data-n="182. Riga" data-v="index 51 · interval 162–192"/><rect class="bar s2-3" x="568.56" y="116.59" width="2.58" height="89.41" data-n="183. Telford" data-v="index 51 · interval 128–200"/><rect class="bar s2-3" x="571.64" y="117.30" width="2.58" height="88.70" data-n="184. Newcastle upon Tyne" data-v="index 50 · interval 153–197"/><rect class="bar s2-3" x="574.72" y="117.82" width="2.58" height="88.18" data-n="185. Bochum" data-v="index 50 · interval 141–217"/><rect class="bar s2-3" x="577.80" y="117.82" width="2.58" height="88.18" data-n="186. Szczecin" data-v="index 50 · interval 171–207"/><rect class="bar s2-3" x="580.88" y="118.00" width="2.58" height="88.00" data-n="187. Kielce" data-v="index 50 · interval 180–203"/><rect class="bar s2-3" x="583.96" y="118.18" width="2.58" height="87.82" data-n="188. Basel" data-v="index 50 · interval 149–223"/><rect class="bar s2-3" x="587.04" y="118.53" width="2.58" height="87.47" data-n="189. Le Havre" data-v="index 50 · interval 173–201"/><rect class="bar s2-3" x="590.12" y="119.41" width="2.58" height="86.59" data-n="190. Leeds" data-v="index 49 · interval 132–213"/><rect class="bar s2-3" x="593.20" y="119.58" width="2.58" height="86.42" data-n="191. Birmingham" data-v="index 49 · interval 111–213"/><rect class="bar s2-3" x="596.28" y="119.76" width="2.58" height="86.24" data-n="192. Saint-Étienne" data-v="index 49 · interval 150–228"/><rect class="bar s2-3" x="599.36" y="120.29" width="2.58" height="85.71" data-n="193. Swansea" data-v="index 49 · interval 127–213"/><rect class="bar s2-3" x="602.44" y="120.64" width="2.58" height="85.36" data-n="194. Cartagena" data-v="index 48 · interval 166–220"/><rect class="bar s2-3" x="605.52" y="120.82" width="2.58" height="85.18" data-n="195. Verona" data-v="index 48 · interval 139–214"/><rect class="bar s2-3" x="608.60" y="120.82" width="2.58" height="85.18" data-n="196. Pescara" data-v="index 48 · interval 155–209"/><rect class="bar s2-3" x="611.68" y="120.82" width="2.58" height="85.18" data-n="197. Zagreb" data-v="index 48 · interval 172–212"/><rect class="bar s2-3" x="614.76" y="121.17" width="2.58" height="84.83" data-n="198. Hagen" data-v="index 48 · interval 146–235"/><rect class="bar s2-3" x="617.84" y="121.17" width="2.58" height="84.83" data-n="199. London" data-v="index 48 · interval 181–207"/><rect class="bar s2-3" x="620.92" y="121.70" width="2.58" height="84.30" data-n="200. Lausanne" data-v="index 48 · interval 130–239"/><rect class="bar s3-0" x="624.00" y="121.70" width="2.58" height="84.30" data-n="201. Alcalá de Henares" data-v="index 48 · interval 167–230"/><rect class="bar s3-0" x="627.08" y="122.40" width="2.58" height="83.60" data-n="202. Prague" data-v="index 48 · interval 188–212"/><rect class="bar s3-0" x="630.16" y="122.75" width="2.58" height="83.25" data-n="203. Southampton" data-v="index 47 · interval 194–211"/><rect class="bar s3-0" x="633.24" y="123.46" width="2.58" height="82.54" data-n="204. Vilnius" data-v="index 47 · interval 187–217"/><rect class="bar s3-0" x="636.32" y="124.16" width="2.58" height="81.84" data-n="205. Saarbrücken" data-v="index 46 · interval 139–244"/><rect class="bar s3-0" x="639.40" y="124.86" width="2.58" height="81.14" data-n="206. Plymouth" data-v="index 46 · interval 182–219"/><rect class="bar s3-0" x="642.48" y="124.86" width="2.58" height="81.14" data-n="207. Wolverhampton" data-v="index 46 · interval 146–225"/><rect class="bar s3-0" x="645.56" y="125.22" width="2.58" height="80.78" data-n="208. Wuppertal" data-v="index 46 · interval 182–233"/><rect class="bar s3-0" x="648.64" y="125.39" width="2.58" height="80.61" data-n="209. Derby" data-v="index 46 · interval 161–221"/><rect class="bar s3-0" x="651.72" y="125.39" width="2.58" height="80.61" data-n="210. Glasgow" data-v="index 46 · interval 141–227"/><rect class="bar s3-0" x="654.80" y="125.92" width="2.58" height="80.08" data-n="211. Brescia" data-v="index 46 · interval 123–237"/><rect class="bar s3-0" x="657.88" y="126.10" width="2.58" height="79.90" data-n="212. Nice" data-v="index 45 · interval 197–219"/><rect class="bar s3-0" x="660.96" y="127.50" width="2.58" height="78.50" data-n="213. Sunderland" data-v="index 45 · interval 164–230"/><rect class="bar s3-0" x="664.04" y="127.50" width="2.58" height="78.50" data-n="214. Sheffield" data-v="index 45 · interval 198–225"/><rect class="bar s3-0" x="667.12" y="128.21" width="2.58" height="77.79" data-n="215. Warrington" data-v="index 44 · interval 186–235"/><rect class="bar s3-0" x="670.20" y="128.74" width="2.58" height="77.26" data-n="216. Katowice" data-v="index 44 · interval 205–225"/><rect class="bar s3-0" x="673.28" y="128.91" width="2.58" height="77.09" data-n="217. Częstochowa" data-v="index 44 · interval 170–247"/><rect class="bar s3-0" x="676.36" y="129.44" width="2.58" height="76.56" data-n="218. Erfurt" data-v="index 44 · interval 205–230"/><rect class="bar s3-0" x="679.44" y="130.32" width="2.58" height="75.68" data-n="219. Leicester" data-v="index 43 · interval 186–236"/><rect class="bar s3-0" x="682.52" y="131.38" width="2.58" height="74.62" data-n="220. Chemnitz" data-v="index 42 · interval 199–239"/><rect class="bar s3-0" x="685.60" y="131.55" width="2.58" height="74.45" data-n="221. Radom" data-v="index 42 · interval 202–237"/><rect class="bar s3-0" x="688.68" y="131.55" width="2.58" height="74.45" data-n="222. Marseille" data-v="index 42 · interval 207–233"/><rect class="bar s3-0" x="691.76" y="131.73" width="2.58" height="74.27" data-n="223. Prato" data-v="index 42 · interval 147–250"/><rect class="bar s3-0" x="694.84" y="132.08" width="2.58" height="73.92" data-n="224. Gliwice" data-v="index 42 · interval 203–242"/><rect class="bar s3-0" x="697.92" y="132.26" width="2.58" height="73.74" data-n="225. Basingstoke" data-v="index 42 · interval 215–232"/><rect class="bar s3-1" x="701.00" y="132.96" width="2.58" height="73.04" data-n="226. Sosnowiec" data-v="index 42 · interval 219–232"/><rect class="bar s3-1" x="704.08" y="135.42" width="2.58" height="70.58" data-n="227. Genoa" data-v="index 40 · interval 196–252"/><rect class="bar s3-1" x="707.16" y="136.13" width="2.58" height="69.87" data-n="228. Fuenlabrada" data-v="index 40 · interval 227–238"/><rect class="bar s3-1" x="710.24" y="136.30" width="2.58" height="69.70" data-n="229. Stoke-on-Trent" data-v="index 40 · interval 172–251"/><rect class="bar s3-1" x="713.32" y="136.30" width="2.58" height="69.70" data-n="230. Plovdiv" data-v="index 40 · interval 156–256"/><rect class="bar s3-1" x="716.40" y="136.30" width="2.58" height="69.70" data-n="231. Thessaloniki" data-v="index 40 · interval 167–259"/><rect class="bar s3-1" x="719.48" y="136.48" width="2.58" height="69.52" data-n="232. Kingston upon Hull" data-v="index 40 · interval 206–243"/><rect class="bar s3-1" x="722.56" y="136.48" width="2.58" height="69.52" data-n="233. Kaunas" data-v="index 40 · interval 225–240"/><rect class="bar s3-1" x="725.64" y="136.48" width="2.58" height="69.52" data-n="234. Košice" data-v="index 40 · interval 218–242"/><rect class="bar s3-1" x="728.72" y="136.83" width="2.58" height="69.17" data-n="235. Ostrava" data-v="index 39 · interval 198–247"/><rect class="bar s3-1" x="731.80" y="137.36" width="2.58" height="68.64" data-n="236. Medway" data-v="index 39 · interval 218–245"/><rect class="bar s3-1" x="734.88" y="138.59" width="2.58" height="67.41" data-n="237. Cardiff" data-v="index 38 · interval 222–247"/><rect class="bar s3-1" x="737.96" y="138.94" width="2.58" height="67.06" data-n="238. Brno" data-v="index 38 · interval 232–244"/><rect class="bar s3-1" x="741.04" y="139.65" width="2.58" height="66.35" data-n="239. Wiesbaden" data-v="index 38 · interval 216–257"/><rect class="bar s3-1" x="744.12" y="140.35" width="2.58" height="65.65" data-n="240. Coventry" data-v="index 37 · interval 196–257"/><rect class="bar s3-1" x="747.20" y="140.88" width="2.58" height="65.12" data-n="241. Colchester" data-v="index 37 · interval 231–251"/><rect class="bar s3-1" x="750.28" y="141.23" width="2.58" height="64.77" data-n="242. Milan" data-v="index 37 · interval 218–251"/><rect class="bar s3-1" x="753.36" y="141.41" width="2.58" height="64.59" data-n="243. Bradford" data-v="index 37 · interval 229–250"/><rect class="bar s3-1" x="756.44" y="141.76" width="2.58" height="64.24" data-n="244. Padua" data-v="index 36 · interval 234–252"/><rect class="bar s3-1" x="759.52" y="142.82" width="2.58" height="63.18" data-n="245. Varna" data-v="index 36 · interval 227–254"/><rect class="bar s3-1" x="762.60" y="143.52" width="2.58" height="62.48" data-n="246. Cluj-Napoca" data-v="index 36 · interval 230–256"/><rect class="bar s3-1" x="765.68" y="146.34" width="2.58" height="59.66" data-n="247. Lisbon" data-v="index 34 · interval 203–269"/><rect class="bar s3-1" x="768.76" y="147.22" width="2.58" height="58.78" data-n="248. Charleroi" data-v="index 33 · interval 228–261"/><rect class="bar s3-1" x="771.84" y="147.39" width="2.58" height="58.61" data-n="249. Luton" data-v="index 33 · interval 248–256"/><rect class="bar s3-1" x="774.92" y="148.80" width="2.58" height="57.20" data-n="250. Cork" data-v="index 32 · interval 243–262"/><rect class="bar s3-2" x="778.00" y="148.98" width="2.58" height="57.02" data-n="251. Trieste" data-v="index 32 · interval 248–258"/><rect class="bar s3-2" x="781.08" y="149.50" width="2.58" height="56.50" data-n="252. Dijon" data-v="index 32 · interval 233–268"/><rect class="bar s3-2" x="784.16" y="150.03" width="2.58" height="55.97" data-n="253. Sofia" data-v="index 32 · interval 250–260"/><rect class="bar s3-2" x="787.24" y="150.38" width="2.58" height="55.62" data-n="254. Porto" data-v="index 32 · interval 224–268"/><rect class="bar s3-2" x="790.32" y="151.09" width="2.58" height="54.91" data-n="255. Rome" data-v="index 31 · interval 243–266"/><rect class="bar s3-2" x="793.40" y="151.79" width="2.58" height="54.21" data-n="256. Northampton" data-v="index 31 · interval 248–263"/><rect class="bar s3-2" x="796.48" y="152.67" width="2.58" height="53.33" data-n="257. Sintra" data-v="index 30 · interval 244–267"/><rect class="bar s3-2" x="799.56" y="153.02" width="2.58" height="52.98" data-n="258. Aberdeen" data-v="index 30 · interval 252–266"/><rect class="bar s3-2" x="802.64" y="153.55" width="2.58" height="52.45" data-n="259. Belfast" data-v="index 30 · interval 248–266"/><rect class="bar s3-2" x="805.72" y="154.08" width="2.58" height="51.92" data-n="260. Cagliari" data-v="index 30 · interval 245–271"/><rect class="bar s3-2" x="808.80" y="155.49" width="2.58" height="50.51" data-n="261. Patras" data-v="index 29 · interval 217–279"/><rect class="bar s3-2" x="811.88" y="155.66" width="2.58" height="50.34" data-n="262. Liverpool" data-v="index 29 · interval 256–268"/><rect class="bar s3-2" x="814.96" y="156.02" width="2.58" height="49.98" data-n="263. Naples" data-v="index 28 · interval 232–275"/><rect class="bar s3-2" x="818.04" y="156.19" width="2.58" height="49.81" data-n="264. Palermo" data-v="index 28 · interval 258–270"/><rect class="bar s3-2" x="821.12" y="158.83" width="2.58" height="47.17" data-n="265. Messina" data-v="index 27 · interval 221–280"/><rect class="bar s3-2" x="824.20" y="159.54" width="2.58" height="46.46" data-n="266. Arad" data-v="index 26 · interval 260–273"/><rect class="bar s3-2" x="827.28" y="159.89" width="2.58" height="46.11" data-n="267. Satu Mare" data-v="index 26 · interval 233–284"/><rect class="bar s3-2" x="830.36" y="160.42" width="2.58" height="45.58" data-n="268. Doncaster" data-v="index 26 · interval 264–274"/><rect class="bar s3-2" x="833.44" y="161.12" width="2.58" height="44.88" data-n="269. Taranto" data-v="index 26 · interval 264–272"/><rect class="bar s3-2" x="836.52" y="161.12" width="2.58" height="44.88" data-n="270. Oradea" data-v="index 26 · interval 239–284"/><rect class="bar s3-2" x="839.60" y="161.47" width="2.58" height="44.53" data-n="271. Nicosia" data-v="index 25 · interval 267–272"/><rect class="bar s3-2" x="842.68" y="164.99" width="2.58" height="41.01" data-n="272. Targu Mures" data-v="index 23 · interval 261–279"/><rect class="bar s3-2" x="845.76" y="165.34" width="2.58" height="40.66" data-n="273. Reggio Calabria" data-v="index 23 · interval 245–286"/><rect class="bar s3-2" x="848.84" y="167.28" width="2.58" height="38.72" data-n="274. Burgas" data-v="index 22 · interval 258–286"/><rect class="bar s3-2" x="851.92" y="167.81" width="2.58" height="38.19" data-n="275. Brasov" data-v="index 22 · interval 264–281"/><rect class="bar s3-3" x="855.00" y="168.51" width="2.58" height="37.49" data-n="276. Maidstone" data-v="index 21 · interval 262–284"/><rect class="bar s3-3" x="858.08" y="169.57" width="2.58" height="36.43" data-n="277. Sibiu" data-v="index 21 · interval 273–279"/><rect class="bar s3-3" x="861.16" y="170.10" width="2.58" height="35.90" data-n="278. Bournemouth" data-v="index 20 · interval 271–281"/><rect class="bar s3-3" x="864.24" y="171.50" width="2.58" height="34.50" data-n="279. Bari" data-v="index 20 · interval 272–285"/><rect class="bar s3-3" x="867.32" y="172.21" width="2.58" height="33.79" data-n="280. Braga" data-v="index 19 · interval 274–283"/><rect class="bar s3-3" x="870.40" y="172.74" width="2.58" height="33.26" data-n="281. Timisoara" data-v="index 19 · interval 275–282"/><rect class="bar s3-3" x="873.48" y="175.20" width="2.58" height="30.80" data-n="282. Catania" data-v="index 18 · interval 266–290"/><rect class="bar s3-3" x="876.56" y="176.78" width="2.58" height="29.22" data-n="283. Constanta" data-v="index 17 · interval 280–286"/><rect class="bar s3-3" x="879.64" y="177.49" width="2.58" height="28.51" data-n="284. Athens" data-v="index 16 · interval 281–285"/><rect class="bar s3-3" x="882.72" y="179.78" width="2.58" height="26.22" data-n="285. Baia Mare" data-v="index 15 · interval 279–289"/><rect class="bar s3-3" x="885.80" y="180.30" width="2.58" height="25.70" data-n="286. Bucharest" data-v="index 15 · interval 277–289"/><rect class="bar s3-3" x="888.88" y="181.18" width="2.58" height="24.82" data-n="287. Limassol" data-v="index 14 · interval 279–290"/><rect class="bar s3-3" x="891.96" y="184.35" width="2.58" height="21.65" data-n="288. Split" data-v="index 12 · interval 278–294"/><rect class="bar s3-3" x="895.04" y="184.88" width="2.58" height="21.12" data-n="289. Bacau" data-v="index 12 · interval 282–289"/><rect class="bar s3-3" x="898.12" y="189.28" width="2.58" height="16.72" data-n="290. Pitesti" data-v="index 10 · interval 287–293"/><rect class="bar s3-3" x="901.20" y="190.51" width="2.58" height="15.49" data-n="291. Strovolos" data-v="index 9 · interval 285–294"/><rect class="bar s3-3" x="904.28" y="193.33" width="2.58" height="12.67" data-n="292. Craiova" data-v="index 7 · interval 290–294"/><rect class="bar s3-3" x="907.36" y="195.44" width="2.58" height="10.56" data-n="293. Galati" data-v="index 6 · interval 291–295"/><rect class="bar s3-3" x="910.44" y="196.67" width="2.58" height="9.33" data-n="294. Paphos" data-v="index 5 · interval 292–295"/><rect class="bar s3-3" x="913.52" y="201.42" width="2.58" height="4.58" data-n="295. Botosani" data-v="index 3 · interval 292–296"/><rect class="bar s3-3" x="916.60" y="202.48" width="2.58" height="3.52" data-n="296. Buzau" data-v="index 2 · interval 294–298"/><rect class="bar s3-3" x="919.68" y="203.54" width="2.58" height="2.46" data-n="297. Ploiesti" data-v="index 1 · interval 295–298"/><rect class="bar s3-3" x="922.76" y="204.94" width="2.58" height="1.50" data-n="298. Braila" data-v="index 1 · interval 297–299"/><rect class="bar s3-3" x="925.84" y="206.00" width="2.58" height="1.50" data-n="299. Iasi" data-v="index 0 · interval 299–300"/><rect class="bar s3-3" x="928.92" y="206.00" width="2.58" height="1.50" data-n="300. Larnaca" data-v="index 0 · interval 296–300"/><line x1="9.5" y1="27.9" x2="9.5" y2="19.9" class="lbl-tick"/><text x="9.5" y="14.9" class="lbl" text-anchor="start">Stockholm #1</text><line x1="77.3" y1="47.1" x2="77.3" y2="39.1" class="lbl-tick"/><text x="77.3" y="34.1" class="lbl" text-anchor="start">Munich 23</text><line x1="138.9" y1="62.8" x2="138.9" y2="54.8" class="lbl-tick"/><text x="138.9" y="49.8" class="lbl" text-anchor="middle">Malmö 43</text><line x1="434.6" y1="99.6" x2="434.6" y2="91.6" class="lbl-tick"/><text x="434.6" y="86.6" class="lbl" text-anchor="middle">Madrid 139</text><line x1="530.1" y1="110.0" x2="530.1" y2="102.0" class="lbl-tick"/><text x="530.1" y="97.0" class="lbl" text-anchor="middle">Zurich 170</text><line x1="791.9" y1="147.1" x2="791.9" y2="139.1" class="lbl-tick"/><text x="791.9" y="134.1" class="lbl" text-anchor="middle">Rome 255</text><line x1="887.3" y1="176.3" x2="887.3" y2="168.3" class="lbl-tick"/><text x="887.3" y="163.3" class="lbl" text-anchor="end">Bucharest 286</text><line x1="930.5" y1="202.0" x2="930.5" y2="194.0" class="lbl-tick"/><text x="930.5" y="189.0" class="lbl" text-anchor="end">Larnaca 300</text><line x1="8" y1="206" x2="932" y2="206" class="axis"/><text x="8" y="230" class="lbl axis-lbl">rank 1</text><text x="932" y="230" class="lbl axis-lbl" text-anchor="end">rank 300</text></svg>
-<div class="legend"><span><span class="sw grad" style="background:linear-gradient(90deg,var(--g0),var(--g3))"></span>Tier 1 · safest</span>
+<div class="legend"><span><span class="sw grad" style="background:linear-gradient(90deg,var(--g0),var(--g3))"></span>Tier 1 · lower assessed risk</span>
 <span><span class="sw grad" style="background:linear-gradient(90deg,var(--y0),var(--y3))"></span>Tier 2 · middle</span>
-<span><span class="sw grad" style="background:linear-gradient(90deg,var(--r0),var(--r3))"></span>Tier 3 · riskiest</span></div>
+<span><span class="sw grad" style="background:linear-gradient(90deg,var(--r0),var(--r3))"></span>Tier 3 · higher assessed risk</span></div>
 <p class="figcap">All 300 cities in rank order. Bar height is the index (0–100, higher = lower
 assessed risk); colour is the tier, and the shade deepens as assessed risk rises within it.
 Hover any bar.</p></div>
@@ -533,317 +674,331 @@ read the intervals, not just the places: Stockholm's #1 means "top of the leadin
 countries of outcome data can't separate a city from its nation). Rankings that carry no caveats
 are marketing.</div>
 
+<!-- build:faq -->
+<h2>Questions about the index</h2>
+<h3>What are the most bike-friendly cities in Europe?</h3>
+<p>Measured by the risk of their streets rather than by reputation, the lowest-risk European cities for cycling are Stockholm, Amsterdam, Helsinki, The Hague and Antwerp, the top five of 300 in the Pedalability Index 2026. Copenhagen ranks 10th.</p>
+<h3>Which European city is lowest-risk for cycling?</h3>
+<p>Stockholm ranks first of 300 in the Pedalability Index 2026, with a score of 98.9 out of 100 and a likely rank between 1st and 8th. Higher score = lower assessed risk. Cities with overlapping likely ranges are a tie.</p>
+<h3>What is the Pedalability Index?</h3>
+<p>The Pedalability Index 2026 ranks 300 European cities by the cycling risk of their street networks. Every scored road segment of the Defensive Pedal risk model is aggregated per city across three pillars: street network risk, the risk of 210 simulated journeys, and low-stress accessibility. Higher score = lower assessed risk.</p>
+<h3>Does a high score mean a city is safe to cycle in?</h3>
+<p>No. The score compares cities with each other. It predicts how badly a crash ends (injury severity), not whether one happens, and it has no signal at junctions. A score of 0.0 means the lowest of the 300 cities, not an absence of safety.</p>
+<!-- /build:faq -->
+
 <h2>The full ranking</h2>
 <p class="figcap">* = straddles a tier boundary under re-specification. Index 0–100 on a fixed
 scale (v1), higher = lower assessed risk. Index range = where the index lands in 90% of 2,000 re-runs.
 Interval = 90% rank range over the same re-runs.</p>
 </div>
+<!-- build:table -->
 <div class="tblwrap"><table>
-<thead><tr><th>#</th><th>City</th><th>Index</th><th>Index range</th><th>Interval</th></tr></thead>
-<tbody><tr class="grp gt1"><td colspan="5">Tier 1 — lower assessed risk</td></tr>
-<tr><td class="r">1</td><td>🇸🇪&nbsp;Stockholm</td><td class="r">99</td><td class="r ci">96–100</td><td class="r ci">1–8</td></tr>
-<tr><td class="r">2</td><td>🇳🇱&nbsp;Amsterdam</td><td class="r">98</td><td class="r ci">94–100</td><td class="r ci">2–15</td></tr>
-<tr><td class="r">3</td><td>🇫🇮&nbsp;Helsinki</td><td class="r">98</td><td class="r ci">95–100</td><td class="r ci">1–11</td></tr>
-<tr><td class="r">4</td><td>🇳🇱&nbsp;The Hague</td><td class="r">98</td><td class="r ci">94–100</td><td class="r ci">2–14</td></tr>
-<tr><td class="r">5</td><td>🇧🇪&nbsp;Antwerp</td><td class="r">98</td><td class="r ci">94–100</td><td class="r ci">3–15</td></tr>
-<tr><td class="r">6</td><td>🇫🇮&nbsp;Vantaa</td><td class="r">97</td><td class="r ci">94–100</td><td class="r ci">2–11</td></tr>
-<tr><td class="r">7</td><td>🇳🇱&nbsp;Leiden</td><td class="r">97</td><td class="r ci">94–100</td><td class="r ci">2–12</td></tr>
-<tr><td class="r">8</td><td>🇳🇱&nbsp;Haarlem</td><td class="r">97</td><td class="r ci">94–100</td><td class="r ci">1–14</td></tr>
-<tr><td class="r">9</td><td>🇫🇮&nbsp;Espoo</td><td class="r">96</td><td class="r ci">93–100</td><td class="r ci">3–16</td></tr>
-<tr><td class="r">10</td><td>🇩🇰&nbsp;Copenhagen</td><td class="r">95</td><td class="r ci">92–100</td><td class="r ci">4–22</td></tr>
-<tr><td class="r">11</td><td>🇫🇮&nbsp;Tampere</td><td class="r">94</td><td class="r ci">91–100</td><td class="r ci">4–18</td></tr>
-<tr><td class="r">12</td><td>🇳🇱&nbsp;Eindhoven</td><td class="r">94</td><td class="r ci">90–99</td><td class="r ci">10–26</td></tr>
-<tr><td class="r">13</td><td>🇫🇷&nbsp;Paris</td><td class="r">94</td><td class="r ci">90–100</td><td class="r ci">6–19</td></tr>
-<tr><td class="r">14</td><td>🇳🇱&nbsp;Utrecht</td><td class="r">94</td><td class="r ci">90–100</td><td class="r ci">10–24</td></tr>
-<tr><td class="r">15</td><td>🇳🇱&nbsp;Rotterdam</td><td class="r">93</td><td class="r ci">90–100</td><td class="r ci">9–23</td></tr>
-<tr><td class="r">16</td><td>🇪🇸&nbsp;Barcelona</td><td class="r">93</td><td class="r ci">90–100</td><td class="r ci">8–22</td></tr>
-<tr><td class="r">17</td><td>🇧🇪&nbsp;Brussels</td><td class="r">92</td><td class="r ci">86–100</td><td class="r ci">3–26</td></tr>
-<tr><td class="r">18</td><td>🇳🇱&nbsp;Nijmegen</td><td class="r">90</td><td class="r ci">86–96</td><td class="r ci">15–30</td></tr>
-<tr><td class="r">19</td><td>🇪🇸&nbsp;San Sebastián</td><td class="r">90</td><td class="r ci">87–94</td><td class="r ci">18–31</td></tr>
-<tr><td class="r">20</td><td>🇫🇮&nbsp;Turku</td><td class="r">90</td><td class="r ci">86–100</td><td class="r ci">6–26</td></tr>
-<tr><td class="r">21</td><td>🇩🇪&nbsp;Hanover</td><td class="r">89</td><td class="r ci">86–94</td><td class="r ci">19–32</td></tr>
-<tr><td class="r">22</td><td>🇳🇱&nbsp;Arnhem</td><td class="r">88</td><td class="r ci">84–94</td><td class="r ci">19–36</td></tr>
-<tr><td class="r">23</td><td>🇩🇪&nbsp;Munich</td><td class="r">88</td><td class="r ci">84–93</td><td class="r ci">21–36</td></tr>
-<tr><td class="r">24</td><td>🇧🇪&nbsp;Ghent</td><td class="r">87</td><td class="r ci">83–91</td><td class="r ci">23–41</td></tr>
-<tr><td class="r">25</td><td>🇩🇪&nbsp;Bremen</td><td class="r">87</td><td class="r ci">83–92</td><td class="r ci">20–41</td></tr>
-<tr><td class="r">26</td><td>🇫🇷&nbsp;Lyon</td><td class="r">86</td><td class="r ci">81–100</td><td class="r ci">13–38</td></tr>
-<tr><td class="r">27</td><td>🇩🇪&nbsp;Braunschweig</td><td class="r">85</td><td class="r ci">82–90</td><td class="r ci">25–42</td></tr>
-<tr><td class="r">28</td><td>🇩🇪&nbsp;Lübeck</td><td class="r">85</td><td class="r ci">81–92</td><td class="r ci">23–44</td></tr>
-<tr><td class="r">29</td><td>🇳🇱&nbsp;Almere</td><td class="r">85</td><td class="r ci">80–100</td><td class="r ci">14–43</td></tr>
-<tr><td class="r">30</td><td>🇪🇸&nbsp;Bilbao</td><td class="r">84</td><td class="r ci">77–100</td><td class="r ci">15–54</td></tr>
-<tr><td class="r">31</td><td>🇫🇷&nbsp;Montpellier</td><td class="r">84</td><td class="r ci">80–90</td><td class="r ci">27–46</td></tr>
-<tr><td class="r">32</td><td>🇳🇱&nbsp;Groningen</td><td class="r">84</td><td class="r ci">80–89</td><td class="r ci">28–43</td></tr>
-<tr><td class="r">33</td><td>🇫🇷&nbsp;Toulouse</td><td class="r">83</td><td class="r ci">79–88</td><td class="r ci">29–50</td></tr>
-<tr><td class="r">34</td><td>🇪🇸&nbsp;Albacete</td><td class="r">83</td><td class="r ci">79–88</td><td class="r ci">32–48</td></tr>
-<tr><td class="r">35</td><td>🇫🇷&nbsp;Grenoble</td><td class="r">83</td><td class="r ci">78–97</td><td class="r ci">23–48</td></tr>
-<tr><td class="r">36</td><td>🇪🇸&nbsp;Salamanca</td><td class="r">82</td><td class="r ci">78–91</td><td class="r ci">27–50</td></tr>
-<tr><td class="r">37</td><td>🇩🇪&nbsp;Oldenburg</td><td class="r">82</td><td class="r ci">78–86</td><td class="r ci">33–54</td></tr>
-<tr><td class="r">38</td><td>🇫🇷&nbsp;Strasbourg</td><td class="r">81</td><td class="r ci">74–100</td><td class="r ci">16–59</td></tr>
-<tr><td class="r">39</td><td>🇳🇱&nbsp;Tilburg</td><td class="r">81</td><td class="r ci">76–88</td><td class="r ci">32–53</td></tr>
-<tr><td class="r">40</td><td>🇫🇷&nbsp;Nantes</td><td class="r">81</td><td class="r ci">75–87</td><td class="r ci">29–61</td></tr>
-<tr><td class="r">41</td><td>🇪🇸&nbsp;Las Rozas de Madrid</td><td class="r">80</td><td class="r ci">77–84</td><td class="r ci">37–55</td></tr>
-<tr><td class="r">42</td><td>🇪🇸&nbsp;Málaga</td><td class="r">80</td><td class="r ci">75–85</td><td class="r ci">33–60</td></tr>
-<tr><td class="r">43</td><td>🇸🇪&nbsp;Malmö</td><td class="r">79</td><td class="r ci">72–100</td><td class="r ci">15–65</td></tr>
-<tr><td class="r">44</td><td>🇩🇪&nbsp;Münster</td><td class="r">79</td><td class="r ci">76–83</td><td class="r ci">41–59</td></tr>
-<tr><td class="r">45</td><td>🇮🇹&nbsp;Bologna</td><td class="r">79</td><td class="r ci">74–93</td><td class="r ci">28–58</td></tr>
-<tr><td class="r">46</td><td>🇪🇸&nbsp;Seville</td><td class="r">78</td><td class="r ci">72–90</td><td class="r ci">32–67</td></tr>
-<tr><td class="r">47</td><td>🇪🇸&nbsp;Valencia</td><td class="r">78</td><td class="r ci">69–100</td><td class="r ci">18–83</td></tr>
-<tr><td class="r">48</td><td>🇩🇪&nbsp;Freiburg</td><td class="r">78</td><td class="r ci">74–82</td><td class="r ci">42–66</td></tr>
-<tr><td class="r">49</td><td>🇫🇷&nbsp;Tours</td><td class="r">78</td><td class="r ci">72–85</td><td class="r ci">36–77</td></tr>
-<tr><td class="r">50</td><td>🇪🇸&nbsp;Valladolid</td><td class="r">77</td><td class="r ci">72–85</td><td class="r ci">42–69</td></tr>
-<tr><td class="r">51</td><td>🇪🇸&nbsp;Sabadell</td><td class="r">77</td><td class="r ci">71–97</td><td class="r ci">24–77</td></tr>
-<tr><td class="r">52</td><td>🇪🇸&nbsp;Vitoria-Gasteiz</td><td class="r">76</td><td class="r ci">72–83</td><td class="r ci">46–67</td></tr>
-<tr><td class="r">53</td><td>🇩🇪&nbsp;Duisburg</td><td class="r">76</td><td class="r ci">72–82</td><td class="r ci">43–72</td></tr>
-<tr><td class="r">54</td><td>🇪🇸&nbsp;Pamplona</td><td class="r">76</td><td class="r ci">71–83</td><td class="r ci">46–74</td></tr>
-<tr><td class="r">55</td><td>🇪🇸&nbsp;Burgos</td><td class="r">76</td><td class="r ci">70–83</td><td class="r ci">48–78</td></tr>
-<tr><td class="r">56</td><td>🇪🇸&nbsp;Palma</td><td class="r">75</td><td class="r ci">72–80</td><td class="r ci">51–67</td></tr>
-<tr><td class="r">57</td><td>🇫🇷&nbsp;Lille</td><td class="r">75</td><td class="r ci">71–79</td><td class="r ci">51–79</td></tr>
-<tr><td class="r">58</td><td>🇩🇪&nbsp;Mannheim</td><td class="r">75</td><td class="r ci">70–83</td><td class="r ci">45–84</td></tr>
-<tr><td class="r">59</td><td>🇦🇹&nbsp;Vienna</td><td class="r">75</td><td class="r ci">68–86</td><td class="r ci">42–88</td></tr>
-<tr><td class="r">60</td><td>🇪🇸&nbsp;Zaragoza</td><td class="r">74</td><td class="r ci">70–78</td><td class="r ci">60–75</td></tr>
-<tr><td class="r">61</td><td>🇫🇮&nbsp;Oulu</td><td class="r">73</td><td class="r ci">66–100</td><td class="r ci">12–86</td></tr>
-<tr><td class="r">62</td><td>🇪🇸&nbsp;Córdoba</td><td class="r">73</td><td class="r ci">69–79</td><td class="r ci">49–82</td></tr>
-<tr><td class="r">63</td><td>🇫🇷&nbsp;Nancy</td><td class="r">73</td><td class="r ci">65–84</td><td class="r ci">39–116</td></tr>
-<tr><td class="r">64</td><td>🇩🇪&nbsp;Berlin</td><td class="r">72</td><td class="r ci">68–79</td><td class="r ci">50–83</td></tr>
-<tr><td class="r">65</td><td>🇪🇸&nbsp;Sant Cugat del Vallès</td><td class="r">72</td><td class="r ci">67–78</td><td class="r ci">51–100</td></tr>
-<tr><td class="r">66</td><td>🇩🇪&nbsp;Bonn</td><td class="r">72</td><td class="r ci">67–80</td><td class="r ci">49–102</td></tr>
-<tr><td class="r">67</td><td>🇩🇪&nbsp;Augsburg</td><td class="r">72</td><td class="r ci">68–76</td><td class="r ci">58–82</td></tr>
-<tr><td class="r">68</td><td>🇩🇪&nbsp;Magdeburg</td><td class="r">72</td><td class="r ci">68–76</td><td class="r ci">64–84</td></tr>
-<tr><td class="r">69</td><td>🇳🇴&nbsp;Trondheim</td><td class="r">71</td><td class="r ci">65–80</td><td class="r ci">53–86</td></tr>
-<tr><td class="r">70</td><td>🇳🇱&nbsp;Apeldoorn</td><td class="r">71</td><td class="r ci">66–80</td><td class="r ci">55–100</td></tr>
-<tr><td class="r">71</td><td>🇬🇧&nbsp;Milton Keynes</td><td class="r">71</td><td class="r ci">63–100</td><td class="r ci">12–98</td></tr>
-<tr><td class="r">72</td><td>🇩🇪&nbsp;Düsseldorf</td><td class="r">71</td><td class="r ci">67–74</td><td class="r ci">66–96</td></tr>
-<tr><td class="r">73</td><td>🇦🇹&nbsp;Graz</td><td class="r">71</td><td class="r ci">67–77</td><td class="r ci">65–89</td></tr>
-<tr><td class="r">74</td><td>🇳🇴&nbsp;Oslo</td><td class="r">71</td><td class="r ci">62–81</td><td class="r ci">46–98</td></tr>
-<tr><td class="r">75</td><td>🇳🇱&nbsp;Breda</td><td class="r">71</td><td class="r ci">65–80</td><td class="r ci">59–101</td></tr>
-<tr><td class="r">76</td><td>🇩🇰&nbsp;Odense</td><td class="r">70</td><td class="r ci">65–86</td><td class="r ci">41–96</td></tr>
-<tr><td class="r">77</td><td>🇸🇮&nbsp;Maribor</td><td class="r">70</td><td class="r ci">64–78</td><td class="r ci">57–91</td></tr>
-<tr><td class="r">78</td><td>🇩🇪&nbsp;Kiel</td><td class="r">70</td><td class="r ci">67–74</td><td class="r ci">69–93</td></tr>
-<tr><td class="r">79</td><td>🇪🇸&nbsp;Gijón</td><td class="r">69</td><td class="r ci">63–78</td><td class="r ci">55–99</td></tr>
-<tr><td class="r">80</td><td>🇪🇸&nbsp;Elche</td><td class="r">69</td><td class="r ci">66–74</td><td class="r ci">74–90</td></tr>
-<tr><td class="r">81</td><td>🇭🇺&nbsp;Szeged</td><td class="r">69</td><td class="r ci">65–74</td><td class="r ci">73–93</td></tr>
-<tr><td class="r">82</td><td>🇪🇸&nbsp;Alicante</td><td class="r">68</td><td class="r ci">65–73</td><td class="r ci">78–96</td></tr>
-<tr><td class="r">83</td><td>🇫🇷&nbsp;Rennes</td><td class="r">68</td><td class="r ci">63–75</td><td class="r ci">65–115</td></tr>
-<tr><td class="r">84</td><td>🇮🇹&nbsp;Reggio Emilia</td><td class="r">68</td><td class="r ci">59–100</td><td class="r ci">13–129</td></tr>
-<tr><td class="r">85</td><td>🇩🇰&nbsp;Aarhus</td><td class="r">68</td><td class="r ci">61–81</td><td class="r ci">52–106</td></tr>
-<tr><td class="r">86</td><td>🇩🇪&nbsp;Oberhausen</td><td class="r">68</td><td class="r ci">62–77</td><td class="r ci">57–125</td></tr>
-<tr><td class="r">87</td><td>🇪🇸&nbsp;Murcia</td><td class="r">68</td><td class="r ci">63–74</td><td class="r ci">69–104</td></tr>
-<tr><td class="r">88</td><td>🇩🇪&nbsp;Cologne</td><td class="r">67</td><td class="r ci">64–71</td><td class="r ci">74–118</td></tr>
-<tr><td class="r">89</td><td>🇪🇸&nbsp;A Coruña</td><td class="r">67</td><td class="r ci">63–72</td><td class="r ci">72–116</td></tr>
-<tr><td class="r">90</td><td>🇪🇸&nbsp;Santander</td><td class="r">67</td><td class="r ci">63–71</td><td class="r ci">87–102</td></tr>
-<tr><td class="r">91</td><td>🇵🇱&nbsp;Białystok</td><td class="r">66</td><td class="r ci">61–76</td><td class="r ci">70–118</td></tr>
-<tr><td class="r">92</td><td>🇱🇺&nbsp;Luxembourg</td><td class="r">66</td><td class="r ci">62–70</td><td class="r ci">83–118</td></tr>
-<tr><td class="r">93</td><td>🇵🇱&nbsp;Wrocław</td><td class="r">66</td><td class="r ci">61–72</td><td class="r ci">84–117</td></tr>
-<tr><td class="r">94</td><td>🇩🇪&nbsp;Halle (Saale)</td><td class="r">65</td><td class="r ci">60–72</td><td class="r ci">79–120</td></tr>
-<tr><td class="r">95</td><td>🇩🇪&nbsp;Karlsruhe</td><td class="r">65</td><td class="r ci">62–69</td><td class="r ci">86–133</td></tr>
-<tr><td class="r">96</td><td>🇸🇮&nbsp;Ljubljana</td><td class="r">64</td><td class="r ci">59–70</td><td class="r ci">88–121</td></tr>
-<tr><td class="r">97</td><td>🇩🇪&nbsp;Ludwigshafen am Rhein</td><td class="r">64</td><td class="r ci">60–69</td><td class="r ci">78–144</td></tr>
-<tr><td class="r">98</td><td>🇫🇷&nbsp;Orléans*</td><td class="r">64</td><td class="r ci">60–68</td><td class="r ci">98–120</td></tr>
-<tr><td class="r">99</td><td>🇪🇸&nbsp;Castellón de la Plana*</td><td class="r">63</td><td class="r ci">57–72</td><td class="r ci">81–153</td></tr>
-<tr><td class="r">100</td><td>🇸🇪&nbsp;Uppsala</td><td class="r">63</td><td class="r ci">55–98</td><td class="r ci">23–161</td></tr>
-<tr class="grp gt2"><td colspan="5">Tier 2 — middle</td></tr>
-<tr><td class="r">101</td><td>🇳🇴&nbsp;Bergen*</td><td class="r">63</td><td class="r ci">55–72</td><td class="r ci">80–139</td></tr>
-<tr><td class="r">102</td><td>🇩🇪&nbsp;Leverkusen*</td><td class="r">62</td><td class="r ci">59–66</td><td class="r ci">100–143</td></tr>
-<tr><td class="r">103</td><td>🇩🇪&nbsp;Krefeld*</td><td class="r">62</td><td class="r ci">59–66</td><td class="r ci">96–148</td></tr>
-<tr><td class="r">104</td><td>🇪🇸&nbsp;Almería*</td><td class="r">62</td><td class="r ci">58–67</td><td class="r ci">103–129</td></tr>
-<tr><td class="r">105</td><td>🇩🇪&nbsp;Gelsenkirchen*</td><td class="r">62</td><td class="r ci">59–66</td><td class="r ci">99–149</td></tr>
-<tr><td class="r">106</td><td>🇩🇪&nbsp;Hamburg*</td><td class="r">62</td><td class="r ci">56–71</td><td class="r ci">84–154</td></tr>
-<tr><td class="r">107</td><td>🇪🇸&nbsp;Vigo*</td><td class="r">62</td><td class="r ci">56–71</td><td class="r ci">81–161</td></tr>
-<tr><td class="r">108</td><td>🇵🇱&nbsp;Gdańsk*</td><td class="r">62</td><td class="r ci">57–67</td><td class="r ci">106–132</td></tr>
-<tr><td class="r">109</td><td>🇪🇸&nbsp;Terrassa</td><td class="r">62</td><td class="r ci">58–66</td><td class="r ci">94–152</td></tr>
-<tr><td class="r">110</td><td>🇳🇴&nbsp;Stavanger*</td><td class="r">62</td><td class="r ci">54–71</td><td class="r ci">91–140</td></tr>
-<tr><td class="r">111</td><td>🇩🇪&nbsp;Hamm</td><td class="r">61</td><td class="r ci">58–65</td><td class="r ci">99–154</td></tr>
-<tr><td class="r">112</td><td>🇩🇪&nbsp;Mainz</td><td class="r">61</td><td class="r ci">58–65</td><td class="r ci">103–159</td></tr>
-<tr><td class="r">113</td><td>🇩🇪&nbsp;Nuremberg</td><td class="r">61</td><td class="r ci">58–65</td><td class="r ci">111–145</td></tr>
-<tr><td class="r">114</td><td>🇩🇪&nbsp;Rostock*</td><td class="r">61</td><td class="r ci">54–70</td><td class="r ci">89–156</td></tr>
-<tr><td class="r">115</td><td>🇫🇷&nbsp;Angers*</td><td class="r">61</td><td class="r ci">54–72</td><td class="r ci">79–170</td></tr>
-<tr><td class="r">116</td><td>🇭🇺&nbsp;Debrecen*</td><td class="r">61</td><td class="r ci">55–70</td><td class="r ci">93–143</td></tr>
-<tr><td class="r">117</td><td>🇵🇱&nbsp;Toruń</td><td class="r">61</td><td class="r ci">56–67</td><td class="r ci">102–156</td></tr>
-<tr><td class="r">118</td><td>🇵🇱&nbsp;Łódź</td><td class="r">61</td><td class="r ci">55–67</td><td class="r ci">109–135</td></tr>
-<tr><td class="r">119</td><td>🇳🇱&nbsp;Alkmaar*</td><td class="r">60</td><td class="r ci">54–69</td><td class="r ci">94–169</td></tr>
-<tr><td class="r">120</td><td>🇩🇪&nbsp;Leipzig*</td><td class="r">60</td><td class="r ci">52–69</td><td class="r ci">94–153</td></tr>
-<tr><td class="r">121</td><td>🇫🇷&nbsp;Clermont-Ferrand</td><td class="r">60</td><td class="r ci">57–63</td><td class="r ci">110–155</td></tr>
-<tr><td class="r">122</td><td>🇪🇸&nbsp;Jerez de la Frontera</td><td class="r">60</td><td class="r ci">54–66</td><td class="r ci">115–140</td></tr>
-<tr><td class="r">123</td><td>🇪🇪&nbsp;Tallinn*</td><td class="r">60</td><td class="r ci">51–76</td><td class="r ci">69–157</td></tr>
-<tr><td class="r">124</td><td>🇪🇸&nbsp;Granada</td><td class="r">60</td><td class="r ci">55–66</td><td class="r ci">103–175</td></tr>
-<tr><td class="r">125</td><td>🇭🇺&nbsp;Budapest</td><td class="r">60</td><td class="r ci">54–69</td><td class="r ci">103–151</td></tr>
-<tr><td class="r">126</td><td>🇩🇪&nbsp;Potsdam</td><td class="r">59</td><td class="r ci">53–68</td><td class="r ci">99–177</td></tr>
-<tr><td class="r">127</td><td>🇦🇹&nbsp;Linz</td><td class="r">59</td><td class="r ci">53–68</td><td class="r ci">101–175</td></tr>
-<tr><td class="r">128</td><td>🇫🇷&nbsp;Bordeaux</td><td class="r">59</td><td class="r ci">54–65</td><td class="r ci">114–170</td></tr>
-<tr><td class="r">129</td><td>🇨🇭&nbsp;Bern*</td><td class="r">59</td><td class="r ci">50–73</td><td class="r ci">75–198</td></tr>
-<tr><td class="r">130</td><td>🇩🇪&nbsp;Aachen</td><td class="r">59</td><td class="r ci">53–66</td><td class="r ci">103–182</td></tr>
-<tr><td class="r">131</td><td>🇵🇱&nbsp;Warsaw*</td><td class="r">59</td><td class="r ci">52–72</td><td class="r ci">83–172</td></tr>
-<tr><td class="r">132</td><td>🇧🇪&nbsp;Liège</td><td class="r">59</td><td class="r ci">52–71</td><td class="r ci">91–176</td></tr>
-<tr><td class="r">133</td><td>🇨🇭&nbsp;Geneva</td><td class="r">58</td><td class="r ci">53–66</td><td class="r ci">108–166</td></tr>
-<tr><td class="r">134</td><td>🇮🇹&nbsp;Venice*</td><td class="r">58</td><td class="r ci">51–77</td><td class="r ci">66–174</td></tr>
-<tr><td class="r">135</td><td>🇬🇧&nbsp;Bedford*</td><td class="r">58</td><td class="r ci">47–71</td><td class="r ci">90–175</td></tr>
-<tr><td class="r">136</td><td>🇩🇪&nbsp;Mönchengladbach</td><td class="r">58</td><td class="r ci">55–62</td><td class="r ci">114–175</td></tr>
-<tr><td class="r">137</td><td>🇵🇱&nbsp;Gdynia</td><td class="r">58</td><td class="r ci">54–62</td><td class="r ci">130–160</td></tr>
-<tr><td class="r">138</td><td>🇬🇧&nbsp;Edinburgh*</td><td class="r">58</td><td class="r ci">50–72</td><td class="r ci">88–163</td></tr>
-<tr><td class="r">139</td><td>🇪🇸&nbsp;Madrid</td><td class="r">58</td><td class="r ci">52–68</td><td class="r ci">110–161</td></tr>
-<tr><td class="r">140</td><td>🇮🇸&nbsp;Reykjavik</td><td class="r">58</td><td class="r ci">53–64</td><td class="r ci">115–177</td></tr>
-<tr><td class="r">141</td><td>🇩🇪&nbsp;Mülheim an der Ruhr</td><td class="r">58</td><td class="r ci">54–62</td><td class="r ci">126–177</td></tr>
-<tr><td class="r">142</td><td>🇩🇪&nbsp;Frankfurt</td><td class="r">58</td><td class="r ci">55–61</td><td class="r ci">123–173</td></tr>
-<tr><td class="r">143</td><td>🇲🇹&nbsp;Valletta*</td><td class="r">57</td><td class="r ci">47–72</td><td class="r ci">75–210</td></tr>
-<tr><td class="r">144</td><td>🇬🇧&nbsp;Peterborough*</td><td class="r">57</td><td class="r ci">49–72</td><td class="r ci">85–174</td></tr>
-<tr><td class="r">145</td><td>🇩🇰&nbsp;Aalborg</td><td class="r">57</td><td class="r ci">49–70</td><td class="r ci">98–171</td></tr>
-<tr><td class="r">146</td><td>🇬🇧&nbsp;Manchester</td><td class="r">57</td><td class="r ci">50–67</td><td class="r ci">117–166</td></tr>
-<tr><td class="r">147</td><td>🇬🇧&nbsp;York</td><td class="r">57</td><td class="r ci">48–67</td><td class="r ci">112–171</td></tr>
-<tr><td class="r">148</td><td>🇪🇸&nbsp;Oviedo*</td><td class="r">57</td><td class="r ci">47–73</td><td class="r ci">76–207</td></tr>
-<tr><td class="r">149</td><td>🇵🇱&nbsp;Poznań</td><td class="r">56</td><td class="r ci">53–62</td><td class="r ci">130–177</td></tr>
-<tr><td class="r">150</td><td>🇮🇹&nbsp;Florence</td><td class="r">56</td><td class="r ci">49–67</td><td class="r ci">114–172</td></tr>
-<tr><td class="r">151</td><td>🇵🇱&nbsp;Lublin</td><td class="r">56</td><td class="r ci">49–66</td><td class="r ci">119–175</td></tr>
-<tr><td class="r">152</td><td>🇬🇧&nbsp;Bristol</td><td class="r">56</td><td class="r ci">46–66</td><td class="r ci">117–181</td></tr>
-<tr><td class="r">153</td><td>🇸🇪&nbsp;Gothenburg</td><td class="r">56</td><td class="r ci">50–65</td><td class="r ci">125–189</td></tr>
-<tr><td class="r">154</td><td>🇫🇷&nbsp;Rouen</td><td class="r">55</td><td class="r ci">49–62</td><td class="r ci">110–212</td></tr>
-<tr><td class="r">155</td><td>🇩🇪&nbsp;Dortmund</td><td class="r">55</td><td class="r ci">48–63</td><td class="r ci">124–186</td></tr>
-<tr><td class="r">156</td><td>🇵🇱&nbsp;Kraków</td><td class="r">55</td><td class="r ci">48–62</td><td class="r ci">140–173</td></tr>
-<tr><td class="r">157</td><td>🇬🇧&nbsp;Brighton and Hove</td><td class="r">55</td><td class="r ci">48–62</td><td class="r ci">136–179</td></tr>
-<tr><td class="r">158</td><td>🇫🇷&nbsp;Mulhouse</td><td class="r">55</td><td class="r ci">50–60</td><td class="r ci">144–191</td></tr>
-<tr><td class="r">159</td><td>🇮🇪&nbsp;Dublin</td><td class="r">54</td><td class="r ci">47–63</td><td class="r ci">124–187</td></tr>
-<tr><td class="r">160</td><td>🇮🇹&nbsp;Modena*</td><td class="r">54</td><td class="r ci">43–74</td><td class="r ci">75–219</td></tr>
-<tr><td class="r">161</td><td>🇩🇪&nbsp;Bielefeld</td><td class="r">54</td><td class="r ci">48–62</td><td class="r ci">135–191</td></tr>
-<tr><td class="r">162</td><td>🇬🇧&nbsp;Nottingham</td><td class="r">54</td><td class="r ci">50–58</td><td class="r ci">150–187</td></tr>
-<tr><td class="r">163</td><td>🇩🇪&nbsp;Stuttgart</td><td class="r">54</td><td class="r ci">48–60</td><td class="r ci">134–208</td></tr>
-<tr><td class="r">164</td><td>🇩🇪&nbsp;Darmstadt</td><td class="r">53</td><td class="r ci">47–60</td><td class="r ci">129–217</td></tr>
-<tr><td class="r">165</td><td>🇸🇰&nbsp;Bratislava</td><td class="r">53</td><td class="r ci">47–60</td><td class="r ci">160–180</td></tr>
-<tr><td class="r">166</td><td>🇵🇱&nbsp;Rzeszów</td><td class="r">53</td><td class="r ci">48–60</td><td class="r ci">158–183</td></tr>
-<tr><td class="r">167</td><td>🇸🇪&nbsp;Linköping</td><td class="r">53</td><td class="r ci">49–57</td><td class="r ci">138–208</td></tr>
-<tr><td class="r">168</td><td>🇬🇧&nbsp;Swindon</td><td class="r">52</td><td class="r ci">44–69</td><td class="r ci">104–199</td></tr>
-<tr><td class="r">169</td><td>🇩🇪&nbsp;Kassel</td><td class="r">52</td><td class="r ci">45–62</td><td class="r ci">126–223</td></tr>
-<tr><td class="r">170</td><td>🇨🇭&nbsp;Zurich</td><td class="r">52</td><td class="r ci">46–59</td><td class="r ci">143–210</td></tr>
-<tr><td class="r">171</td><td>🇩🇪&nbsp;Dresden</td><td class="r">52</td><td class="r ci">45–62</td><td class="r ci">132–207</td></tr>
-<tr><td class="r">172</td><td>🇫🇷&nbsp;Reims</td><td class="r">52</td><td class="r ci">48–57</td><td class="r ci">157–202</td></tr>
-<tr><td class="r">173</td><td>🇫🇷&nbsp;Metz</td><td class="r">52</td><td class="r ci">47–57</td><td class="r ci">154–207</td></tr>
-<tr><td class="r">174</td><td>🇵🇱&nbsp;Bydgoszcz</td><td class="r">52</td><td class="r ci">46–60</td><td class="r ci">154–197</td></tr>
-<tr><td class="r">175</td><td>🇮🇹&nbsp;Bergamo</td><td class="r">52</td><td class="r ci">43–63</td><td class="r ci">140–191</td></tr>
-<tr><td class="r">176</td><td>🇨🇿&nbsp;Plzeň*</td><td class="r">52</td><td class="r ci">43–68</td><td class="r ci">109–199</td></tr>
-<tr><td class="r">177</td><td>🇫🇷&nbsp;Toulon</td><td class="r">52</td><td class="r ci">45–61</td><td class="r ci">139–205</td></tr>
-<tr><td class="r">178</td><td>🇮🇹&nbsp;Turin*</td><td class="r">52</td><td class="r ci">41–88</td><td class="r ci">39–223</td></tr>
-<tr><td class="r">179</td><td>🇬🇧&nbsp;Portsmouth</td><td class="r">52</td><td class="r ci">46–58</td><td class="r ci">168–193</td></tr>
-<tr><td class="r">180</td><td>🇮🇹&nbsp;Parma*</td><td class="r">52</td><td class="r ci">42–73</td><td class="r ci">81–218</td></tr>
-<tr><td class="r">181</td><td>🇩🇪&nbsp;Essen</td><td class="r">51</td><td class="r ci">46–57</td><td class="r ci">161–204</td></tr>
-<tr><td class="r">182</td><td>🇱🇻&nbsp;Riga</td><td class="r">51</td><td class="r ci">43–60</td><td class="r ci">162–192</td></tr>
-<tr><td class="r">183</td><td>🇬🇧&nbsp;Telford</td><td class="r">51</td><td class="r ci">42–65</td><td class="r ci">128–200</td></tr>
-<tr><td class="r">184</td><td>🇬🇧&nbsp;Newcastle upon Tyne</td><td class="r">50</td><td class="r ci">42–61</td><td class="r ci">153–197</td></tr>
-<tr><td class="r">185</td><td>🇩🇪&nbsp;Bochum</td><td class="r">50</td><td class="r ci">43–60</td><td class="r ci">141–217</td></tr>
-<tr><td class="r">186</td><td>🇵🇱&nbsp;Szczecin</td><td class="r">50</td><td class="r ci">45–57</td><td class="r ci">171–207</td></tr>
-<tr><td class="r">187</td><td>🇵🇱&nbsp;Kielce</td><td class="r">50</td><td class="r ci">45–56</td><td class="r ci">180–203</td></tr>
-<tr><td class="r">188</td><td>🇨🇭&nbsp;Basel</td><td class="r">50</td><td class="r ci">46–54</td><td class="r ci">149–223</td></tr>
-<tr><td class="r">189</td><td>🇫🇷&nbsp;Le Havre</td><td class="r">50</td><td class="r ci">42–57</td><td class="r ci">173–201</td></tr>
-<tr><td class="r">190</td><td>🇬🇧&nbsp;Leeds*</td><td class="r">49</td><td class="r ci">41–64</td><td class="r ci">132–213</td></tr>
-<tr><td class="r">191</td><td>🇬🇧&nbsp;Birmingham*</td><td class="r">49</td><td class="r ci">39–68</td><td class="r ci">111–213</td></tr>
-<tr><td class="r">192</td><td>🇫🇷&nbsp;Saint-Étienne*</td><td class="r">49</td><td class="r ci">42–58</td><td class="r ci">150–228</td></tr>
-<tr><td class="r">193</td><td>🇬🇧&nbsp;Swansea*</td><td class="r">49</td><td class="r ci">38–65</td><td class="r ci">127–213</td></tr>
-<tr><td class="r">194</td><td>🇪🇸&nbsp;Cartagena*</td><td class="r">48</td><td class="r ci">42–56</td><td class="r ci">166–220</td></tr>
-<tr><td class="r">195</td><td>🇮🇹&nbsp;Verona*</td><td class="r">48</td><td class="r ci">40–63</td><td class="r ci">139–214</td></tr>
-<tr><td class="r">196</td><td>🇮🇹&nbsp;Pescara*</td><td class="r">48</td><td class="r ci">40–60</td><td class="r ci">155–209</td></tr>
-<tr><td class="r">197</td><td>🇭🇷&nbsp;Zagreb*</td><td class="r">48</td><td class="r ci">39–58</td><td class="r ci">172–212</td></tr>
-<tr><td class="r">198</td><td>🇩🇪&nbsp;Hagen*</td><td class="r">48</td><td class="r ci">40–59</td><td class="r ci">146–235</td></tr>
-<tr><td class="r">199</td><td>🇬🇧&nbsp;London*</td><td class="r">48</td><td class="r ci">40–57</td><td class="r ci">181–207</td></tr>
-<tr><td class="r">200</td><td>🇨🇭&nbsp;Lausanne*</td><td class="r">48</td><td class="r ci">39–62</td><td class="r ci">130–239</td></tr>
-<tr class="grp gt3"><td colspan="5">Tier 3 — higher assessed risk</td></tr>
-<tr><td class="r">201</td><td>🇪🇸&nbsp;Alcalá de Henares*</td><td class="r">48</td><td class="r ci">42–55</td><td class="r ci">167–230</td></tr>
-<tr><td class="r">202</td><td>🇨🇿&nbsp;Prague*</td><td class="r">48</td><td class="r ci">40–55</td><td class="r ci">188–212</td></tr>
-<tr><td class="r">203</td><td>🇬🇧&nbsp;Southampton*</td><td class="r">47</td><td class="r ci">40–54</td><td class="r ci">194–211</td></tr>
-<tr><td class="r">204</td><td>🇱🇹&nbsp;Vilnius*</td><td class="r">47</td><td class="r ci">40–54</td><td class="r ci">187–217</td></tr>
-<tr><td class="r">205</td><td>🇩🇪&nbsp;Saarbrücken*</td><td class="r">46</td><td class="r ci">37–60</td><td class="r ci">139–244</td></tr>
-<tr><td class="r">206</td><td>🇬🇧&nbsp;Plymouth*</td><td class="r">46</td><td class="r ci">37–57</td><td class="r ci">182–219</td></tr>
-<tr><td class="r">207</td><td>🇬🇧&nbsp;Wolverhampton*</td><td class="r">46</td><td class="r ci">37–62</td><td class="r ci">146–225</td></tr>
-<tr><td class="r">208</td><td>🇩🇪&nbsp;Wuppertal*</td><td class="r">46</td><td class="r ci">40–53</td><td class="r ci">182–233</td></tr>
-<tr><td class="r">209</td><td>🇬🇧&nbsp;Derby*</td><td class="r">46</td><td class="r ci">37–60</td><td class="r ci">161–221</td></tr>
-<tr><td class="r">210</td><td>🇬🇧&nbsp;Glasgow*</td><td class="r">46</td><td class="r ci">37–63</td><td class="r ci">141–227</td></tr>
-<tr><td class="r">211</td><td>🇮🇹&nbsp;Brescia*</td><td class="r">46</td><td class="r ci">36–66</td><td class="r ci">123–237</td></tr>
-<tr><td class="r">212</td><td>🇫🇷&nbsp;Nice</td><td class="r">45</td><td class="r ci">39–53</td><td class="r ci">197–219</td></tr>
-<tr><td class="r">213</td><td>🇬🇧&nbsp;Sunderland*</td><td class="r">45</td><td class="r ci">34–59</td><td class="r ci">164–230</td></tr>
-<tr><td class="r">214</td><td>🇬🇧&nbsp;Sheffield*</td><td class="r">45</td><td class="r ci">36–53</td><td class="r ci">198–225</td></tr>
-<tr><td class="r">215</td><td>🇬🇧&nbsp;Warrington</td><td class="r">44</td><td class="r ci">38–54</td><td class="r ci">186–235</td></tr>
-<tr><td class="r">216</td><td>🇵🇱&nbsp;Katowice</td><td class="r">44</td><td class="r ci">36–52</td><td class="r ci">205–225</td></tr>
-<tr><td class="r">217</td><td>🇵🇱&nbsp;Częstochowa</td><td class="r">44</td><td class="r ci">36–55</td><td class="r ci">170–247</td></tr>
-<tr><td class="r">218</td><td>🇩🇪&nbsp;Erfurt</td><td class="r">44</td><td class="r ci">38–49</td><td class="r ci">205–230</td></tr>
-<tr><td class="r">219</td><td>🇬🇧&nbsp;Leicester</td><td class="r">43</td><td class="r ci">35–55</td><td class="r ci">186–236</td></tr>
-<tr><td class="r">220</td><td>🇩🇪&nbsp;Chemnitz</td><td class="r">42</td><td class="r ci">35–51</td><td class="r ci">199–239</td></tr>
-<tr><td class="r">221</td><td>🇵🇱&nbsp;Radom</td><td class="r">42</td><td class="r ci">36–50</td><td class="r ci">202–237</td></tr>
-<tr><td class="r">222</td><td>🇫🇷&nbsp;Marseille</td><td class="r">42</td><td class="r ci">34–50</td><td class="r ci">207–233</td></tr>
-<tr><td class="r">223</td><td>🇮🇹&nbsp;Prato*</td><td class="r">42</td><td class="r ci">32–61</td><td class="r ci">147–250</td></tr>
-<tr><td class="r">224</td><td>🇵🇱&nbsp;Gliwice</td><td class="r">42</td><td class="r ci">37–48</td><td class="r ci">203–242</td></tr>
-<tr><td class="r">225</td><td>🇬🇧&nbsp;Basingstoke</td><td class="r">42</td><td class="r ci">36–48</td><td class="r ci">215–232</td></tr>
-<tr><td class="r">226</td><td>🇵🇱&nbsp;Sosnowiec</td><td class="r">42</td><td class="r ci">35–48</td><td class="r ci">219–232</td></tr>
-<tr><td class="r">227</td><td>🇮🇹&nbsp;Genoa</td><td class="r">40</td><td class="r ci">32–51</td><td class="r ci">196–252</td></tr>
-<tr><td class="r">228</td><td>🇪🇸&nbsp;Fuenlabrada</td><td class="r">40</td><td class="r ci">34–45</td><td class="r ci">227–238</td></tr>
-<tr><td class="r">229</td><td>🇬🇧&nbsp;Stoke-on-Trent</td><td class="r">40</td><td class="r ci">29–58</td><td class="r ci">172–251</td></tr>
-<tr><td class="r">230</td><td>🇧🇬&nbsp;Plovdiv</td><td class="r">40</td><td class="r ci">29–60</td><td class="r ci">156–256</td></tr>
-<tr><td class="r">231</td><td>🇬🇷&nbsp;Thessaloniki</td><td class="r">40</td><td class="r ci">28–57</td><td class="r ci">167–259</td></tr>
-<tr><td class="r">232</td><td>🇬🇧&nbsp;Kingston upon Hull</td><td class="r">40</td><td class="r ci">31–51</td><td class="r ci">206–243</td></tr>
-<tr><td class="r">233</td><td>🇱🇹&nbsp;Kaunas</td><td class="r">40</td><td class="r ci">34–45</td><td class="r ci">225–240</td></tr>
-<tr><td class="r">234</td><td>🇸🇰&nbsp;Košice</td><td class="r">40</td><td class="r ci">33–46</td><td class="r ci">218–242</td></tr>
-<tr><td class="r">235</td><td>🇨🇿&nbsp;Ostrava</td><td class="r">39</td><td class="r ci">31–53</td><td class="r ci">198–247</td></tr>
-<tr><td class="r">236</td><td>🇬🇧&nbsp;Medway</td><td class="r">39</td><td class="r ci">29–49</td><td class="r ci">218–245</td></tr>
-<tr><td class="r">237</td><td>🇬🇧&nbsp;Cardiff</td><td class="r">38</td><td class="r ci">32–44</td><td class="r ci">222–247</td></tr>
-<tr><td class="r">238</td><td>🇨🇿&nbsp;Brno</td><td class="r">38</td><td class="r ci">32–43</td><td class="r ci">232–244</td></tr>
-<tr><td class="r">239</td><td>🇩🇪&nbsp;Wiesbaden</td><td class="r">38</td><td class="r ci">34–41</td><td class="r ci">216–257</td></tr>
-<tr><td class="r">240</td><td>🇬🇧&nbsp;Coventry</td><td class="r">37</td><td class="r ci">28–53</td><td class="r ci">196–257</td></tr>
-<tr><td class="r">241</td><td>🇬🇧&nbsp;Colchester</td><td class="r">37</td><td class="r ci">31–44</td><td class="r ci">231–251</td></tr>
-<tr><td class="r">242</td><td>🇮🇹&nbsp;Milan</td><td class="r">37</td><td class="r ci">28–48</td><td class="r ci">218–251</td></tr>
-<tr><td class="r">243</td><td>🇬🇧&nbsp;Bradford</td><td class="r">37</td><td class="r ci">28–46</td><td class="r ci">229–250</td></tr>
-<tr><td class="r">244</td><td>🇮🇹&nbsp;Padua</td><td class="r">36</td><td class="r ci">31–43</td><td class="r ci">234–252</td></tr>
-<tr><td class="r">245</td><td>🇧🇬&nbsp;Varna</td><td class="r">36</td><td class="r ci">28–43</td><td class="r ci">227–254</td></tr>
-<tr><td class="r">246</td><td>🇷🇴&nbsp;Cluj-Napoca</td><td class="r">36</td><td class="r ci">29–42</td><td class="r ci">230–256</td></tr>
-<tr><td class="r">247</td><td>🇵🇹&nbsp;Lisbon</td><td class="r">34</td><td class="r ci">24–51</td><td class="r ci">203–269</td></tr>
-<tr><td class="r">248</td><td>🇧🇪&nbsp;Charleroi</td><td class="r">33</td><td class="r ci">26–45</td><td class="r ci">228–261</td></tr>
-<tr><td class="r">249</td><td>🇬🇧&nbsp;Luton</td><td class="r">33</td><td class="r ci">27–39</td><td class="r ci">248–256</td></tr>
-<tr><td class="r">250</td><td>🇮🇪&nbsp;Cork</td><td class="r">32</td><td class="r ci">27–38</td><td class="r ci">243–262</td></tr>
-<tr><td class="r">251</td><td>🇮🇹&nbsp;Trieste</td><td class="r">32</td><td class="r ci">25–40</td><td class="r ci">248–258</td></tr>
-<tr><td class="r">252</td><td>🇫🇷&nbsp;Dijon</td><td class="r">32</td><td class="r ci">28–36</td><td class="r ci">233–268</td></tr>
-<tr><td class="r">253</td><td>🇧🇬&nbsp;Sofia</td><td class="r">32</td><td class="r ci">24–39</td><td class="r ci">250–260</td></tr>
-<tr><td class="r">254</td><td>🇵🇹&nbsp;Porto</td><td class="r">32</td><td class="r ci">22–43</td><td class="r ci">224–268</td></tr>
-<tr><td class="r">255</td><td>🇮🇹&nbsp;Rome</td><td class="r">31</td><td class="r ci">22–42</td><td class="r ci">243–266</td></tr>
-<tr><td class="r">256</td><td>🇬🇧&nbsp;Northampton</td><td class="r">31</td><td class="r ci">22–40</td><td class="r ci">248–263</td></tr>
-<tr><td class="r">257</td><td>🇵🇹&nbsp;Sintra</td><td class="r">30</td><td class="r ci">21–40</td><td class="r ci">244–267</td></tr>
-<tr><td class="r">258</td><td>🇬🇧&nbsp;Aberdeen</td><td class="r">30</td><td class="r ci">25–34</td><td class="r ci">252–266</td></tr>
-<tr><td class="r">259</td><td>🇬🇧&nbsp;Belfast</td><td class="r">30</td><td class="r ci">22–39</td><td class="r ci">248–266</td></tr>
-<tr><td class="r">260</td><td>🇮🇹&nbsp;Cagliari</td><td class="r">30</td><td class="r ci">22–39</td><td class="r ci">245–271</td></tr>
-<tr><td class="r">261</td><td>🇬🇷&nbsp;Patras</td><td class="r">29</td><td class="r ci">18–44</td><td class="r ci">217–279</td></tr>
-<tr><td class="r">262</td><td>🇬🇧&nbsp;Liverpool</td><td class="r">29</td><td class="r ci">22–36</td><td class="r ci">256–268</td></tr>
-<tr><td class="r">263</td><td>🇮🇹&nbsp;Naples</td><td class="r">28</td><td class="r ci">19–41</td><td class="r ci">232–275</td></tr>
-<tr><td class="r">264</td><td>🇮🇹&nbsp;Palermo</td><td class="r">28</td><td class="r ci">20–36</td><td class="r ci">258–270</td></tr>
-<tr><td class="r">265</td><td>🇮🇹&nbsp;Messina</td><td class="r">27</td><td class="r ci">16–44</td><td class="r ci">221–280</td></tr>
-<tr><td class="r">266</td><td>🇷🇴&nbsp;Arad</td><td class="r">26</td><td class="r ci">19–34</td><td class="r ci">260–273</td></tr>
-<tr><td class="r">267</td><td>🇷🇴&nbsp;Satu Mare</td><td class="r">26</td><td class="r ci">16–41</td><td class="r ci">233–284</td></tr>
-<tr><td class="r">268</td><td>🇬🇧&nbsp;Doncaster</td><td class="r">26</td><td class="r ci">18–33</td><td class="r ci">264–274</td></tr>
-<tr><td class="r">269</td><td>🇮🇹&nbsp;Taranto</td><td class="r">26</td><td class="r ci">19–31</td><td class="r ci">264–272</td></tr>
-<tr><td class="r">270</td><td>🇷🇴&nbsp;Oradea</td><td class="r">26</td><td class="r ci">16–42</td><td class="r ci">239–284</td></tr>
-<tr><td class="r">271</td><td>🇨🇾&nbsp;Nicosia</td><td class="r">25</td><td class="r ci">19–31</td><td class="r ci">267–272</td></tr>
-<tr><td class="r">272</td><td>🇷🇴&nbsp;Targu Mures</td><td class="r">23</td><td class="r ci">19–27</td><td class="r ci">261–279</td></tr>
-<tr><td class="r">273</td><td>🇮🇹&nbsp;Reggio Calabria</td><td class="r">23</td><td class="r ci">13–37</td><td class="r ci">245–286</td></tr>
-<tr><td class="r">274</td><td>🇧🇬&nbsp;Burgas</td><td class="r">22</td><td class="r ci">13–35</td><td class="r ci">258–286</td></tr>
-<tr><td class="r">275</td><td>🇷🇴&nbsp;Brasov</td><td class="r">22</td><td class="r ci">18–25</td><td class="r ci">264–281</td></tr>
-<tr><td class="r">276</td><td>🇬🇧&nbsp;Maidstone</td><td class="r">21</td><td class="r ci">14–30</td><td class="r ci">262–284</td></tr>
-<tr><td class="r">277</td><td>🇷🇴&nbsp;Sibiu</td><td class="r">21</td><td class="r ci">17–24</td><td class="r ci">273–279</td></tr>
-<tr><td class="r">278</td><td>🇬🇧&nbsp;Bournemouth</td><td class="r">20</td><td class="r ci">14–26</td><td class="r ci">271–281</td></tr>
-<tr><td class="r">279</td><td>🇮🇹&nbsp;Bari</td><td class="r">20</td><td class="r ci">13–26</td><td class="r ci">272–285</td></tr>
-<tr><td class="r">280</td><td>🇵🇹&nbsp;Braga</td><td class="r">19</td><td class="r ci">14–24</td><td class="r ci">274–283</td></tr>
-<tr><td class="r">281</td><td>🇷🇴&nbsp;Timisoara</td><td class="r">19</td><td class="r ci">14–24</td><td class="r ci">275–282</td></tr>
-<tr><td class="r">282</td><td>🇮🇹&nbsp;Catania</td><td class="r">18</td><td class="r ci">9–28</td><td class="r ci">266–290</td></tr>
-<tr><td class="r">283</td><td>🇷🇴&nbsp;Constanta</td><td class="r">17</td><td class="r ci">12–21</td><td class="r ci">280–286</td></tr>
-<tr><td class="r">284</td><td>🇬🇷&nbsp;Athens</td><td class="r">16</td><td class="r ci">12–20</td><td class="r ci">281–285</td></tr>
-<tr><td class="r">285</td><td>🇷🇴&nbsp;Baia Mare</td><td class="r">15</td><td class="r ci">10–20</td><td class="r ci">279–289</td></tr>
-<tr><td class="r">286</td><td>🇷🇴&nbsp;Bucharest</td><td class="r">15</td><td class="r ci">10–19</td><td class="r ci">277–289</td></tr>
-<tr><td class="r">287</td><td>🇨🇾&nbsp;Limassol</td><td class="r">14</td><td class="r ci">9–21</td><td class="r ci">279–290</td></tr>
-<tr><td class="r">288</td><td>🇭🇷&nbsp;Split</td><td class="r">12</td><td class="r ci">7–18</td><td class="r ci">278–294</td></tr>
-<tr><td class="r">289</td><td>🇷🇴&nbsp;Bacau</td><td class="r">12</td><td class="r ci">7–17</td><td class="r ci">282–289</td></tr>
-<tr><td class="r">290</td><td>🇷🇴&nbsp;Pitesti</td><td class="r">10</td><td class="r ci">5–14</td><td class="r ci">287–293</td></tr>
-<tr><td class="r">291</td><td>🇨🇾&nbsp;Strovolos</td><td class="r">9</td><td class="r ci">4–16</td><td class="r ci">285–294</td></tr>
-<tr><td class="r">292</td><td>🇷🇴&nbsp;Craiova</td><td class="r">7</td><td class="r ci">3–11</td><td class="r ci">290–294</td></tr>
-<tr><td class="r">293</td><td>🇷🇴&nbsp;Galati</td><td class="r">6</td><td class="r ci">3–10</td><td class="r ci">291–295</td></tr>
-<tr><td class="r">294</td><td>🇨🇾&nbsp;Paphos</td><td class="r">5</td><td class="r ci">2–10</td><td class="r ci">292–295</td></tr>
-<tr><td class="r">295</td><td>🇷🇴&nbsp;Botosani</td><td class="r">3</td><td class="r ci">0–6</td><td class="r ci">292–296</td></tr>
-<tr><td class="r">296</td><td>🇷🇴&nbsp;Buzau</td><td class="r">2</td><td class="r ci">0–5</td><td class="r ci">294–298</td></tr>
-<tr><td class="r">297</td><td>🇷🇴&nbsp;Ploiesti</td><td class="r">1</td><td class="r ci">0–5</td><td class="r ci">295–298</td></tr>
-<tr><td class="r">298</td><td>🇷🇴&nbsp;Braila</td><td class="r">1</td><td class="r ci">0–3</td><td class="r ci">297–299</td></tr>
-<tr><td class="r">299</td><td>🇷🇴&nbsp;Iasi</td><td class="r">0</td><td class="r ci">0–0</td><td class="r ci">299–300</td></tr>
-<tr><td class="r">300</td><td>🇨🇾&nbsp;Larnaca</td><td class="r">0</td><td class="r ci">0–2</td><td class="r ci">296–300</td></tr></tbody>
+<thead><tr><th>#</th><th>City</th><th>Country</th><th>Score</th><th>Score range</th><th>Likely rank range</th><th>Tier</th></tr></thead>
+<tbody><tr class="grp gt1"><td colspan="7">Tier 1 — lower assessed risk</td></tr>
+<tr><td class="r">1</td><td>🇸🇪&nbsp;Stockholm</td><td><a href="/pedalability-index/sweden/">Sweden</a></td><td class="r">98.9</td><td class="r ci">96.1–100.0</td><td class="r ci">1–8</td><td class="r">1</td></tr>
+<tr><td class="r">2</td><td>🇳🇱&nbsp;Amsterdam</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">97.9</td><td class="r ci">94.0–100.0</td><td class="r ci">2–15</td><td class="r">1</td></tr>
+<tr><td class="r">3</td><td>🇫🇮&nbsp;Helsinki</td><td><a href="/pedalability-index/finland/">Finland</a></td><td class="r">97.9</td><td class="r ci">95.3–100.0</td><td class="r ci">1–11</td><td class="r">1</td></tr>
+<tr><td class="r">4</td><td>🇳🇱&nbsp;The Hague</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">97.8</td><td class="r ci">94.5–100.0</td><td class="r ci">2–14</td><td class="r">1</td></tr>
+<tr><td class="r">5</td><td>🇧🇪&nbsp;Antwerp</td><td><a href="/pedalability-index/belgium/">Belgium</a></td><td class="r">97.7</td><td class="r ci">93.8–100.0</td><td class="r ci">3–15</td><td class="r">1</td></tr>
+<tr><td class="r">6</td><td>🇫🇮&nbsp;Vantaa</td><td><a href="/pedalability-index/finland/">Finland</a></td><td class="r">97.2</td><td class="r ci">94.5–100.0</td><td class="r ci">2–11</td><td class="r">1</td></tr>
+<tr><td class="r">7</td><td>🇳🇱&nbsp;Leiden</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">97.1</td><td class="r ci">94.0–100.0</td><td class="r ci">2–12</td><td class="r">1</td></tr>
+<tr><td class="r">8</td><td>🇳🇱&nbsp;Haarlem</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">96.6</td><td class="r ci">93.5–100.0</td><td class="r ci">1–14</td><td class="r">1</td></tr>
+<tr><td class="r">9</td><td>🇫🇮&nbsp;Espoo</td><td><a href="/pedalability-index/finland/">Finland</a></td><td class="r">95.5</td><td class="r ci">92.8–100.0</td><td class="r ci">3–16</td><td class="r">1</td></tr>
+<tr><td class="r">10</td><td>🇩🇰&nbsp;Copenhagen</td><td><a href="/pedalability-index/denmark/">Denmark</a></td><td class="r">95.0</td><td class="r ci">91.5–100.0</td><td class="r ci">4–22</td><td class="r">1</td></tr>
+<tr><td class="r">11</td><td>🇫🇮&nbsp;Tampere</td><td><a href="/pedalability-index/finland/">Finland</a></td><td class="r">94.1</td><td class="r ci">91.0–100.0</td><td class="r ci">4–18</td><td class="r">1</td></tr>
+<tr><td class="r">12</td><td>🇳🇱&nbsp;Eindhoven</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">93.8</td><td class="r ci">89.9–99.4</td><td class="r ci">10–26</td><td class="r">1</td></tr>
+<tr><td class="r">13</td><td>🇫🇷&nbsp;Paris</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">93.7</td><td class="r ci">90.4–100.0</td><td class="r ci">6–19</td><td class="r">1</td></tr>
+<tr><td class="r">14</td><td>🇳🇱&nbsp;Utrecht</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">93.5</td><td class="r ci">89.7–99.6</td><td class="r ci">10–24</td><td class="r">1</td></tr>
+<tr><td class="r">15</td><td>🇳🇱&nbsp;Rotterdam</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">93.2</td><td class="r ci">89.5–99.8</td><td class="r ci">9–23</td><td class="r">1</td></tr>
+<tr><td class="r">16</td><td>🇪🇸&nbsp;Barcelona</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">93.1</td><td class="r ci">89.9–99.9</td><td class="r ci">8–22</td><td class="r">1</td></tr>
+<tr><td class="r">17</td><td>🇧🇪&nbsp;Brussels</td><td><a href="/pedalability-index/belgium/">Belgium</a></td><td class="r">91.6</td><td class="r ci">86.4–100.0</td><td class="r ci">3–26</td><td class="r">1</td></tr>
+<tr><td class="r">18</td><td>🇳🇱&nbsp;Nijmegen</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">90.5</td><td class="r ci">86.3–96.3</td><td class="r ci">15–30</td><td class="r">1</td></tr>
+<tr><td class="r">19</td><td>🇪🇸&nbsp;San Sebastián</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">90.3</td><td class="r ci">86.6–94.4</td><td class="r ci">18–31</td><td class="r">1</td></tr>
+<tr><td class="r">20</td><td>🇫🇮&nbsp;Turku</td><td><a href="/pedalability-index/finland/">Finland</a></td><td class="r">89.6</td><td class="r ci">86.1–100.0</td><td class="r ci">6–26</td><td class="r">1</td></tr>
+<tr><td class="r">21</td><td>🇩🇪&nbsp;Hanover</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">89.0</td><td class="r ci">85.5–93.7</td><td class="r ci">19–32</td><td class="r">1</td></tr>
+<tr><td class="r">22</td><td>🇳🇱&nbsp;Arnhem</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">88.0</td><td class="r ci">83.8–94.5</td><td class="r ci">19–36</td><td class="r">1</td></tr>
+<tr><td class="r">23</td><td>🇩🇪&nbsp;Munich</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">88.0</td><td class="r ci">84.4–92.6</td><td class="r ci">21–36</td><td class="r">1</td></tr>
+<tr><td class="r">24</td><td>🇧🇪&nbsp;Ghent</td><td><a href="/pedalability-index/belgium/">Belgium</a></td><td class="r">86.7</td><td class="r ci">82.7–91.3</td><td class="r ci">23–41</td><td class="r">1</td></tr>
+<tr><td class="r">25</td><td>🇩🇪&nbsp;Bremen</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">86.6</td><td class="r ci">82.6–91.7</td><td class="r ci">20–41</td><td class="r">1</td></tr>
+<tr><td class="r">26</td><td>🇫🇷&nbsp;Lyon</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">85.7</td><td class="r ci">80.8–99.8</td><td class="r ci">13–38</td><td class="r">1</td></tr>
+<tr><td class="r">27</td><td>🇩🇪&nbsp;Braunschweig</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">85.2</td><td class="r ci">81.6–89.9</td><td class="r ci">25–42</td><td class="r">1</td></tr>
+<tr><td class="r">28</td><td>🇩🇪&nbsp;Lübeck</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">85.0</td><td class="r ci">80.6–91.8</td><td class="r ci">23–44</td><td class="r">1</td></tr>
+<tr><td class="r">29</td><td>🇳🇱&nbsp;Almere</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">84.6</td><td class="r ci">80.3–99.7</td><td class="r ci">14–43</td><td class="r">1</td></tr>
+<tr><td class="r">30</td><td>🇪🇸&nbsp;Bilbao</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">83.9</td><td class="r ci">77.2–99.8</td><td class="r ci">15–54</td><td class="r">1</td></tr>
+<tr><td class="r">31</td><td>🇫🇷&nbsp;Montpellier</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">83.6</td><td class="r ci">79.6–90.2</td><td class="r ci">27–46</td><td class="r">1</td></tr>
+<tr><td class="r">32</td><td>🇳🇱&nbsp;Groningen</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">83.5</td><td class="r ci">79.9–88.9</td><td class="r ci">28–43</td><td class="r">1</td></tr>
+<tr><td class="r">33</td><td>🇫🇷&nbsp;Toulouse</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">83.0</td><td class="r ci">79.2–88.0</td><td class="r ci">29–50</td><td class="r">1</td></tr>
+<tr><td class="r">34</td><td>🇪🇸&nbsp;Albacete</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">82.7</td><td class="r ci">79.1–87.5</td><td class="r ci">32–48</td><td class="r">1</td></tr>
+<tr><td class="r">35</td><td>🇫🇷&nbsp;Grenoble</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">82.7</td><td class="r ci">78.3–96.9</td><td class="r ci">23–48</td><td class="r">1</td></tr>
+<tr><td class="r">36</td><td>🇪🇸&nbsp;Salamanca</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">81.9</td><td class="r ci">77.7–91.2</td><td class="r ci">27–50</td><td class="r">1</td></tr>
+<tr><td class="r">37</td><td>🇩🇪&nbsp;Oldenburg</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">81.6</td><td class="r ci">77.9–86.3</td><td class="r ci">33–54</td><td class="r">1</td></tr>
+<tr><td class="r">38</td><td>🇫🇷&nbsp;Strasbourg</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">81.3</td><td class="r ci">73.7–99.7</td><td class="r ci">16–59</td><td class="r">1</td></tr>
+<tr><td class="r">39</td><td>🇳🇱&nbsp;Tilburg</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">81.0</td><td class="r ci">76.1–88.5</td><td class="r ci">32–53</td><td class="r">1</td></tr>
+<tr><td class="r">40</td><td>🇫🇷&nbsp;Nantes</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">80.6</td><td class="r ci">75.4–87.2</td><td class="r ci">29–61</td><td class="r">1</td></tr>
+<tr><td class="r">41</td><td>🇪🇸&nbsp;Las Rozas de Madrid</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">80.1</td><td class="r ci">76.6–84.2</td><td class="r ci">37–55</td><td class="r">1</td></tr>
+<tr><td class="r">42</td><td>🇪🇸&nbsp;Málaga</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">79.5</td><td class="r ci">75.4–85.1</td><td class="r ci">33–60</td><td class="r">1</td></tr>
+<tr><td class="r">43</td><td>🇸🇪&nbsp;Malmö</td><td><a href="/pedalability-index/sweden/">Sweden</a></td><td class="r">79.1</td><td class="r ci">72.4–99.7</td><td class="r ci">15–65</td><td class="r">1</td></tr>
+<tr><td class="r">44</td><td>🇩🇪&nbsp;Münster</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">79.1</td><td class="r ci">75.8–82.9</td><td class="r ci">41–59</td><td class="r">1</td></tr>
+<tr><td class="r">45</td><td>🇮🇹&nbsp;Bologna</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">78.8</td><td class="r ci">74.3–92.6</td><td class="r ci">28–58</td><td class="r">1</td></tr>
+<tr><td class="r">46</td><td>🇪🇸&nbsp;Seville</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">78.5</td><td class="r ci">72.2–89.9</td><td class="r ci">32–67</td><td class="r">1</td></tr>
+<tr><td class="r">47</td><td>🇪🇸&nbsp;Valencia</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">77.8</td><td class="r ci">69.2–99.6</td><td class="r ci">18–83</td><td class="r">1</td></tr>
+<tr><td class="r">48</td><td>🇩🇪&nbsp;Freiburg</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">77.7</td><td class="r ci">74.0–82.4</td><td class="r ci">42–66</td><td class="r">1</td></tr>
+<tr><td class="r">49</td><td>🇫🇷&nbsp;Tours</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">77.7</td><td class="r ci">72.0–85.1</td><td class="r ci">36–77</td><td class="r">1</td></tr>
+<tr><td class="r">50</td><td>🇪🇸&nbsp;Valladolid</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">77.3</td><td class="r ci">71.9–85.3</td><td class="r ci">42–69</td><td class="r">1</td></tr>
+<tr><td class="r">51</td><td>🇪🇸&nbsp;Sabadell</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">77.0</td><td class="r ci">71.3–97.3</td><td class="r ci">24–77</td><td class="r">1</td></tr>
+<tr><td class="r">52</td><td>🇪🇸&nbsp;Vitoria-Gasteiz</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">76.2</td><td class="r ci">72.0–83.1</td><td class="r ci">46–67</td><td class="r">1</td></tr>
+<tr><td class="r">53</td><td>🇩🇪&nbsp;Duisburg</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">76.0</td><td class="r ci">71.6–82.0</td><td class="r ci">43–72</td><td class="r">1</td></tr>
+<tr><td class="r">54</td><td>🇪🇸&nbsp;Pamplona</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">75.9</td><td class="r ci">71.0–82.8</td><td class="r ci">46–74</td><td class="r">1</td></tr>
+<tr><td class="r">55</td><td>🇪🇸&nbsp;Burgos</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">75.5</td><td class="r ci">70.3–82.6</td><td class="r ci">48–78</td><td class="r">1</td></tr>
+<tr><td class="r">56</td><td>🇪🇸&nbsp;Palma</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">75.3</td><td class="r ci">71.8–80.1</td><td class="r ci">51–67</td><td class="r">1</td></tr>
+<tr><td class="r">57</td><td>🇫🇷&nbsp;Lille</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">74.8</td><td class="r ci">71.3–79.2</td><td class="r ci">51–79</td><td class="r">1</td></tr>
+<tr><td class="r">58</td><td>🇩🇪&nbsp;Mannheim</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">74.6</td><td class="r ci">69.9–83.1</td><td class="r ci">45–84</td><td class="r">1</td></tr>
+<tr><td class="r">59</td><td>🇦🇹&nbsp;Vienna</td><td><a href="/pedalability-index/austria/">Austria</a></td><td class="r">74.6</td><td class="r ci">68.2–85.7</td><td class="r ci">42–88</td><td class="r">1</td></tr>
+<tr><td class="r">60</td><td>🇪🇸&nbsp;Zaragoza</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">73.7</td><td class="r ci">70.5–77.5</td><td class="r ci">60–75</td><td class="r">1</td></tr>
+<tr><td class="r">61</td><td>🇫🇮&nbsp;Oulu</td><td><a href="/pedalability-index/finland/">Finland</a></td><td class="r">73.2</td><td class="r ci">66.2–99.9</td><td class="r ci">12–86</td><td class="r">1</td></tr>
+<tr><td class="r">62</td><td>🇪🇸&nbsp;Córdoba</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">73.1</td><td class="r ci">68.8–78.7</td><td class="r ci">49–82</td><td class="r">1</td></tr>
+<tr><td class="r">63</td><td>🇫🇷&nbsp;Nancy</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">72.7</td><td class="r ci">64.6–83.8</td><td class="r ci">39–116</td><td class="r">1</td></tr>
+<tr><td class="r">64</td><td>🇩🇪&nbsp;Berlin</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">72.4</td><td class="r ci">67.5–78.7</td><td class="r ci">50–83</td><td class="r">1</td></tr>
+<tr><td class="r">65</td><td>🇪🇸&nbsp;Sant Cugat del Vallès</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">72.1</td><td class="r ci">67.3–78.5</td><td class="r ci">51–100</td><td class="r">1</td></tr>
+<tr><td class="r">66</td><td>🇩🇪&nbsp;Bonn</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">71.9</td><td class="r ci">66.6–79.5</td><td class="r ci">49–102</td><td class="r">1</td></tr>
+<tr><td class="r">67</td><td>🇩🇪&nbsp;Augsburg</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">71.8</td><td class="r ci">67.9–76.5</td><td class="r ci">58–82</td><td class="r">1</td></tr>
+<tr><td class="r">68</td><td>🇩🇪&nbsp;Magdeburg</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">71.8</td><td class="r ci">68.4–76.1</td><td class="r ci">64–84</td><td class="r">1</td></tr>
+<tr><td class="r">69</td><td>🇳🇴&nbsp;Trondheim</td><td><a href="/pedalability-index/norway/">Norway</a></td><td class="r">71.3</td><td class="r ci">64.8–80.0</td><td class="r ci">53–86</td><td class="r">1</td></tr>
+<tr><td class="r">70</td><td>🇳🇱&nbsp;Apeldoorn</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">71.2</td><td class="r ci">65.6–80.2</td><td class="r ci">55–100</td><td class="r">1</td></tr>
+<tr><td class="r">71</td><td>🇬🇧&nbsp;Milton Keynes</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">70.7</td><td class="r ci">63.2–99.9</td><td class="r ci">12–98</td><td class="r">1</td></tr>
+<tr><td class="r">72</td><td>🇩🇪&nbsp;Düsseldorf</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">70.7</td><td class="r ci">67.3–74.4</td><td class="r ci">66–96</td><td class="r">1</td></tr>
+<tr><td class="r">73</td><td>🇦🇹&nbsp;Graz</td><td><a href="/pedalability-index/austria/">Austria</a></td><td class="r">70.6</td><td class="r ci">66.6–77.1</td><td class="r ci">65–89</td><td class="r">1</td></tr>
+<tr><td class="r">74</td><td>🇳🇴&nbsp;Oslo</td><td><a href="/pedalability-index/norway/">Norway</a></td><td class="r">70.6</td><td class="r ci">62.5–80.9</td><td class="r ci">46–98</td><td class="r">1</td></tr>
+<tr><td class="r">75</td><td>🇳🇱&nbsp;Breda</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">70.6</td><td class="r ci">65.3–79.5</td><td class="r ci">59–101</td><td class="r">1</td></tr>
+<tr><td class="r">76</td><td>🇩🇰&nbsp;Odense</td><td><a href="/pedalability-index/denmark/">Denmark</a></td><td class="r">70.4</td><td class="r ci">64.6–86.2</td><td class="r ci">41–96</td><td class="r">1</td></tr>
+<tr><td class="r">77</td><td>🇸🇮&nbsp;Maribor</td><td><a href="/pedalability-index/slovenia/">Slovenia</a></td><td class="r">70.3</td><td class="r ci">63.8–78.0</td><td class="r ci">57–91</td><td class="r">1</td></tr>
+<tr><td class="r">78</td><td>🇩🇪&nbsp;Kiel</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">70.3</td><td class="r ci">67.1–73.7</td><td class="r ci">69–93</td><td class="r">1</td></tr>
+<tr><td class="r">79</td><td>🇪🇸&nbsp;Gijón</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">69.4</td><td class="r ci">63.2–77.7</td><td class="r ci">55–99</td><td class="r">1</td></tr>
+<tr><td class="r">80</td><td>🇪🇸&nbsp;Elche</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">69.4</td><td class="r ci">65.6–73.6</td><td class="r ci">74–90</td><td class="r">1</td></tr>
+<tr><td class="r">81</td><td>🇭🇺&nbsp;Szeged</td><td><a href="/pedalability-index/hungary/">Hungary</a></td><td class="r">69.1</td><td class="r ci">65.1–73.7</td><td class="r ci">73–93</td><td class="r">1</td></tr>
+<tr><td class="r">82</td><td>🇪🇸&nbsp;Alicante</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">68.4</td><td class="r ci">64.9–72.9</td><td class="r ci">78–96</td><td class="r">1</td></tr>
+<tr><td class="r">83</td><td>🇫🇷&nbsp;Rennes</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">68.3</td><td class="r ci">63.4–74.8</td><td class="r ci">65–115</td><td class="r">1</td></tr>
+<tr><td class="r">84</td><td>🇮🇹&nbsp;Reggio Emilia</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">68.2</td><td class="r ci">59.3–99.9</td><td class="r ci">13–129</td><td class="r">1</td></tr>
+<tr><td class="r">85</td><td>🇩🇰&nbsp;Aarhus</td><td><a href="/pedalability-index/denmark/">Denmark</a></td><td class="r">68.1</td><td class="r ci">61.4–81.3</td><td class="r ci">52–106</td><td class="r">1</td></tr>
+<tr><td class="r">86</td><td>🇩🇪&nbsp;Oberhausen</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">67.9</td><td class="r ci">61.9–76.9</td><td class="r ci">57–125</td><td class="r">1</td></tr>
+<tr><td class="r">87</td><td>🇪🇸&nbsp;Murcia</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">67.9</td><td class="r ci">62.7–74.0</td><td class="r ci">69–104</td><td class="r">1</td></tr>
+<tr><td class="r">88</td><td>🇩🇪&nbsp;Cologne</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">67.1</td><td class="r ci">63.8–71.0</td><td class="r ci">74–118</td><td class="r">1</td></tr>
+<tr><td class="r">89</td><td>🇪🇸&nbsp;A Coruña</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">67.1</td><td class="r ci">63.4–71.6</td><td class="r ci">72–116</td><td class="r">1</td></tr>
+<tr><td class="r">90</td><td>🇪🇸&nbsp;Santander</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">66.7</td><td class="r ci">62.9–71.1</td><td class="r ci">87–102</td><td class="r">1</td></tr>
+<tr><td class="r">91</td><td>🇵🇱&nbsp;Białystok</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">66.5</td><td class="r ci">61.3–75.7</td><td class="r ci">70–118</td><td class="r">1</td></tr>
+<tr><td class="r">92</td><td>🇱🇺&nbsp;Luxembourg</td><td><a href="/pedalability-index/luxembourg/">Luxembourg</a></td><td class="r">65.7</td><td class="r ci">62.4–69.7</td><td class="r ci">83–118</td><td class="r">1</td></tr>
+<tr><td class="r">93</td><td>🇵🇱&nbsp;Wrocław</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">65.5</td><td class="r ci">61.2–71.8</td><td class="r ci">84–117</td><td class="r">1</td></tr>
+<tr><td class="r">94</td><td>🇩🇪&nbsp;Halle (Saale)</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">65.4</td><td class="r ci">59.8–72.2</td><td class="r ci">79–120</td><td class="r">1</td></tr>
+<tr><td class="r">95</td><td>🇩🇪&nbsp;Karlsruhe</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">65.1</td><td class="r ci">61.5–69.2</td><td class="r ci">86–133</td><td class="r">1</td></tr>
+<tr><td class="r">96</td><td>🇸🇮&nbsp;Ljubljana</td><td><a href="/pedalability-index/slovenia/">Slovenia</a></td><td class="r">64.2</td><td class="r ci">58.6–70.5</td><td class="r ci">88–121</td><td class="r">1</td></tr>
+<tr><td class="r">97</td><td>🇩🇪&nbsp;Ludwigshafen am Rhein</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">64.0</td><td class="r ci">60.0–69.4</td><td class="r ci">78–144</td><td class="r">1</td></tr>
+<tr><td class="r">98</td><td>🇫🇷&nbsp;Orléans*</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">63.5</td><td class="r ci">59.6–67.9</td><td class="r ci">98–120</td><td class="r">1</td></tr>
+<tr><td class="r">99</td><td>🇪🇸&nbsp;Castellón de la Plana*</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">63.1</td><td class="r ci">57.3–71.9</td><td class="r ci">81–153</td><td class="r">1</td></tr>
+<tr><td class="r">100</td><td>🇸🇪&nbsp;Uppsala</td><td><a href="/pedalability-index/sweden/">Sweden</a></td><td class="r">63.0</td><td class="r ci">54.6–98.3</td><td class="r ci">23–161</td><td class="r">1</td></tr>
+<tr class="grp gt2"><td colspan="7">Tier 2 — middle</td></tr>
+<tr><td class="r">101</td><td>🇳🇴&nbsp;Bergen*</td><td><a href="/pedalability-index/norway/">Norway</a></td><td class="r">62.8</td><td class="r ci">54.9–72.1</td><td class="r ci">80–139</td><td class="r">2</td></tr>
+<tr><td class="r">102</td><td>🇩🇪&nbsp;Leverkusen*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">62.5</td><td class="r ci">59.4–66.0</td><td class="r ci">100–143</td><td class="r">2</td></tr>
+<tr><td class="r">103</td><td>🇩🇪&nbsp;Krefeld*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">62.4</td><td class="r ci">59.3–65.7</td><td class="r ci">96–148</td><td class="r">2</td></tr>
+<tr><td class="r">104</td><td>🇪🇸&nbsp;Almería*</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">62.4</td><td class="r ci">57.7–67.3</td><td class="r ci">103–129</td><td class="r">2</td></tr>
+<tr><td class="r">105</td><td>🇩🇪&nbsp;Gelsenkirchen*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">62.3</td><td class="r ci">58.7–66.2</td><td class="r ci">99–149</td><td class="r">2</td></tr>
+<tr><td class="r">106</td><td>🇩🇪&nbsp;Hamburg*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">62.2</td><td class="r ci">56.0–70.8</td><td class="r ci">84–154</td><td class="r">2</td></tr>
+<tr><td class="r">107</td><td>🇪🇸&nbsp;Vigo*</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">62.2</td><td class="r ci">55.9–71.2</td><td class="r ci">81–161</td><td class="r">2</td></tr>
+<tr><td class="r">108</td><td>🇵🇱&nbsp;Gdańsk*</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">61.8</td><td class="r ci">57.0–66.9</td><td class="r ci">106–132</td><td class="r">2</td></tr>
+<tr><td class="r">109</td><td>🇪🇸&nbsp;Terrassa</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">61.8</td><td class="r ci">58.4–65.6</td><td class="r ci">94–152</td><td class="r">2</td></tr>
+<tr><td class="r">110</td><td>🇳🇴&nbsp;Stavanger*</td><td><a href="/pedalability-index/norway/">Norway</a></td><td class="r">61.7</td><td class="r ci">53.8–70.9</td><td class="r ci">91–140</td><td class="r">2</td></tr>
+<tr><td class="r">111</td><td>🇩🇪&nbsp;Hamm</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">61.4</td><td class="r ci">58.3–64.7</td><td class="r ci">99–154</td><td class="r">2</td></tr>
+<tr><td class="r">112</td><td>🇩🇪&nbsp;Mainz</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">61.2</td><td class="r ci">57.7–65.0</td><td class="r ci">103–159</td><td class="r">2</td></tr>
+<tr><td class="r">113</td><td>🇩🇪&nbsp;Nuremberg</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">61.2</td><td class="r ci">57.8–64.8</td><td class="r ci">111–145</td><td class="r">2</td></tr>
+<tr><td class="r">114</td><td>🇩🇪&nbsp;Rostock*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">60.9</td><td class="r ci">54.1–70.3</td><td class="r ci">89–156</td><td class="r">2</td></tr>
+<tr><td class="r">115</td><td>🇫🇷&nbsp;Angers*</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">60.9</td><td class="r ci">53.8–71.9</td><td class="r ci">79–170</td><td class="r">2</td></tr>
+<tr><td class="r">116</td><td>🇭🇺&nbsp;Debrecen*</td><td><a href="/pedalability-index/hungary/">Hungary</a></td><td class="r">60.9</td><td class="r ci">55.0–70.5</td><td class="r ci">93–143</td><td class="r">2</td></tr>
+<tr><td class="r">117</td><td>🇵🇱&nbsp;Toruń</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">60.7</td><td class="r ci">56.2–66.9</td><td class="r ci">102–156</td><td class="r">2</td></tr>
+<tr><td class="r">118</td><td>🇵🇱&nbsp;Łódź</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">60.6</td><td class="r ci">54.9–67.2</td><td class="r ci">109–135</td><td class="r">2</td></tr>
+<tr><td class="r">119</td><td>🇳🇱&nbsp;Alkmaar*</td><td><a href="/pedalability-index/netherlands/">Netherlands</a></td><td class="r">60.5</td><td class="r ci">54.4–68.8</td><td class="r ci">94–169</td><td class="r">2</td></tr>
+<tr><td class="r">120</td><td>🇩🇪&nbsp;Leipzig*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">60.1</td><td class="r ci">52.3–69.3</td><td class="r ci">94–153</td><td class="r">2</td></tr>
+<tr><td class="r">121</td><td>🇫🇷&nbsp;Clermont-Ferrand</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">60.1</td><td class="r ci">57.0–63.4</td><td class="r ci">110–155</td><td class="r">2</td></tr>
+<tr><td class="r">122</td><td>🇪🇸&nbsp;Jerez de la Frontera</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">60.0</td><td class="r ci">54.4–65.9</td><td class="r ci">115–140</td><td class="r">2</td></tr>
+<tr><td class="r">123</td><td>🇪🇪&nbsp;Tallinn*</td><td><a href="/pedalability-index/estonia/">Estonia</a></td><td class="r">59.8</td><td class="r ci">51.3–76.1</td><td class="r ci">69–157</td><td class="r">2</td></tr>
+<tr><td class="r">124</td><td>🇪🇸&nbsp;Granada</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">59.8</td><td class="r ci">54.6–66.4</td><td class="r ci">103–175</td><td class="r">2</td></tr>
+<tr><td class="r">125</td><td>🇭🇺&nbsp;Budapest</td><td><a href="/pedalability-index/hungary/">Hungary</a></td><td class="r">59.6</td><td class="r ci">53.7–68.9</td><td class="r ci">103–151</td><td class="r">2</td></tr>
+<tr><td class="r">126</td><td>🇩🇪&nbsp;Potsdam</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">59.3</td><td class="r ci">53.3–67.5</td><td class="r ci">99–177</td><td class="r">2</td></tr>
+<tr><td class="r">127</td><td>🇦🇹&nbsp;Linz</td><td><a href="/pedalability-index/austria/">Austria</a></td><td class="r">59.0</td><td class="r ci">53.1–68.2</td><td class="r ci">101–175</td><td class="r">2</td></tr>
+<tr><td class="r">128</td><td>🇫🇷&nbsp;Bordeaux</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">58.8</td><td class="r ci">53.9–64.6</td><td class="r ci">114–170</td><td class="r">2</td></tr>
+<tr><td class="r">129</td><td>🇨🇭&nbsp;Bern*</td><td><a href="/pedalability-index/switzerland/">Switzerland</a></td><td class="r">58.8</td><td class="r ci">49.9–72.8</td><td class="r ci">75–198</td><td class="r">2</td></tr>
+<tr><td class="r">130</td><td>🇩🇪&nbsp;Aachen</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">58.7</td><td class="r ci">53.0–66.4</td><td class="r ci">103–182</td><td class="r">2</td></tr>
+<tr><td class="r">131</td><td>🇵🇱&nbsp;Warsaw*</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">58.7</td><td class="r ci">51.8–72.3</td><td class="r ci">83–172</td><td class="r">2</td></tr>
+<tr><td class="r">132</td><td>🇧🇪&nbsp;Liège</td><td><a href="/pedalability-index/belgium/">Belgium</a></td><td class="r">58.6</td><td class="r ci">51.9–70.8</td><td class="r ci">91–176</td><td class="r">2</td></tr>
+<tr><td class="r">133</td><td>🇨🇭&nbsp;Geneva</td><td><a href="/pedalability-index/switzerland/">Switzerland</a></td><td class="r">58.5</td><td class="r ci">52.6–65.8</td><td class="r ci">108–166</td><td class="r">2</td></tr>
+<tr><td class="r">134</td><td>🇮🇹&nbsp;Venice*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">58.5</td><td class="r ci">50.6–77.2</td><td class="r ci">66–174</td><td class="r">2</td></tr>
+<tr><td class="r">135</td><td>🇬🇧&nbsp;Bedford*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">58.4</td><td class="r ci">47.1–71.3</td><td class="r ci">90–175</td><td class="r">2</td></tr>
+<tr><td class="r">136</td><td>🇩🇪&nbsp;Mönchengladbach</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">58.3</td><td class="r ci">55.2–61.5</td><td class="r ci">114–175</td><td class="r">2</td></tr>
+<tr><td class="r">137</td><td>🇵🇱&nbsp;Gdynia</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">58.2</td><td class="r ci">54.3–62.3</td><td class="r ci">130–160</td><td class="r">2</td></tr>
+<tr><td class="r">138</td><td>🇬🇧&nbsp;Edinburgh*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">58.2</td><td class="r ci">50.0–71.6</td><td class="r ci">88–163</td><td class="r">2</td></tr>
+<tr><td class="r">139</td><td>🇪🇸&nbsp;Madrid</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">58.2</td><td class="r ci">52.2–67.8</td><td class="r ci">110–161</td><td class="r">2</td></tr>
+<tr><td class="r">140</td><td>🇮🇸&nbsp;Reykjavik</td><td><a href="/pedalability-index/iceland/">Iceland</a></td><td class="r">57.8</td><td class="r ci">53.2–63.5</td><td class="r ci">115–177</td><td class="r">2</td></tr>
+<tr><td class="r">141</td><td>🇩🇪&nbsp;Mülheim an der Ruhr</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">57.7</td><td class="r ci">53.7–62.2</td><td class="r ci">126–177</td><td class="r">2</td></tr>
+<tr><td class="r">142</td><td>🇩🇪&nbsp;Frankfurt</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">57.6</td><td class="r ci">54.7–60.7</td><td class="r ci">123–173</td><td class="r">2</td></tr>
+<tr><td class="r">143</td><td>🇲🇹&nbsp;Valletta*</td><td><a href="/pedalability-index/malta/">Malta</a></td><td class="r">57.4</td><td class="r ci">47.4–72.3</td><td class="r ci">75–210</td><td class="r">2</td></tr>
+<tr><td class="r">144</td><td>🇬🇧&nbsp;Peterborough*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">57.2</td><td class="r ci">48.9–71.7</td><td class="r ci">85–174</td><td class="r">2</td></tr>
+<tr><td class="r">145</td><td>🇩🇰&nbsp;Aalborg</td><td><a href="/pedalability-index/denmark/">Denmark</a></td><td class="r">57.0</td><td class="r ci">48.6–69.9</td><td class="r ci">98–171</td><td class="r">2</td></tr>
+<tr><td class="r">146</td><td>🇬🇧&nbsp;Manchester</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">57.0</td><td class="r ci">50.3–66.7</td><td class="r ci">117–166</td><td class="r">2</td></tr>
+<tr><td class="r">147</td><td>🇬🇧&nbsp;York</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">56.9</td><td class="r ci">47.9–67.4</td><td class="r ci">112–171</td><td class="r">2</td></tr>
+<tr><td class="r">148</td><td>🇪🇸&nbsp;Oviedo*</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">56.8</td><td class="r ci">47.2–72.8</td><td class="r ci">76–207</td><td class="r">2</td></tr>
+<tr><td class="r">149</td><td>🇵🇱&nbsp;Poznań</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">56.5</td><td class="r ci">52.6–61.6</td><td class="r ci">130–177</td><td class="r">2</td></tr>
+<tr><td class="r">150</td><td>🇮🇹&nbsp;Florence</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">56.4</td><td class="r ci">49.4–67.2</td><td class="r ci">114–172</td><td class="r">2</td></tr>
+<tr><td class="r">151</td><td>🇵🇱&nbsp;Lublin</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">55.9</td><td class="r ci">48.7–66.5</td><td class="r ci">119–175</td><td class="r">2</td></tr>
+<tr><td class="r">152</td><td>🇬🇧&nbsp;Bristol</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">55.7</td><td class="r ci">46.1–65.7</td><td class="r ci">117–181</td><td class="r">2</td></tr>
+<tr><td class="r">153</td><td>🇸🇪&nbsp;Gothenburg</td><td><a href="/pedalability-index/sweden/">Sweden</a></td><td class="r">55.5</td><td class="r ci">49.6–64.8</td><td class="r ci">125–189</td><td class="r">2</td></tr>
+<tr><td class="r">154</td><td>🇫🇷&nbsp;Rouen</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">55.2</td><td class="r ci">49.2–61.6</td><td class="r ci">110–212</td><td class="r">2</td></tr>
+<tr><td class="r">155</td><td>🇩🇪&nbsp;Dortmund</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">55.1</td><td class="r ci">48.4–63.1</td><td class="r ci">124–186</td><td class="r">2</td></tr>
+<tr><td class="r">156</td><td>🇵🇱&nbsp;Kraków</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">54.9</td><td class="r ci">48.0–61.8</td><td class="r ci">140–173</td><td class="r">2</td></tr>
+<tr><td class="r">157</td><td>🇬🇧&nbsp;Brighton and Hove</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">54.8</td><td class="r ci">48.0–61.8</td><td class="r ci">136–179</td><td class="r">2</td></tr>
+<tr><td class="r">158</td><td>🇫🇷&nbsp;Mulhouse</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">54.6</td><td class="r ci">50.2–59.5</td><td class="r ci">144–191</td><td class="r">2</td></tr>
+<tr><td class="r">159</td><td>🇮🇪&nbsp;Dublin</td><td><a href="/pedalability-index/ireland/">Ireland</a></td><td class="r">54.4</td><td class="r ci">46.8–63.3</td><td class="r ci">124–187</td><td class="r">2</td></tr>
+<tr><td class="r">160</td><td>🇮🇹&nbsp;Modena*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">54.3</td><td class="r ci">43.2–73.5</td><td class="r ci">75–219</td><td class="r">2</td></tr>
+<tr><td class="r">161</td><td>🇩🇪&nbsp;Bielefeld</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">54.1</td><td class="r ci">47.9–61.5</td><td class="r ci">135–191</td><td class="r">2</td></tr>
+<tr><td class="r">162</td><td>🇬🇧&nbsp;Nottingham</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">54.0</td><td class="r ci">50.1–58.5</td><td class="r ci">150–187</td><td class="r">2</td></tr>
+<tr><td class="r">163</td><td>🇩🇪&nbsp;Stuttgart</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">53.8</td><td class="r ci">48.4–60.5</td><td class="r ci">134–208</td><td class="r">2</td></tr>
+<tr><td class="r">164</td><td>🇩🇪&nbsp;Darmstadt</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">53.4</td><td class="r ci">47.4–59.6</td><td class="r ci">129–217</td><td class="r">2</td></tr>
+<tr><td class="r">165</td><td>🇸🇰&nbsp;Bratislava</td><td><a href="/pedalability-index/slovakia/">Slovakia</a></td><td class="r">53.3</td><td class="r ci">47.0–59.6</td><td class="r ci">160–180</td><td class="r">2</td></tr>
+<tr><td class="r">166</td><td>🇵🇱&nbsp;Rzeszów</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">53.2</td><td class="r ci">47.9–59.5</td><td class="r ci">158–183</td><td class="r">2</td></tr>
+<tr><td class="r">167</td><td>🇸🇪&nbsp;Linköping</td><td><a href="/pedalability-index/sweden/">Sweden</a></td><td class="r">52.9</td><td class="r ci">49.2–56.9</td><td class="r ci">138–208</td><td class="r">2</td></tr>
+<tr><td class="r">168</td><td>🇬🇧&nbsp;Swindon</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">52.4</td><td class="r ci">43.9–68.9</td><td class="r ci">104–199</td><td class="r">2</td></tr>
+<tr><td class="r">169</td><td>🇩🇪&nbsp;Kassel</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">52.3</td><td class="r ci">44.8–61.5</td><td class="r ci">126–223</td><td class="r">2</td></tr>
+<tr><td class="r">170</td><td>🇨🇭&nbsp;Zurich</td><td><a href="/pedalability-index/switzerland/">Switzerland</a></td><td class="r">52.3</td><td class="r ci">46.5–59.4</td><td class="r ci">143–210</td><td class="r">2</td></tr>
+<tr><td class="r">171</td><td>🇩🇪&nbsp;Dresden</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">52.2</td><td class="r ci">45.1–61.5</td><td class="r ci">132–207</td><td class="r">2</td></tr>
+<tr><td class="r">172</td><td>🇫🇷&nbsp;Reims</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">52.2</td><td class="r ci">47.8–56.9</td><td class="r ci">157–202</td><td class="r">2</td></tr>
+<tr><td class="r">173</td><td>🇫🇷&nbsp;Metz</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">52.0</td><td class="r ci">47.2–57.3</td><td class="r ci">154–207</td><td class="r">2</td></tr>
+<tr><td class="r">174</td><td>🇵🇱&nbsp;Bydgoszcz</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">51.9</td><td class="r ci">46.3–60.2</td><td class="r ci">154–197</td><td class="r">2</td></tr>
+<tr><td class="r">175</td><td>🇮🇹&nbsp;Bergamo</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">51.9</td><td class="r ci">43.4–62.9</td><td class="r ci">140–191</td><td class="r">2</td></tr>
+<tr><td class="r">176</td><td>🇨🇿&nbsp;Plzeň*</td><td><a href="/pedalability-index/czechia/">Czechia</a></td><td class="r">51.9</td><td class="r ci">42.9–68.1</td><td class="r ci">109–199</td><td class="r">2</td></tr>
+<tr><td class="r">177</td><td>🇫🇷&nbsp;Toulon</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">51.8</td><td class="r ci">44.6–60.8</td><td class="r ci">139–205</td><td class="r">2</td></tr>
+<tr><td class="r">178</td><td>🇮🇹&nbsp;Turin*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">51.8</td><td class="r ci">40.7–88.4</td><td class="r ci">39–223</td><td class="r">2</td></tr>
+<tr><td class="r">179</td><td>🇬🇧&nbsp;Portsmouth</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">51.6</td><td class="r ci">45.8–58.2</td><td class="r ci">168–193</td><td class="r">2</td></tr>
+<tr><td class="r">180</td><td>🇮🇹&nbsp;Parma*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">51.6</td><td class="r ci">41.9–72.7</td><td class="r ci">81–218</td><td class="r">2</td></tr>
+<tr><td class="r">181</td><td>🇩🇪&nbsp;Essen</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">51.3</td><td class="r ci">45.7–57.4</td><td class="r ci">161–204</td><td class="r">2</td></tr>
+<tr><td class="r">182</td><td>🇱🇻&nbsp;Riga</td><td><a href="/pedalability-index/latvia/">Latvia</a></td><td class="r">51.2</td><td class="r ci">43.3–59.5</td><td class="r ci">162–192</td><td class="r">2</td></tr>
+<tr><td class="r">183</td><td>🇬🇧&nbsp;Telford</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">50.8</td><td class="r ci">41.8–65.2</td><td class="r ci">128–200</td><td class="r">2</td></tr>
+<tr><td class="r">184</td><td>🇬🇧&nbsp;Newcastle upon Tyne</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">50.4</td><td class="r ci">41.9–61.0</td><td class="r ci">153–197</td><td class="r">2</td></tr>
+<tr><td class="r">185</td><td>🇩🇪&nbsp;Bochum</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">50.1</td><td class="r ci">42.6–60.2</td><td class="r ci">141–217</td><td class="r">2</td></tr>
+<tr><td class="r">186</td><td>🇵🇱&nbsp;Szczecin</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">50.1</td><td class="r ci">45.0–56.9</td><td class="r ci">171–207</td><td class="r">2</td></tr>
+<tr><td class="r">187</td><td>🇵🇱&nbsp;Kielce</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">50.0</td><td class="r ci">44.7–55.7</td><td class="r ci">180–203</td><td class="r">2</td></tr>
+<tr><td class="r">188</td><td>🇨🇭&nbsp;Basel</td><td><a href="/pedalability-index/switzerland/">Switzerland</a></td><td class="r">49.9</td><td class="r ci">46.1–53.9</td><td class="r ci">149–223</td><td class="r">2</td></tr>
+<tr><td class="r">189</td><td>🇫🇷&nbsp;Le Havre</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">49.7</td><td class="r ci">41.9–57.3</td><td class="r ci">173–201</td><td class="r">2</td></tr>
+<tr><td class="r">190</td><td>🇬🇧&nbsp;Leeds*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">49.2</td><td class="r ci">40.9–64.2</td><td class="r ci">132–213</td><td class="r">2</td></tr>
+<tr><td class="r">191</td><td>🇬🇧&nbsp;Birmingham*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">49.1</td><td class="r ci">38.8–67.7</td><td class="r ci">111–213</td><td class="r">2</td></tr>
+<tr><td class="r">192</td><td>🇫🇷&nbsp;Saint-Étienne*</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">49.0</td><td class="r ci">41.9–58.4</td><td class="r ci">150–228</td><td class="r">2</td></tr>
+<tr><td class="r">193</td><td>🇬🇧&nbsp;Swansea*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">48.7</td><td class="r ci">38.4–65.2</td><td class="r ci">127–213</td><td class="r">2</td></tr>
+<tr><td class="r">194</td><td>🇪🇸&nbsp;Cartagena*</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">48.5</td><td class="r ci">42.2–56.2</td><td class="r ci">166–220</td><td class="r">2</td></tr>
+<tr><td class="r">195</td><td>🇮🇹&nbsp;Verona*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">48.4</td><td class="r ci">40.2–63.0</td><td class="r ci">139–214</td><td class="r">2</td></tr>
+<tr><td class="r">196</td><td>🇮🇹&nbsp;Pescara*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">48.4</td><td class="r ci">40.5–60.5</td><td class="r ci">155–209</td><td class="r">2</td></tr>
+<tr><td class="r">197</td><td>🇭🇷&nbsp;Zagreb*</td><td><a href="/pedalability-index/croatia/">Croatia</a></td><td class="r">48.4</td><td class="r ci">39.3–57.5</td><td class="r ci">172–212</td><td class="r">2</td></tr>
+<tr><td class="r">198</td><td>🇩🇪&nbsp;Hagen*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">48.2</td><td class="r ci">40.4–59.2</td><td class="r ci">146–235</td><td class="r">2</td></tr>
+<tr><td class="r">199</td><td>🇬🇧&nbsp;London*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">48.2</td><td class="r ci">39.9–56.7</td><td class="r ci">181–207</td><td class="r">2</td></tr>
+<tr><td class="r">200</td><td>🇨🇭&nbsp;Lausanne*</td><td><a href="/pedalability-index/switzerland/">Switzerland</a></td><td class="r">47.9</td><td class="r ci">38.8–61.6</td><td class="r ci">130–239</td><td class="r">2</td></tr>
+<tr class="grp gt3"><td colspan="7">Tier 3 — higher assessed risk</td></tr>
+<tr><td class="r">201</td><td>🇪🇸&nbsp;Alcalá de Henares*</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">47.9</td><td class="r ci">42.2–54.7</td><td class="r ci">167–230</td><td class="r">3</td></tr>
+<tr><td class="r">202</td><td>🇨🇿&nbsp;Prague*</td><td><a href="/pedalability-index/czechia/">Czechia</a></td><td class="r">47.5</td><td class="r ci">39.7–55.0</td><td class="r ci">188–212</td><td class="r">3</td></tr>
+<tr><td class="r">203</td><td>🇬🇧&nbsp;Southampton*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">47.3</td><td class="r ci">40.1–54.3</td><td class="r ci">194–211</td><td class="r">3</td></tr>
+<tr><td class="r">204</td><td>🇱🇹&nbsp;Vilnius*</td><td><a href="/pedalability-index/lithuania/">Lithuania</a></td><td class="r">46.9</td><td class="r ci">39.6–54.0</td><td class="r ci">187–217</td><td class="r">3</td></tr>
+<tr><td class="r">205</td><td>🇩🇪&nbsp;Saarbrücken*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">46.5</td><td class="r ci">37.0–60.1</td><td class="r ci">139–244</td><td class="r">3</td></tr>
+<tr><td class="r">206</td><td>🇬🇧&nbsp;Plymouth*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">46.1</td><td class="r ci">36.8–56.6</td><td class="r ci">182–219</td><td class="r">3</td></tr>
+<tr><td class="r">207</td><td>🇬🇧&nbsp;Wolverhampton*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">46.1</td><td class="r ci">37.2–62.1</td><td class="r ci">146–225</td><td class="r">3</td></tr>
+<tr><td class="r">208</td><td>🇩🇪&nbsp;Wuppertal*</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">45.9</td><td class="r ci">39.5–53.2</td><td class="r ci">182–233</td><td class="r">3</td></tr>
+<tr><td class="r">209</td><td>🇬🇧&nbsp;Derby*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">45.8</td><td class="r ci">37.0–59.5</td><td class="r ci">161–221</td><td class="r">3</td></tr>
+<tr><td class="r">210</td><td>🇬🇧&nbsp;Glasgow*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">45.8</td><td class="r ci">36.7–62.9</td><td class="r ci">141–227</td><td class="r">3</td></tr>
+<tr><td class="r">211</td><td>🇮🇹&nbsp;Brescia*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">45.5</td><td class="r ci">35.8–65.6</td><td class="r ci">123–237</td><td class="r">3</td></tr>
+<tr><td class="r">212</td><td>🇫🇷&nbsp;Nice</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">45.4</td><td class="r ci">38.9–52.9</td><td class="r ci">197–219</td><td class="r">3</td></tr>
+<tr><td class="r">213</td><td>🇬🇧&nbsp;Sunderland*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">44.6</td><td class="r ci">34.2–59.2</td><td class="r ci">164–230</td><td class="r">3</td></tr>
+<tr><td class="r">214</td><td>🇬🇧&nbsp;Sheffield*</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">44.6</td><td class="r ci">35.7–53.2</td><td class="r ci">198–225</td><td class="r">3</td></tr>
+<tr><td class="r">215</td><td>🇬🇧&nbsp;Warrington</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">44.2</td><td class="r ci">37.6–54.3</td><td class="r ci">186–235</td><td class="r">3</td></tr>
+<tr><td class="r">216</td><td>🇵🇱&nbsp;Katowice</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">43.9</td><td class="r ci">35.8–51.5</td><td class="r ci">205–225</td><td class="r">3</td></tr>
+<tr><td class="r">217</td><td>🇵🇱&nbsp;Częstochowa</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">43.8</td><td class="r ci">35.8–55.4</td><td class="r ci">170–247</td><td class="r">3</td></tr>
+<tr><td class="r">218</td><td>🇩🇪&nbsp;Erfurt</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">43.5</td><td class="r ci">38.1–48.6</td><td class="r ci">205–230</td><td class="r">3</td></tr>
+<tr><td class="r">219</td><td>🇬🇧&nbsp;Leicester</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">43.0</td><td class="r ci">35.4–55.2</td><td class="r ci">186–236</td><td class="r">3</td></tr>
+<tr><td class="r">220</td><td>🇩🇪&nbsp;Chemnitz</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">42.4</td><td class="r ci">34.7–50.7</td><td class="r ci">199–239</td><td class="r">3</td></tr>
+<tr><td class="r">221</td><td>🇵🇱&nbsp;Radom</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">42.3</td><td class="r ci">36.5–50.5</td><td class="r ci">202–237</td><td class="r">3</td></tr>
+<tr><td class="r">222</td><td>🇫🇷&nbsp;Marseille</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">42.3</td><td class="r ci">34.5–49.8</td><td class="r ci">207–233</td><td class="r">3</td></tr>
+<tr><td class="r">223</td><td>🇮🇹&nbsp;Prato*</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">42.2</td><td class="r ci">32.4–61.3</td><td class="r ci">147–250</td><td class="r">3</td></tr>
+<tr><td class="r">224</td><td>🇵🇱&nbsp;Gliwice</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">42.0</td><td class="r ci">36.6–47.8</td><td class="r ci">203–242</td><td class="r">3</td></tr>
+<tr><td class="r">225</td><td>🇬🇧&nbsp;Basingstoke</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">41.9</td><td class="r ci">36.3–48.2</td><td class="r ci">215–232</td><td class="r">3</td></tr>
+<tr><td class="r">226</td><td>🇵🇱&nbsp;Sosnowiec</td><td><a href="/pedalability-index/poland/">Poland</a></td><td class="r">41.5</td><td class="r ci">35.2–47.6</td><td class="r ci">219–232</td><td class="r">3</td></tr>
+<tr><td class="r">227</td><td>🇮🇹&nbsp;Genoa</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">40.1</td><td class="r ci">31.6–50.8</td><td class="r ci">196–252</td><td class="r">3</td></tr>
+<tr><td class="r">228</td><td>🇪🇸&nbsp;Fuenlabrada</td><td><a href="/pedalability-index/spain/">Spain</a></td><td class="r">39.7</td><td class="r ci">33.9–45.1</td><td class="r ci">227–238</td><td class="r">3</td></tr>
+<tr><td class="r">229</td><td>🇬🇧&nbsp;Stoke-on-Trent</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">39.6</td><td class="r ci">29.4–58.3</td><td class="r ci">172–251</td><td class="r">3</td></tr>
+<tr><td class="r">230</td><td>🇧🇬&nbsp;Plovdiv</td><td><a href="/pedalability-index/bulgaria/">Bulgaria</a></td><td class="r">39.6</td><td class="r ci">29.2–60.1</td><td class="r ci">156–256</td><td class="r">3</td></tr>
+<tr><td class="r">231</td><td>🇬🇷&nbsp;Thessaloniki</td><td><a href="/pedalability-index/greece/">Greece</a></td><td class="r">39.6</td><td class="r ci">28.0–56.7</td><td class="r ci">167–259</td><td class="r">3</td></tr>
+<tr><td class="r">232</td><td>🇬🇧&nbsp;Kingston upon Hull</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">39.5</td><td class="r ci">31.3–51.0</td><td class="r ci">206–243</td><td class="r">3</td></tr>
+<tr><td class="r">233</td><td>🇱🇹&nbsp;Kaunas</td><td><a href="/pedalability-index/lithuania/">Lithuania</a></td><td class="r">39.5</td><td class="r ci">34.0–45.3</td><td class="r ci">225–240</td><td class="r">3</td></tr>
+<tr><td class="r">234</td><td>🇸🇰&nbsp;Košice</td><td><a href="/pedalability-index/slovakia/">Slovakia</a></td><td class="r">39.5</td><td class="r ci">32.6–45.9</td><td class="r ci">218–242</td><td class="r">3</td></tr>
+<tr><td class="r">235</td><td>🇨🇿&nbsp;Ostrava</td><td><a href="/pedalability-index/czechia/">Czechia</a></td><td class="r">39.3</td><td class="r ci">30.7–52.7</td><td class="r ci">198–247</td><td class="r">3</td></tr>
+<tr><td class="r">236</td><td>🇬🇧&nbsp;Medway</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">39.0</td><td class="r ci">29.0–48.7</td><td class="r ci">218–245</td><td class="r">3</td></tr>
+<tr><td class="r">237</td><td>🇬🇧&nbsp;Cardiff</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">38.3</td><td class="r ci">32.5–44.0</td><td class="r ci">222–247</td><td class="r">3</td></tr>
+<tr><td class="r">238</td><td>🇨🇿&nbsp;Brno</td><td><a href="/pedalability-index/czechia/">Czechia</a></td><td class="r">38.1</td><td class="r ci">32.5–43.3</td><td class="r ci">232–244</td><td class="r">3</td></tr>
+<tr><td class="r">239</td><td>🇩🇪&nbsp;Wiesbaden</td><td><a href="/pedalability-index/germany/">Germany</a></td><td class="r">37.7</td><td class="r ci">33.8–41.3</td><td class="r ci">216–257</td><td class="r">3</td></tr>
+<tr><td class="r">240</td><td>🇬🇧&nbsp;Coventry</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">37.3</td><td class="r ci">27.9–53.4</td><td class="r ci">196–257</td><td class="r">3</td></tr>
+<tr><td class="r">241</td><td>🇬🇧&nbsp;Colchester</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">37.0</td><td class="r ci">31.4–43.8</td><td class="r ci">231–251</td><td class="r">3</td></tr>
+<tr><td class="r">242</td><td>🇮🇹&nbsp;Milan</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">36.8</td><td class="r ci">28.0–48.0</td><td class="r ci">218–251</td><td class="r">3</td></tr>
+<tr><td class="r">243</td><td>🇬🇧&nbsp;Bradford</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">36.7</td><td class="r ci">27.5–45.7</td><td class="r ci">229–250</td><td class="r">3</td></tr>
+<tr><td class="r">244</td><td>🇮🇹&nbsp;Padua</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">36.5</td><td class="r ci">30.6–43.4</td><td class="r ci">234–252</td><td class="r">3</td></tr>
+<tr><td class="r">245</td><td>🇧🇬&nbsp;Varna</td><td><a href="/pedalability-index/bulgaria/">Bulgaria</a></td><td class="r">35.9</td><td class="r ci">28.2–43.4</td><td class="r ci">227–254</td><td class="r">3</td></tr>
+<tr><td class="r">246</td><td>🇷🇴&nbsp;Cluj-Napoca</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">35.5</td><td class="r ci">28.6–42.4</td><td class="r ci">230–256</td><td class="r">3</td></tr>
+<tr><td class="r">247</td><td>🇵🇹&nbsp;Lisbon</td><td><a href="/pedalability-index/portugal/">Portugal</a></td><td class="r">33.9</td><td class="r ci">24.0–51.4</td><td class="r ci">203–269</td><td class="r">3</td></tr>
+<tr><td class="r">248</td><td>🇧🇪&nbsp;Charleroi</td><td><a href="/pedalability-index/belgium/">Belgium</a></td><td class="r">33.4</td><td class="r ci">25.5–44.9</td><td class="r ci">228–261</td><td class="r">3</td></tr>
+<tr><td class="r">249</td><td>🇬🇧&nbsp;Luton</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">33.3</td><td class="r ci">26.7–39.2</td><td class="r ci">248–256</td><td class="r">3</td></tr>
+<tr><td class="r">250</td><td>🇮🇪&nbsp;Cork</td><td><a href="/pedalability-index/ireland/">Ireland</a></td><td class="r">32.5</td><td class="r ci">26.6–38.1</td><td class="r ci">243–262</td><td class="r">3</td></tr>
+<tr><td class="r">251</td><td>🇮🇹&nbsp;Trieste</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">32.4</td><td class="r ci">24.6–39.8</td><td class="r ci">248–258</td><td class="r">3</td></tr>
+<tr><td class="r">252</td><td>🇫🇷&nbsp;Dijon</td><td><a href="/pedalability-index/france/">France</a></td><td class="r">32.1</td><td class="r ci">28.1–36.1</td><td class="r ci">233–268</td><td class="r">3</td></tr>
+<tr><td class="r">253</td><td>🇧🇬&nbsp;Sofia</td><td><a href="/pedalability-index/bulgaria/">Bulgaria</a></td><td class="r">31.8</td><td class="r ci">23.9–38.8</td><td class="r ci">250–260</td><td class="r">3</td></tr>
+<tr><td class="r">254</td><td>🇵🇹&nbsp;Porto</td><td><a href="/pedalability-index/portugal/">Portugal</a></td><td class="r">31.6</td><td class="r ci">22.4–43.1</td><td class="r ci">224–268</td><td class="r">3</td></tr>
+<tr><td class="r">255</td><td>🇮🇹&nbsp;Rome</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">31.2</td><td class="r ci">21.7–41.7</td><td class="r ci">243–266</td><td class="r">3</td></tr>
+<tr><td class="r">256</td><td>🇬🇧&nbsp;Northampton</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">30.8</td><td class="r ci">22.3–39.7</td><td class="r ci">248–263</td><td class="r">3</td></tr>
+<tr><td class="r">257</td><td>🇵🇹&nbsp;Sintra</td><td><a href="/pedalability-index/portugal/">Portugal</a></td><td class="r">30.3</td><td class="r ci">21.0–39.7</td><td class="r ci">244–267</td><td class="r">3</td></tr>
+<tr><td class="r">258</td><td>🇬🇧&nbsp;Aberdeen</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">30.1</td><td class="r ci">25.3–34.3</td><td class="r ci">252–266</td><td class="r">3</td></tr>
+<tr><td class="r">259</td><td>🇬🇧&nbsp;Belfast</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">29.8</td><td class="r ci">21.6–39.4</td><td class="r ci">248–266</td><td class="r">3</td></tr>
+<tr><td class="r">260</td><td>🇮🇹&nbsp;Cagliari</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">29.5</td><td class="r ci">22.3–39.4</td><td class="r ci">245–271</td><td class="r">3</td></tr>
+<tr><td class="r">261</td><td>🇬🇷&nbsp;Patras</td><td><a href="/pedalability-index/greece/">Greece</a></td><td class="r">28.7</td><td class="r ci">17.9–44.0</td><td class="r ci">217–279</td><td class="r">3</td></tr>
+<tr><td class="r">262</td><td>🇬🇧&nbsp;Liverpool</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">28.6</td><td class="r ci">22.3–35.7</td><td class="r ci">256–268</td><td class="r">3</td></tr>
+<tr><td class="r">263</td><td>🇮🇹&nbsp;Naples</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">28.4</td><td class="r ci">18.8–40.8</td><td class="r ci">232–275</td><td class="r">3</td></tr>
+<tr><td class="r">264</td><td>🇮🇹&nbsp;Palermo</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">28.3</td><td class="r ci">19.6–36.4</td><td class="r ci">258–270</td><td class="r">3</td></tr>
+<tr><td class="r">265</td><td>🇮🇹&nbsp;Messina</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">26.8</td><td class="r ci">15.5–44.3</td><td class="r ci">221–280</td><td class="r">3</td></tr>
+<tr><td class="r">266</td><td>🇷🇴&nbsp;Arad</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">26.4</td><td class="r ci">19.4–34.3</td><td class="r ci">260–273</td><td class="r">3</td></tr>
+<tr><td class="r">267</td><td>🇷🇴&nbsp;Satu Mare</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">26.2</td><td class="r ci">16.2–41.2</td><td class="r ci">233–284</td><td class="r">3</td></tr>
+<tr><td class="r">268</td><td>🇬🇧&nbsp;Doncaster</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">25.9</td><td class="r ci">18.2–33.4</td><td class="r ci">264–274</td><td class="r">3</td></tr>
+<tr><td class="r">269</td><td>🇮🇹&nbsp;Taranto</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">25.5</td><td class="r ci">19.4–31.0</td><td class="r ci">264–272</td><td class="r">3</td></tr>
+<tr><td class="r">270</td><td>🇷🇴&nbsp;Oradea</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">25.5</td><td class="r ci">15.6–41.8</td><td class="r ci">239–284</td><td class="r">3</td></tr>
+<tr><td class="r">271</td><td>🇨🇾&nbsp;Nicosia</td><td><a href="/pedalability-index/cyprus/">Cyprus</a></td><td class="r">25.3</td><td class="r ci">19.3–30.6</td><td class="r ci">267–272</td><td class="r">3</td></tr>
+<tr><td class="r">272</td><td>🇷🇴&nbsp;Targu Mures</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">23.3</td><td class="r ci">19.2–27.2</td><td class="r ci">261–279</td><td class="r">3</td></tr>
+<tr><td class="r">273</td><td>🇮🇹&nbsp;Reggio Calabria</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">23.1</td><td class="r ci">13.3–36.7</td><td class="r ci">245–286</td><td class="r">3</td></tr>
+<tr><td class="r">274</td><td>🇧🇬&nbsp;Burgas</td><td><a href="/pedalability-index/bulgaria/">Bulgaria</a></td><td class="r">22.0</td><td class="r ci">13.3–34.9</td><td class="r ci">258–286</td><td class="r">3</td></tr>
+<tr><td class="r">275</td><td>🇷🇴&nbsp;Brasov</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">21.7</td><td class="r ci">17.7–25.2</td><td class="r ci">264–281</td><td class="r">3</td></tr>
+<tr><td class="r">276</td><td>🇬🇧&nbsp;Maidstone</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">21.3</td><td class="r ci">13.8–29.7</td><td class="r ci">262–284</td><td class="r">3</td></tr>
+<tr><td class="r">277</td><td>🇷🇴&nbsp;Sibiu</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">20.7</td><td class="r ci">16.6–24.5</td><td class="r ci">273–279</td><td class="r">3</td></tr>
+<tr><td class="r">278</td><td>🇬🇧&nbsp;Bournemouth</td><td><a href="/pedalability-index/united-kingdom/">United Kingdom</a></td><td class="r">20.4</td><td class="r ci">14.1–26.2</td><td class="r ci">271–281</td><td class="r">3</td></tr>
+<tr><td class="r">279</td><td>🇮🇹&nbsp;Bari</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">19.6</td><td class="r ci">13.3–26.0</td><td class="r ci">272–285</td><td class="r">3</td></tr>
+<tr><td class="r">280</td><td>🇵🇹&nbsp;Braga</td><td><a href="/pedalability-index/portugal/">Portugal</a></td><td class="r">19.2</td><td class="r ci">13.5–24.3</td><td class="r ci">274–283</td><td class="r">3</td></tr>
+<tr><td class="r">281</td><td>🇷🇴&nbsp;Timisoara</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">18.9</td><td class="r ci">14.0–23.6</td><td class="r ci">275–282</td><td class="r">3</td></tr>
+<tr><td class="r">282</td><td>🇮🇹&nbsp;Catania</td><td><a href="/pedalability-index/italy/">Italy</a></td><td class="r">17.5</td><td class="r ci">9.2–27.9</td><td class="r ci">266–290</td><td class="r">3</td></tr>
+<tr><td class="r">283</td><td>🇷🇴&nbsp;Constanta</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">16.6</td><td class="r ci">12.3–20.7</td><td class="r ci">280–286</td><td class="r">3</td></tr>
+<tr><td class="r">284</td><td>🇬🇷&nbsp;Athens</td><td><a href="/pedalability-index/greece/">Greece</a></td><td class="r">16.2</td><td class="r ci">12.2–19.7</td><td class="r ci">281–285</td><td class="r">3</td></tr>
+<tr><td class="r">285</td><td>🇷🇴&nbsp;Baia Mare</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">14.9</td><td class="r ci">9.7–19.9</td><td class="r ci">279–289</td><td class="r">3</td></tr>
+<tr><td class="r">286</td><td>🇷🇴&nbsp;Bucharest</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">14.6</td><td class="r ci">10.1–18.9</td><td class="r ci">277–289</td><td class="r">3</td></tr>
+<tr><td class="r">287</td><td>🇨🇾&nbsp;Limassol</td><td><a href="/pedalability-index/cyprus/">Cyprus</a></td><td class="r">14.1</td><td class="r ci">8.8–20.6</td><td class="r ci">279–290</td><td class="r">3</td></tr>
+<tr><td class="r">288</td><td>🇭🇷&nbsp;Split</td><td><a href="/pedalability-index/croatia/">Croatia</a></td><td class="r">12.3</td><td class="r ci">7.3–18.0</td><td class="r ci">278–294</td><td class="r">3</td></tr>
+<tr><td class="r">289</td><td>🇷🇴&nbsp;Bacau</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">12.0</td><td class="r ci">7.3–17.4</td><td class="r ci">282–289</td><td class="r">3</td></tr>
+<tr><td class="r">290</td><td>🇷🇴&nbsp;Pitesti</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">9.5</td><td class="r ci">5.3–14.5</td><td class="r ci">287–293</td><td class="r">3</td></tr>
+<tr><td class="r">291</td><td>🇨🇾&nbsp;Strovolos</td><td><a href="/pedalability-index/cyprus/">Cyprus</a></td><td class="r">8.8</td><td class="r ci">4.0–15.9</td><td class="r ci">285–294</td><td class="r">3</td></tr>
+<tr><td class="r">292</td><td>🇷🇴&nbsp;Craiova</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">7.2</td><td class="r ci">3.3–10.9</td><td class="r ci">290–294</td><td class="r">3</td></tr>
+<tr><td class="r">293</td><td>🇷🇴&nbsp;Galati</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">6.0</td><td class="r ci">3.4–10.2</td><td class="r ci">291–295</td><td class="r">3</td></tr>
+<tr><td class="r">294</td><td>🇨🇾&nbsp;Paphos</td><td><a href="/pedalability-index/cyprus/">Cyprus</a></td><td class="r">5.3</td><td class="r ci">2.4–10.1</td><td class="r ci">292–295</td><td class="r">3</td></tr>
+<tr><td class="r">295</td><td>🇷🇴&nbsp;Botosani</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">2.6</td><td class="r ci">0.4–6.4</td><td class="r ci">292–296</td><td class="r">3</td></tr>
+<tr><td class="r">296</td><td>🇷🇴&nbsp;Buzau</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">2.0</td><td class="r ci">0.0–5.4</td><td class="r ci">294–298</td><td class="r">3</td></tr>
+<tr><td class="r">297</td><td>🇷🇴&nbsp;Ploiesti</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">1.4</td><td class="r ci">0.1–4.9</td><td class="r ci">295–298</td><td class="r">3</td></tr>
+<tr><td class="r">298</td><td>🇷🇴&nbsp;Braila</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">0.6</td><td class="r ci">0.0–3.4</td><td class="r ci">297–299</td><td class="r">3</td></tr>
+<tr><td class="r">299</td><td>🇷🇴&nbsp;Iasi</td><td><a href="/pedalability-index/romania/">Romania</a></td><td class="r">0.0</td><td class="r ci">0.0–0.3</td><td class="r ci">299–300</td><td class="r">3</td></tr>
+<tr><td class="r">300</td><td>🇨🇾&nbsp;Larnaca</td><td><a href="/pedalability-index/cyprus/">Cyprus</a></td><td class="r">0.0</td><td class="r ci">0.0–1.7</td><td class="r ci">296–300</td><td class="r">3</td></tr></tbody>
 </table></div>
+<!-- /build:table -->
 
 <div class="citycta" id="forcities">
   <div class="citycta-inner">
@@ -875,7 +1030,7 @@ mandatory parallel path don't count against a city's streets; cities are officia
 boundaries.</p>
 <p>Full technical report, criterion analysis and every caveat:
 <a href="https://defensivepedal.tech/pedalability-index/report/">Pedalability Index: Cycling Risk —
-the full study</a> (open access, DOI 10.5281/zenodo.22771452) · Defensive Pedal Research, 2026.
+the full study</a> (v1.0, 219 cities; open access, DOI 10.5281/zenodo.22771452) · Defensive Pedal Research, 2026.
 Study archived at DOI <a href="https://doi.org/10.5281/zenodo.22771452">10.5281/zenodo.22771452</a> (CC-BY-4.0).
 External reference: <a href="https://www.eiturbanmobility.eu/the-copenhagenize-index-2025-eit-urban-mobility-edition-reveals-the-best-bicycle-friendly-cities/">Copenhagenize
 Index 2025 — EIT Urban Mobility Edition</a>.</p>

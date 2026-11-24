@@ -1,0 +1,26 @@
+/* Answer pages: city, country, guide, research and app pages built by scripts/build.mjs.
+   Same document look as /methodology. */
+.answer { background: var(--c-off); padding: 120px 0 80px; min-height: 100vh; }
+.answer-doc { max-width: 760px; margin: 0 auto; background: var(--c-white); padding: 56px clamp(24px, 4vw, 56px); border-radius: var(--radius-lg); box-shadow: var(--shadow-1); }
+.answer-doc h1 { font-size: 36px; margin-bottom: 16px; }
+.answer-doc h2 { font-size: 22px; margin: 32px 0 12px; }
+.answer-doc h3 { font-size: 17px; margin: 20px 0 6px; }
+.answer-doc p, .answer-doc li { color: var(--c-ink-2); font-size: 16px; line-height: 1.65; }
+.answer-doc h1 + p { color: var(--c-ink); font-size: 18px; }
+.answer-doc p.meta, .answer-crumbs { color: var(--c-ink-3); font-size: 14px; }
+.answer-crumbs { margin-bottom: 20px; }
+.answer-doc ul, .answer-doc ol { padding-left: 20px; }
+.answer-doc ul { list-style: disc; }
+.answer-doc a { color: var(--c-navy); border-bottom: 1px dashed var(--c-ink-4); }
+.answer-doc h2 a { border-bottom: 0; }
+.answer-doc blockquote { margin: 16px 0; padding: 4px 16px; border-left: 4px solid var(--c-yellow); }
+.answer-doc table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0 20px; }
+.answer-doc th, .answer-doc td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--c-line); vertical-align: top; color: var(--c-ink-2); }
+.answer-doc th { color: var(--c-ink); font-weight: 600; }
+.answer-foot { max-width: 760px; margin: 28px auto 0; padding: 0 var(--pad); color: var(--c-ink-3); font-size: 14px; line-height: 1.8; }
+.answer-foot a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .answer { padding-top: 96px; }
+  .answer-doc { padding: 32px 20px; border-radius: 0; }
+  .answer-doc table { display: block; overflow-x: auto; }
+}
