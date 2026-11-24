@@ -4,3 +4,4 @@ content/
 .assetsignore
 .gitignore
 wrangler.jsonc
+.git

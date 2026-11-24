@@ -138,7 +138,7 @@ const seen = new Set();
 
 /** Returns { modified, published } for a page, given its content with dates left out. */
 export function stamp(url, contentWithoutDates) {
-  const hash = crypto.createHash('sha256').update(contentWithoutDates).digest('hex').slice(0, 16);
+  const hash = crypto.createHash('sha256').update(contentWithoutDates.replace(/\r\n/g, '\n')).digest('hex').slice(0, 16);
   const prev = manifest[url];
   if (!prev) manifest[url] = { hash, modified: TODAY, published: TODAY };
   else if (prev.hash !== hash) manifest[url] = { ...prev, hash, modified: TODAY };
