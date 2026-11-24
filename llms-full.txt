@@ -1,0 +1,422 @@
+# Defensive Pedal: full text for language models
+
+Source: https://defensivepedal.tech/ · Licence for the index data: CC BY 4.0 · Short version: https://defensivepedal.tech/llms.txt
+
+# How Defensive Pedal scores street risk
+
+By Victor Rotariu, founder · Published 12 October 2026 · Describes the risk model used in the Defensive Pedal app
+
+The Defensive Pedal risk score is a rating of how risky each street segment is for a cyclist. It is built from more than 100 road and traffic factors and shown in the app as Safer, Typical or High risk. This page explains what goes into the score, where the data comes from, how we checked it against crash records in five countries, and what it can and cannot tell you about a single ride.
+
+## What is the risk score?
+
+Every segment of the street network in the 31 countries the app covers gets a score. The score is calculated across the whole network from the same factors everywhere, so two streets in different cities can be compared. The routing engine then favours lower-scoring segments when it plans a ride, and the app explains which factors made a street safer or riskier so you can judge the suggestion yourself. On a test of 10,149 trips between random points in Romanian cities, the routes it produced carried lower modelled risk than Google Maps cycling directions on 99 of every 100 trips, and were on average 5% longer than the shortest route.
+
+## Which factors go into the score?
+
+The factors fall into seven families. The table lists the main inputs in each.
+
+Factor family | What we measure
+
+Motor traffic | Traffic volume from our own model, calibrated on congestion data; speed limits; roadway stress, which is speed multiplied by the number of lanes; access for vehicles over 7.5 tonnes; number of lanes; one-way status
+
+Road type | Classification from major arterial roads down to residential streets
+
+Cycling infrastructure | Separated cycle paths, cycle lanes, cycling networks, rules that require using an adjacent cycle path, roads closed to motor vehicles, and green spaces where cycling is allowed
+
+Geometry and surface | Width, surface type and quality, gradient, and defects such as potholes
+
+Legal access rules | Country-specific rules on where bicycles may ride
+
+Intersections | Signalised or unsignalised, roundabout or not, number of intersecting streets, the angles between them, and the number of lanes
+
+Special features | Tunnels, bridges, railway and tram tracks, and the type of parking along the street
+
+## Where does the data come from?
+
+- OpenStreetMap supplies the street network and most of its attributes, under the Open Database Licence.
+
+- Our traffic model estimates motor traffic volume on every segment and is calibrated against congestion data.
+
+- Our road-marking model estimates painted markings, such as cycle lanes, that are not recorded digitally.
+
+- Elevation data comes from LiDAR where it is available and from the GEDTM30 bare-earth model elsewhere.
+
+- Crash data is used where national sources publish it.
+
+- Riders refine the score through reported hazards, how risky they say a street feels, and whether they follow or leave the suggested route.
+
+## How is the score validated?
+
+We tested the score against independent crash and bicycle-traffic data that was never used to build the model. The test panel pairs each counting site with the crashes recorded around it, so injuries are weighed against how many people actually ride there.
+
+Validation panel | Figure
+
+Countries | 5: Germany, France, Belgium, Spain and Switzerland
+
+Regions | 13
+
+Bicycle counting sites | 2,034
+
+Bicycle passages counted | About 4 billion
+
+Crashes in the panel | More than 10,000
+
+Serious injuries | 1,169
+
+Three results matter most:
+
+- The serious-injury rate per passage rises with each risk level, a trend significant at p < 10−5.
+
+- A cyclist is 2.19 times as likely to be seriously injured per passage on the streets with the highest scores as on the safest ones.
+
+- The score predicts how severe crashes are, and only weakly how many crashes happen. Its relationship to raw crash frequency was weak and inconsistent, while its relationship to severity held at every cut-point tested, survived controlling for road class, and was strongest between junctions rather than at them.
+
+The analysis is published with open access as Rotariu, V. (2026). Severity Without Frequency: A Multi-Country Validation of a Cycling Routing Risk Score. Zenodo, under a CC BY 4.0 licence, and a manuscript for peer review is in preparation. To our knowledge this is the only cycling risk score that has been validated against independent crash data in this way.
+
+## What can the score not tell you?
+
+- It compares streets with each other. It says nothing certain about any single trip, and a Safer street can still be dangerous on a given day.
+
+- Cycling is safe overall. Serious injuries are rare on every street in the panel; the score tells you where they are rarer still.
+
+- Hazards reported by riders are shown before we verify them, and map, traffic and surface data can be out of date.
+
+- The score rates roads, not people. It makes no judgement about you and is the same for everyone with the same settings.
+
+## Questions about the methodology
+
+### Does a Safer rating mean a street is safe?
+
+It means the street scores lower on risk than most streets around it. In the validation panel, Safer streets had roughly half the serious-injury rate per passage of High risk streets, which is a difference in degree rather than a guarantee.
+
+### Was crash data used to build the model?
+
+No. The model was built from road, traffic and infrastructure factors. Crash records were held back and used only to test it, so the validation is independent of the training.
+
+### Can I see why a route was chosen?
+
+Yes. The app explains which factors made the chosen streets safer than the alternatives, so you can decide whether to follow it.
+
+### Is the validation data public?
+
+The full analysis, including the method and the figures above, is published on Zenodo under an open licence at doi.org/10.5281/zenodo.23051502.
+
+## About the author
+
+Victor Rotariu founded Defensive Pedal, built its routing engine and both apps, and wrote the validation study. He is a lifelong cyclist and previously shipped Romania’s largest chatbot. Contact: hello@defensivepedal.com.
+
+See also: Home · Methodology · Privacy Policy · Terms of Use · Updates feed · In Romanian: Acasă · Metodologie · Confidențialitate · Termeni
+
+## What this score doesn't tell you
+
+The score predicts how badly a crash ends (injury severity), not whether a crash happens.
+It was checked against official crash records from major European cities in five countries. That check found the score's signal along streets and not at junctions, where much urban cycling harm happens.
+The figures are associations, not causes. Nothing yet shows that changing one rider's route changes their outcome.
+A city's score is an average over its whole street network. Risk changes street by street.
+
+## Pedalability Index 2026: all 300 cities
+
+The index runs from 0 to 100 on a fixed scale. Higher score = lower assessed risk. A score of 0.0 means the lowest of the 300 cities and a score of 100 the highest; neither is an absolute level of risk.
+
+Rank | City | Country | Score | Likely rank range | Tier
+1 | Stockholm | Sweden | 98.9 | 1–8 | 1
+2 | Amsterdam | Netherlands | 97.9 | 2–15 | 1
+3 | Helsinki | Finland | 97.9 | 1–11 | 1
+4 | The Hague | Netherlands | 97.8 | 2–14 | 1
+5 | Antwerp | Belgium | 97.7 | 3–15 | 1
+6 | Vantaa | Finland | 97.2 | 2–11 | 1
+7 | Leiden | Netherlands | 97.1 | 2–12 | 1
+8 | Haarlem | Netherlands | 96.6 | 1–14 | 1
+9 | Espoo | Finland | 95.5 | 3–16 | 1
+10 | Copenhagen | Denmark | 95.0 | 4–22 | 1
+11 | Tampere | Finland | 94.1 | 4–18 | 1
+12 | Eindhoven | Netherlands | 93.8 | 10–26 | 1
+13 | Paris | France | 93.7 | 6–19 | 1
+14 | Utrecht | Netherlands | 93.5 | 10–24 | 1
+15 | Rotterdam | Netherlands | 93.2 | 9–23 | 1
+16 | Barcelona | Spain | 93.1 | 8–22 | 1
+17 | Brussels | Belgium | 91.6 | 3–26 | 1
+18 | Nijmegen | Netherlands | 90.5 | 15–30 | 1
+19 | San Sebastián | Spain | 90.3 | 18–31 | 1
+20 | Turku | Finland | 89.6 | 6–26 | 1
+21 | Hanover | Germany | 89.0 | 19–32 | 1
+22 | Arnhem | Netherlands | 88.0 | 19–36 | 1
+23 | Munich | Germany | 88.0 | 21–36 | 1
+24 | Ghent | Belgium | 86.7 | 23–41 | 1
+25 | Bremen | Germany | 86.6 | 20–41 | 1
+26 | Lyon | France | 85.7 | 13–38 | 1
+27 | Braunschweig | Germany | 85.2 | 25–42 | 1
+28 | Lübeck | Germany | 85.0 | 23–44 | 1
+29 | Almere | Netherlands | 84.6 | 14–43 | 1
+30 | Bilbao | Spain | 83.9 | 15–54 | 1
+31 | Montpellier | France | 83.6 | 27–46 | 1
+32 | Groningen | Netherlands | 83.5 | 28–43 | 1
+33 | Toulouse | France | 83.0 | 29–50 | 1
+34 | Albacete | Spain | 82.7 | 32–48 | 1
+35 | Grenoble | France | 82.7 | 23–48 | 1
+36 | Salamanca | Spain | 81.9 | 27–50 | 1
+37 | Oldenburg | Germany | 81.6 | 33–54 | 1
+38 | Strasbourg | France | 81.3 | 16–59 | 1
+39 | Tilburg | Netherlands | 81.0 | 32–53 | 1
+40 | Nantes | France | 80.6 | 29–61 | 1
+41 | Las Rozas de Madrid | Spain | 80.1 | 37–55 | 1
+42 | Málaga | Spain | 79.5 | 33–60 | 1
+43 | Malmö | Sweden | 79.1 | 15–65 | 1
+44 | Münster | Germany | 79.1 | 41–59 | 1
+45 | Bologna | Italy | 78.8 | 28–58 | 1
+46 | Seville | Spain | 78.5 | 32–67 | 1
+47 | Valencia | Spain | 77.8 | 18–83 | 1
+48 | Freiburg | Germany | 77.7 | 42–66 | 1
+49 | Tours | France | 77.7 | 36–77 | 1
+50 | Valladolid | Spain | 77.3 | 42–69 | 1
+51 | Sabadell | Spain | 77.0 | 24–77 | 1
+52 | Vitoria-Gasteiz | Spain | 76.2 | 46–67 | 1
+53 | Duisburg | Germany | 76.0 | 43–72 | 1
+54 | Pamplona | Spain | 75.9 | 46–74 | 1
+55 | Burgos | Spain | 75.5 | 48–78 | 1
+56 | Palma | Spain | 75.3 | 51–67 | 1
+57 | Lille | France | 74.8 | 51–79 | 1
+58 | Mannheim | Germany | 74.6 | 45–84 | 1
+59 | Vienna | Austria | 74.6 | 42–88 | 1
+60 | Zaragoza | Spain | 73.7 | 60–75 | 1
+61 | Oulu | Finland | 73.2 | 12–86 | 1
+62 | Córdoba | Spain | 73.1 | 49–82 | 1
+63 | Nancy | France | 72.7 | 39–116 | 1
+64 | Berlin | Germany | 72.4 | 50–83 | 1
+65 | Sant Cugat del Vallès | Spain | 72.1 | 51–100 | 1
+66 | Bonn | Germany | 71.9 | 49–102 | 1
+67 | Augsburg | Germany | 71.8 | 58–82 | 1
+68 | Magdeburg | Germany | 71.8 | 64–84 | 1
+69 | Trondheim | Norway | 71.3 | 53–86 | 1
+70 | Apeldoorn | Netherlands | 71.2 | 55–100 | 1
+71 | Milton Keynes | United Kingdom | 70.7 | 12–98 | 1
+72 | Düsseldorf | Germany | 70.7 | 66–96 | 1
+73 | Graz | Austria | 70.6 | 65–89 | 1
+74 | Oslo | Norway | 70.6 | 46–98 | 1
+75 | Breda | Netherlands | 70.6 | 59–101 | 1
+76 | Odense | Denmark | 70.4 | 41–96 | 1
+77 | Maribor | Slovenia | 70.3 | 57–91 | 1
+78 | Kiel | Germany | 70.3 | 69–93 | 1
+79 | Gijón | Spain | 69.4 | 55–99 | 1
+80 | Elche | Spain | 69.4 | 74–90 | 1
+81 | Szeged | Hungary | 69.1 | 73–93 | 1
+82 | Alicante | Spain | 68.4 | 78–96 | 1
+83 | Rennes | France | 68.3 | 65–115 | 1
+84 | Reggio Emilia | Italy | 68.2 | 13–129 | 1
+85 | Aarhus | Denmark | 68.1 | 52–106 | 1
+86 | Oberhausen | Germany | 67.9 | 57–125 | 1
+87 | Murcia | Spain | 67.9 | 69–104 | 1
+88 | Cologne | Germany | 67.1 | 74–118 | 1
+89 | A Coruña | Spain | 67.1 | 72–116 | 1
+90 | Santander | Spain | 66.7 | 87–102 | 1
+91 | Białystok | Poland | 66.5 | 70–118 | 1
+92 | Luxembourg | Luxembourg | 65.7 | 83–118 | 1
+93 | Wrocław | Poland | 65.5 | 84–117 | 1
+94 | Halle (Saale) | Germany | 65.4 | 79–120 | 1
+95 | Karlsruhe | Germany | 65.1 | 86–133 | 1
+96 | Ljubljana | Slovenia | 64.2 | 88–121 | 1
+97 | Ludwigshafen am Rhein | Germany | 64.0 | 78–144 | 1
+98 | Orléans | France | 63.5 | 98–120 | 1
+99 | Castellón de la Plana | Spain | 63.1 | 81–153 | 1
+100 | Uppsala | Sweden | 63.0 | 23–161 | 1
+101 | Bergen | Norway | 62.8 | 80–139 | 2
+102 | Leverkusen | Germany | 62.5 | 100–143 | 2
+103 | Krefeld | Germany | 62.4 | 96–148 | 2
+104 | Almería | Spain | 62.4 | 103–129 | 2
+105 | Gelsenkirchen | Germany | 62.3 | 99–149 | 2
+106 | Hamburg | Germany | 62.2 | 84–154 | 2
+107 | Vigo | Spain | 62.2 | 81–161 | 2
+108 | Gdańsk | Poland | 61.8 | 106–132 | 2
+109 | Terrassa | Spain | 61.8 | 94–152 | 2
+110 | Stavanger | Norway | 61.7 | 91–140 | 2
+111 | Hamm | Germany | 61.4 | 99–154 | 2
+112 | Mainz | Germany | 61.2 | 103–159 | 2
+113 | Nuremberg | Germany | 61.2 | 111–145 | 2
+114 | Rostock | Germany | 60.9 | 89–156 | 2
+115 | Angers | France | 60.9 | 79–170 | 2
+116 | Debrecen | Hungary | 60.9 | 93–143 | 2
+117 | Toruń | Poland | 60.7 | 102–156 | 2
+118 | Łódź | Poland | 60.6 | 109–135 | 2
+119 | Alkmaar | Netherlands | 60.5 | 94–169 | 2
+120 | Leipzig | Germany | 60.1 | 94–153 | 2
+121 | Clermont-Ferrand | France | 60.1 | 110–155 | 2
+122 | Jerez de la Frontera | Spain | 60.0 | 115–140 | 2
+123 | Tallinn | Estonia | 59.8 | 69–157 | 2
+124 | Granada | Spain | 59.8 | 103–175 | 2
+125 | Budapest | Hungary | 59.6 | 103–151 | 2
+126 | Potsdam | Germany | 59.3 | 99–177 | 2
+127 | Linz | Austria | 59.0 | 101–175 | 2
+128 | Bordeaux | France | 58.8 | 114–170 | 2
+129 | Bern | Switzerland | 58.8 | 75–198 | 2
+130 | Aachen | Germany | 58.7 | 103–182 | 2
+131 | Warsaw | Poland | 58.7 | 83–172 | 2
+132 | Liège | Belgium | 58.6 | 91–176 | 2
+133 | Geneva | Switzerland | 58.5 | 108–166 | 2
+134 | Venice | Italy | 58.5 | 66–174 | 2
+135 | Bedford | United Kingdom | 58.4 | 90–175 | 2
+136 | Mönchengladbach | Germany | 58.3 | 114–175 | 2
+137 | Gdynia | Poland | 58.2 | 130–160 | 2
+138 | Edinburgh | United Kingdom | 58.2 | 88–163 | 2
+139 | Madrid | Spain | 58.2 | 110–161 | 2
+140 | Reykjavik | Iceland | 57.8 | 115–177 | 2
+141 | Mülheim an der Ruhr | Germany | 57.7 | 126–177 | 2
+142 | Frankfurt | Germany | 57.6 | 123–173 | 2
+143 | Valletta | Malta | 57.4 | 75–210 | 2
+144 | Peterborough | United Kingdom | 57.2 | 85–174 | 2
+145 | Aalborg | Denmark | 57.0 | 98–171 | 2
+146 | Manchester | United Kingdom | 57.0 | 117–166 | 2
+147 | York | United Kingdom | 56.9 | 112–171 | 2
+148 | Oviedo | Spain | 56.8 | 76–207 | 2
+149 | Poznań | Poland | 56.5 | 130–177 | 2
+150 | Florence | Italy | 56.4 | 114–172 | 2
+151 | Lublin | Poland | 55.9 | 119–175 | 2
+152 | Bristol | United Kingdom | 55.7 | 117–181 | 2
+153 | Gothenburg | Sweden | 55.5 | 125–189 | 2
+154 | Rouen | France | 55.2 | 110–212 | 2
+155 | Dortmund | Germany | 55.1 | 124–186 | 2
+156 | Kraków | Poland | 54.9 | 140–173 | 2
+157 | Brighton and Hove | United Kingdom | 54.8 | 136–179 | 2
+158 | Mulhouse | France | 54.6 | 144–191 | 2
+159 | Dublin | Ireland | 54.4 | 124–187 | 2
+160 | Modena | Italy | 54.3 | 75–219 | 2
+161 | Bielefeld | Germany | 54.1 | 135–191 | 2
+162 | Nottingham | United Kingdom | 54.0 | 150–187 | 2
+163 | Stuttgart | Germany | 53.8 | 134–208 | 2
+164 | Darmstadt | Germany | 53.4 | 129–217 | 2
+165 | Bratislava | Slovakia | 53.3 | 160–180 | 2
+166 | Rzeszów | Poland | 53.2 | 158–183 | 2
+167 | Linköping | Sweden | 52.9 | 138–208 | 2
+168 | Swindon | United Kingdom | 52.4 | 104–199 | 2
+169 | Kassel | Germany | 52.3 | 126–223 | 2
+170 | Zurich | Switzerland | 52.3 | 143–210 | 2
+171 | Dresden | Germany | 52.2 | 132–207 | 2
+172 | Reims | France | 52.2 | 157–202 | 2
+173 | Metz | France | 52.0 | 154–207 | 2
+174 | Bydgoszcz | Poland | 51.9 | 154–197 | 2
+175 | Bergamo | Italy | 51.9 | 140–191 | 2
+176 | Plzeň | Czechia | 51.9 | 109–199 | 2
+177 | Toulon | France | 51.8 | 139–205 | 2
+178 | Turin | Italy | 51.8 | 39–223 | 2
+179 | Portsmouth | United Kingdom | 51.6 | 168–193 | 2
+180 | Parma | Italy | 51.6 | 81–218 | 2
+181 | Essen | Germany | 51.3 | 161–204 | 2
+182 | Riga | Latvia | 51.2 | 162–192 | 2
+183 | Telford | United Kingdom | 50.8 | 128–200 | 2
+184 | Newcastle upon Tyne | United Kingdom | 50.4 | 153–197 | 2
+185 | Bochum | Germany | 50.1 | 141–217 | 2
+186 | Szczecin | Poland | 50.1 | 171–207 | 2
+187 | Kielce | Poland | 50.0 | 180–203 | 2
+188 | Basel | Switzerland | 49.9 | 149–223 | 2
+189 | Le Havre | France | 49.7 | 173–201 | 2
+190 | Leeds | United Kingdom | 49.2 | 132–213 | 2
+191 | Birmingham | United Kingdom | 49.1 | 111–213 | 2
+192 | Saint-Étienne | France | 49.0 | 150–228 | 2
+193 | Swansea | United Kingdom | 48.7 | 127–213 | 2
+194 | Cartagena | Spain | 48.5 | 166–220 | 2
+195 | Verona | Italy | 48.4 | 139–214 | 2
+196 | Pescara | Italy | 48.4 | 155–209 | 2
+197 | Zagreb | Croatia | 48.4 | 172–212 | 2
+198 | Hagen | Germany | 48.2 | 146–235 | 2
+199 | London | United Kingdom | 48.2 | 181–207 | 2
+200 | Lausanne | Switzerland | 47.9 | 130–239 | 2
+201 | Alcalá de Henares | Spain | 47.9 | 167–230 | 3
+202 | Prague | Czechia | 47.5 | 188–212 | 3
+203 | Southampton | United Kingdom | 47.3 | 194–211 | 3
+204 | Vilnius | Lithuania | 46.9 | 187–217 | 3
+205 | Saarbrücken | Germany | 46.5 | 139–244 | 3
+206 | Plymouth | United Kingdom | 46.1 | 182–219 | 3
+207 | Wolverhampton | United Kingdom | 46.1 | 146–225 | 3
+208 | Wuppertal | Germany | 45.9 | 182–233 | 3
+209 | Derby | United Kingdom | 45.8 | 161–221 | 3
+210 | Glasgow | United Kingdom | 45.8 | 141–227 | 3
+211 | Brescia | Italy | 45.5 | 123–237 | 3
+212 | Nice | France | 45.4 | 197–219 | 3
+213 | Sunderland | United Kingdom | 44.6 | 164–230 | 3
+214 | Sheffield | United Kingdom | 44.6 | 198–225 | 3
+215 | Warrington | United Kingdom | 44.2 | 186–235 | 3
+216 | Katowice | Poland | 43.9 | 205–225 | 3
+217 | Częstochowa | Poland | 43.8 | 170–247 | 3
+218 | Erfurt | Germany | 43.5 | 205–230 | 3
+219 | Leicester | United Kingdom | 43.0 | 186–236 | 3
+220 | Chemnitz | Germany | 42.4 | 199–239 | 3
+221 | Radom | Poland | 42.3 | 202–237 | 3
+222 | Marseille | France | 42.3 | 207–233 | 3
+223 | Prato | Italy | 42.2 | 147–250 | 3
+224 | Gliwice | Poland | 42.0 | 203–242 | 3
+225 | Basingstoke | United Kingdom | 41.9 | 215–232 | 3
+226 | Sosnowiec | Poland | 41.5 | 219–232 | 3
+227 | Genoa | Italy | 40.1 | 196–252 | 3
+228 | Fuenlabrada | Spain | 39.7 | 227–238 | 3
+229 | Stoke-on-Trent | United Kingdom | 39.6 | 172–251 | 3
+230 | Plovdiv | Bulgaria | 39.6 | 156–256 | 3
+231 | Thessaloniki | Greece | 39.6 | 167–259 | 3
+232 | Kingston upon Hull | United Kingdom | 39.5 | 206–243 | 3
+233 | Kaunas | Lithuania | 39.5 | 225–240 | 3
+234 | Košice | Slovakia | 39.5 | 218–242 | 3
+235 | Ostrava | Czechia | 39.3 | 198–247 | 3
+236 | Medway | United Kingdom | 39.0 | 218–245 | 3
+237 | Cardiff | United Kingdom | 38.3 | 222–247 | 3
+238 | Brno | Czechia | 38.1 | 232–244 | 3
+239 | Wiesbaden | Germany | 37.7 | 216–257 | 3
+240 | Coventry | United Kingdom | 37.3 | 196–257 | 3
+241 | Colchester | United Kingdom | 37.0 | 231–251 | 3
+242 | Milan | Italy | 36.8 | 218–251 | 3
+243 | Bradford | United Kingdom | 36.7 | 229–250 | 3
+244 | Padua | Italy | 36.5 | 234–252 | 3
+245 | Varna | Bulgaria | 35.9 | 227–254 | 3
+246 | Cluj-Napoca | Romania | 35.5 | 230–256 | 3
+247 | Lisbon | Portugal | 33.9 | 203–269 | 3
+248 | Charleroi | Belgium | 33.4 | 228–261 | 3
+249 | Luton | United Kingdom | 33.3 | 248–256 | 3
+250 | Cork | Ireland | 32.5 | 243–262 | 3
+251 | Trieste | Italy | 32.4 | 248–258 | 3
+252 | Dijon | France | 32.1 | 233–268 | 3
+253 | Sofia | Bulgaria | 31.8 | 250–260 | 3
+254 | Porto | Portugal | 31.6 | 224–268 | 3
+255 | Rome | Italy | 31.2 | 243–266 | 3
+256 | Northampton | United Kingdom | 30.8 | 248–263 | 3
+257 | Sintra | Portugal | 30.3 | 244–267 | 3
+258 | Aberdeen | United Kingdom | 30.1 | 252–266 | 3
+259 | Belfast | United Kingdom | 29.8 | 248–266 | 3
+260 | Cagliari | Italy | 29.5 | 245–271 | 3
+261 | Patras | Greece | 28.7 | 217–279 | 3
+262 | Liverpool | United Kingdom | 28.6 | 256–268 | 3
+263 | Naples | Italy | 28.4 | 232–275 | 3
+264 | Palermo | Italy | 28.3 | 258–270 | 3
+265 | Messina | Italy | 26.8 | 221–280 | 3
+266 | Arad | Romania | 26.4 | 260–273 | 3
+267 | Satu Mare | Romania | 26.2 | 233–284 | 3
+268 | Doncaster | United Kingdom | 25.9 | 264–274 | 3
+269 | Taranto | Italy | 25.5 | 264–272 | 3
+270 | Oradea | Romania | 25.5 | 239–284 | 3
+271 | Nicosia | Cyprus | 25.3 | 267–272 | 3
+272 | Targu Mures | Romania | 23.3 | 261–279 | 3
+273 | Reggio Calabria | Italy | 23.1 | 245–286 | 3
+274 | Burgas | Bulgaria | 22.0 | 258–286 | 3
+275 | Brasov | Romania | 21.7 | 264–281 | 3
+276 | Maidstone | United Kingdom | 21.3 | 262–284 | 3
+277 | Sibiu | Romania | 20.7 | 273–279 | 3
+278 | Bournemouth | United Kingdom | 20.4 | 271–281 | 3
+279 | Bari | Italy | 19.6 | 272–285 | 3
+280 | Braga | Portugal | 19.2 | 274–283 | 3
+281 | Timisoara | Romania | 18.9 | 275–282 | 3
+282 | Catania | Italy | 17.5 | 266–290 | 3
+283 | Constanta | Romania | 16.6 | 280–286 | 3
+284 | Athens | Greece | 16.2 | 281–285 | 3
+285 | Baia Mare | Romania | 14.9 | 279–289 | 3
+286 | Bucharest | Romania | 14.6 | 277–289 | 3
+287 | Limassol | Cyprus | 14.1 | 279–290 | 3
+288 | Split | Croatia | 12.3 | 278–294 | 3
+289 | Bacau | Romania | 12.0 | 282–289 | 3
+290 | Pitesti | Romania | 9.5 | 287–293 | 3
+291 | Strovolos | Cyprus | 8.8 | 285–294 | 3
+292 | Craiova | Romania | 7.2 | 290–294 | 3
+293 | Galati | Romania | 6.0 | 291–295 | 3
+294 | Paphos | Cyprus | 5.3 | 292–295 | 3
+295 | Botosani | Romania | 2.6 | 292–296 | 3
+296 | Buzau | Romania | 2.0 | 294–298 | 3
+297 | Ploiesti | Romania | 1.4 | 295–298 | 3
+298 | Braila | Romania | 0.6 | 297–299 | 3
+299 | Iasi | Romania | 0.0 | 299–300 | 3
+300 | Larnaca | Cyprus | 0.0 | 296–300 | 3

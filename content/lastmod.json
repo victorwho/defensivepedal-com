@@ -1,0 +1,232 @@
+{
+ "/": {
+  "hash": "5129776b9a5a70e0",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/404": {
+  "hash": "6dfe266515785790",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/cities": {
+  "hash": "1aa28f36471796a7",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/fleets": {
+  "hash": "327aec4e7bf61278",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/methodology": {
+  "hash": "78e525ccc2814311",
+  "modified": "2026-11-24",
+  "published": "2026-10-12"
+ },
+ "/partners": {
+  "hash": "2c0b9241ba98cacd",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/": {
+  "hash": "a0a3efe510316061",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/austria/": {
+  "hash": "4fcdd55e55591d1a",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/belgium/": {
+  "hash": "1633e019215a6436",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/bulgaria/": {
+  "hash": "de0397ac1044d14c",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/croatia/": {
+  "hash": "1d5cab35ae82c2a1",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/cyprus/": {
+  "hash": "edf90184ae959170",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/czechia/": {
+  "hash": "b82de9c10880f5cb",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/denmark/": {
+  "hash": "df53afeda14c7551",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/estonia/": {
+  "hash": "764e350bb494710f",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/finland/": {
+  "hash": "4a58403710c89dfd",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/france/": {
+  "hash": "2c458f8fa9b5b0a6",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/germany/": {
+  "hash": "a5d86a799247b6ef",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/greece/": {
+  "hash": "dca4449191fcfad8",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/hungary/": {
+  "hash": "aad41f0a9d0885c6",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/iceland/": {
+  "hash": "8fcd1a426fef4c02",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/ireland/": {
+  "hash": "dfc0465d9b285d35",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/italy/": {
+  "hash": "5721c0bfb75b3f21",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/latvia/": {
+  "hash": "bcd4e451a04702e4",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/lithuania/": {
+  "hash": "160f21367247372a",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/luxembourg/": {
+  "hash": "b8444c26ad62e1cc",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/malta/": {
+  "hash": "c17abef5cb520ce1",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/netherlands/": {
+  "hash": "9a03480375e4a795",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/norway/": {
+  "hash": "f98984e6acf3a03c",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/poland/": {
+  "hash": "c0f47d1a7fb87629",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/portugal/": {
+  "hash": "8d9003c3d3ffe0fd",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/report/": {
+  "hash": "221d2990736a3188",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/romania/": {
+  "hash": "4807c21fad402fcc",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/slovakia/": {
+  "hash": "0ba3208514cc394d",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/slovenia/": {
+  "hash": "44bab53cdfd7a1cd",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/spain/": {
+  "hash": "f9f1ae742bf2445e",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/sweden/": {
+  "hash": "48ba316b37581843",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/switzerland/": {
+  "hash": "9c8e6d840cfc2ad3",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pedalability-index/united-kingdom/": {
+  "hash": "0ea0ee7c8f74b998",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/pitch": {
+  "hash": "ed744d19725c8068",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/privacy": {
+  "hash": "dbcaedc2a4e10bb6",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/ro/": {
+  "hash": "c8cded60359095d9",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/ro/methodology": {
+  "hash": "b134daa455e766f0",
+  "modified": "2026-11-24",
+  "published": "2026-10-12"
+ },
+ "/ro/privacy": {
+  "hash": "49f7df5f1c395f74",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/ro/terms": {
+  "hash": "7b9ba968f2bbc480",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ },
+ "/terms": {
+  "hash": "18fa6a7f9ad5b286",
+  "modified": "2026-11-24",
+  "published": "2026-11-24"
+ }
+}

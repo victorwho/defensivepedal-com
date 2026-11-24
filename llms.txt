@@ -15,14 +15,55 @@
 
 - [Home, English](https://defensivepedal.tech/)
 - [Acasă, Română](https://defensivepedal.tech/ro/)
-- [Pedalability Index: Cycling Risk — ranking of 300 European cities](https://defensivepedal.tech/pedalability-index/)
 - [For cities: street-level cycling risk reviews](https://defensivepedal.tech/cities)
 - [For consultancies: white-label cycling risk layer](https://defensivepedal.tech/partners)
 - [For fleets: route-risk audit for courier and e-bike fleets in Bucharest](https://defensivepedal.tech/fleets)
 - [Defensive Pedal on Google Play](https://play.google.com/store/apps/details?id=com.defensivepedal.mobile)
 - [Defensive Pedal on the App Store](https://apps.apple.com/ro/app/defensive-pedal/id6778694757)
 
-## Methodology
+## Pedalability Index
+
+- [Pedalability Index 2026: Cycling Risk](https://defensivepedal.tech/pedalability-index/): 300 European cities ranked by the cycling risk of their street networks, from 74 million scored road segments. Higher score = lower assessed risk. A score of 0.0 means the lowest of the 300 cities, not an absence of safety.
+- Top 10: 1. Stockholm (Sweden) 98.9 · 2. Amsterdam (Netherlands) 97.9 · 3. Helsinki (Finland) 97.9 · 4. The Hague (Netherlands) 97.8 · 5. Antwerp (Belgium) 97.7 · 6. Vantaa (Finland) 97.2 · 7. Leiden (Netherlands) 97.1 · 8. Haarlem (Netherlands) 96.6 · 9. Espoo (Finland) 95.5 · 10. Copenhagen (Denmark) 95.0
+- [City data file, CSV, CC BY 4.0](https://defensivepedal.tech/pedalability-index/data/eu300_city_index.csv)
+- [The study, v1.0, 219 cities](https://defensivepedal.tech/pedalability-index/report/): Rotariu, V. (2026), The European Cycling Risk Index: Methodology, Validation, and a City-Level Analysis of 219 Cities, https://doi.org/10.5281/zenodo.22771452
+- [Full text for language models](https://defensivepedal.tech/llms-full.txt): methodology, limits and the 300-row table as plain text.
+
+### Countries
+
+- [Is it safe to cycle in Austria?](https://defensivepedal.tech/pedalability-index/austria/)
+- [Is it safe to cycle in Belgium?](https://defensivepedal.tech/pedalability-index/belgium/)
+- [Is it safe to cycle in Bulgaria?](https://defensivepedal.tech/pedalability-index/bulgaria/)
+- [Is it safe to cycle in Croatia?](https://defensivepedal.tech/pedalability-index/croatia/)
+- [Is it safe to cycle in Cyprus?](https://defensivepedal.tech/pedalability-index/cyprus/)
+- [Is it safe to cycle in Czechia?](https://defensivepedal.tech/pedalability-index/czechia/)
+- [Is it safe to cycle in Denmark?](https://defensivepedal.tech/pedalability-index/denmark/)
+- [Is it safe to cycle in Estonia?](https://defensivepedal.tech/pedalability-index/estonia/)
+- [Is it safe to cycle in Finland?](https://defensivepedal.tech/pedalability-index/finland/)
+- [Is it safe to cycle in France?](https://defensivepedal.tech/pedalability-index/france/)
+- [Is it safe to cycle in Germany?](https://defensivepedal.tech/pedalability-index/germany/)
+- [Is it safe to cycle in Greece?](https://defensivepedal.tech/pedalability-index/greece/)
+- [Is it safe to cycle in Hungary?](https://defensivepedal.tech/pedalability-index/hungary/)
+- [Is it safe to cycle in Iceland?](https://defensivepedal.tech/pedalability-index/iceland/)
+- [Is it safe to cycle in Ireland?](https://defensivepedal.tech/pedalability-index/ireland/)
+- [Is it safe to cycle in Italy?](https://defensivepedal.tech/pedalability-index/italy/)
+- [Is it safe to cycle in Latvia?](https://defensivepedal.tech/pedalability-index/latvia/)
+- [Is it safe to cycle in Lithuania?](https://defensivepedal.tech/pedalability-index/lithuania/)
+- [Is it safe to cycle in Luxembourg?](https://defensivepedal.tech/pedalability-index/luxembourg/)
+- [Is it safe to cycle in Malta?](https://defensivepedal.tech/pedalability-index/malta/)
+- [Is it safe to cycle in the Netherlands?](https://defensivepedal.tech/pedalability-index/netherlands/)
+- [Is it safe to cycle in Norway?](https://defensivepedal.tech/pedalability-index/norway/)
+- [Is it safe to cycle in Poland?](https://defensivepedal.tech/pedalability-index/poland/)
+- [Is it safe to cycle in Portugal?](https://defensivepedal.tech/pedalability-index/portugal/)
+- [Is it safe to cycle in Romania?](https://defensivepedal.tech/pedalability-index/romania/)
+- [Is it safe to cycle in Slovakia?](https://defensivepedal.tech/pedalability-index/slovakia/)
+- [Is it safe to cycle in Slovenia?](https://defensivepedal.tech/pedalability-index/slovenia/)
+- [Is it safe to cycle in Spain?](https://defensivepedal.tech/pedalability-index/spain/)
+- [Is it safe to cycle in Sweden?](https://defensivepedal.tech/pedalability-index/sweden/)
+- [Is it safe to cycle in Switzerland?](https://defensivepedal.tech/pedalability-index/switzerland/)
+- [Is it safe to cycle in the United Kingdom?](https://defensivepedal.tech/pedalability-index/united-kingdom/)
+
+## Methodology and papers
 
 - [How Defensive Pedal scores street risk](https://defensivepedal.tech/methodology): 100+ factors in seven families (motor traffic, road type, cycling infrastructure, geometry and surface, legal access, intersections, special features); data from OpenStreetMap, an own traffic model calibrated on congestion data, a road-marking model, LiDAR/GEDTM30 elevation and rider reports. Validated on 2,034 counting sites in 5 countries and 13 regions, about 4 billion passages, 10,000+ crashes, 1,169 serious injuries: serious-injury rate rises with each risk level (p < 10^-5), about 2x per passage on the highest-risk streets; the score predicts severity, not crash frequency. Published: Rotariu, V. (2026), Severity Without Frequency: A Multi-Country Validation of a Cycling Routing Risk Score, Zenodo, CC BY 4.0, https://doi.org/10.5281/zenodo.23051502
 - [Romanian version](https://defensivepedal.tech/ro/methodology)

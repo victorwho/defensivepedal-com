@@ -1,0 +1,6 @@
+# Build inputs and tooling: kept in the repo, not served.
+scripts/
+content/
+.assetsignore
+.gitignore
+wrangler.jsonc
