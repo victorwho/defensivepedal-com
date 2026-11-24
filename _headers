@@ -24,25 +24,3 @@
 
 /
   Cache-Control: public, max-age=300, must-revalidate
-
-# Generated HTML routes (index pages, guides, research, apps and their translations)
-/pedalability-index/*/
-  Cache-Control: public, max-age=300, must-revalidate
-
-/guides/*
-  Cache-Control: public, max-age=300, must-revalidate
-
-/research/*
-  Cache-Control: public, max-age=300, must-revalidate
-
-/apps/*
-  Cache-Control: public, max-age=300, must-revalidate
-
-/:lang/guides/*
-  Cache-Control: public, max-age=300, must-revalidate
-
-/:lang/research/*
-  Cache-Control: public, max-age=300, must-revalidate
-
-/:lang/apps/*
-  Cache-Control: public, max-age=300, must-revalidate
