@@ -11,7 +11,8 @@ const texts = JSON.parse(read('content/template_text.json'));
 // Register every page first, so links, hreflang and navigation only ever point at pages that exist.
 planSite();
 const answers = planPages(texts);
-const index = planCities(texts);
+const index = planCities(texts, answers.cityDrafts);
+for (const d of index.unusedDrafts) console.log(`City draft not used: ${d.file} (${d.why})`);
 
 answers.render();
 const { indexNodes } = index.render({ guide: answers.guide, research: answers.research });

@@ -75,7 +75,8 @@ export function markdown(src) {
   return out;
 }
 
-const plain = (html) => html.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+
+export const plainText = (html) => html.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
 
 /** A LOG.md line approves a draft when it contains the exact question and its last field is "approved". */
 function approvedIn(log, meta) {
@@ -91,10 +92,10 @@ function loadDrafts(texts) {
     // A missing drafts folder must never read as "unpublish every answer page".
     const live = SECTIONS.filter((s) => fs.existsSync(path.resolve(ROOT, s)));
     if (live.length) throw new Error(`${logFile} not found, but /${live.join('/, /')}/ are published. Set DRAFTS_DIR to the drafts folder.`);
-    return { drafts: [], rejected: [], note: `No ${logFile}; nothing approved.` };
+    return { drafts: [], cityDrafts: [], rejected: [], note: `No ${logFile}; nothing approved.` };
   }
   const log = fs.readFileSync(logFile, 'utf8');
-  const drafts = [], rejected = [];
+  const drafts = [], cityDrafts = [], rejected = [];
   for (const lang of fs.readdirSync(DRAFTS, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort()) {
     for (const name of fs.readdirSync(path.join(DRAFTS, lang)).filter((f) => f.endsWith('.md')).sort()) {
       const file = `${lang}/${name}`;
@@ -113,22 +114,28 @@ function loadDrafts(texts) {
       if (!textsFor(texts, language)) { reject(`no template wording for "${language}" under i18n in content/template_text.json`); continue; }
       const rel = meta.slug.replace(/^https?:\/\/[^/]+/, '').replace(/^\/+|\/+$/g, '').replace(new RegExp(`^${language}/`), '');
       const [section] = rel.split('/');
+      // City drafts extend a generated city page; build-cities.mjs decides whether that page exists.
+      if (section === 'pedalability-index' && /^pedalability-index\/[a-z0-9-]+\/[a-z0-9-]+$/.test(rel)) {
+        if (language !== 'en') { reject('city pages are English-only for now'); continue; }
+        cityDrafts.push({ file, meta, body: draft.body, language, url: `/${rel}/` });
+        continue;
+      }
       if (!SECTIONS.includes(section) || !/^[a-z0-9-]+(\/[a-z0-9-]+)+$/.test(rel)) { reject(`slug "${meta.slug}" must be lowercase letters, digits and hyphens under /guides/, /research/ or /apps/`); continue; }
       drafts.push({ file, meta, body: draft.body, language, section, rel });
     }
   }
-  return { drafts, rejected };
+  return { drafts, cityDrafts, rejected };
 }
 
 export function plan(texts) {
-  const { drafts, rejected, note } = loadDrafts(texts);
+  const { drafts, cityDrafts, rejected, note } = loadDrafts(texts);
   const prefix = (lang) => (lang === 'en' ? '' : `/${lang}`);
   const built = [];
 
   for (const d of drafts) {
     const blocks = markdown(d.body.replace(/^\s*#\s+.*\n/, ''));
     const first = blocks.find((b) => b.startsWith('<p>'));
-    const words = first ? wordCount(plain(first)) : 0;
+    const words = first ? wordCount(plainText(first)) : 0;
     if (blocks[0] !== first || words < 40 || words > 60) {
       rejected.push({ file: d.file, why: `first paragraph after the H1 must be the 40–60-word answer (found ${words} words)` });
       continue;
@@ -137,7 +144,7 @@ export function plan(texts) {
     if (built.some((p) => p.url === url)) { rejected.push({ file: d.file, why: `another draft already builds ${url}` }); continue; }
     built.push(register({
       url, file: `${url.slice(1)}index.html`, lang: d.language, key: d.rel, group: 'answers',
-      section: d.section, title: d.meta.question, summary: plain(first), draft: d, blocks,
+      section: d.section, title: d.meta.question, summary: plainText(first), draft: d, blocks,
     }));
   }
 
@@ -158,7 +165,7 @@ export function plan(texts) {
     let skipping = false;
     for (const block of page.blocks.slice(1)) {
       const heading = block.match(/^<h2>(.*)<\/h2>$/);
-      if (heading) skipping = /^(related questions|sources)$/i.test(plain(heading[1]).trim());
+      if (heading) skipping = /^(related questions|sources)$/i.test(plainText(heading[1]).trim());
       if (skipping || /^<p><em>Updated\b/.test(block)) continue;
       kept.push(block);
     }
@@ -173,8 +180,8 @@ export function plan(texts) {
       const q = block.match(/^<h2>(.*\?)<\/h2>$/);
       if (!q) return;
       const end = kept.findIndex((b, j) => j > i && /^<h2>/.test(b));
-      const text = kept.slice(i + 1, end === -1 ? undefined : end).map(plain).join(' ').replace(/\s+/g, ' ').trim();
-      if (text) faq.push([plain(q[1]), text]);
+      const text = kept.slice(i + 1, end === -1 ? undefined : end).map(plainText).join(' ').replace(/\s+/g, ' ').trim();
+      if (text) faq.push([plainText(q[1]), text]);
     });
     const indent = (html) => html.split('\n').map((l) => `      ${l}`).join('\n');
     const body = `      <nav class="answer-crumbs" aria-label="Breadcrumb"><a href="${hubUrl}">${esc(sectionName)}</a> › ${esc(meta.question)}</nav>
@@ -240,7 +247,7 @@ ${members.map((p) => `      <h2><a href="${p.url}">${esc(p.title)}</a></h2>\n   
   const guide = en.find((p) => p.url === '/guides/start-cycling-to-work/') || en.find((p) => p.section === 'guides');
   const research = en.filter((p) => p.section === 'research').sort((a, b) => a.url.localeCompare(b.url))[0];
 
-  return { built, hubs, rejected, note, render, guide, research };
+  return { built, hubs, cityDrafts, rejected, note, render, guide, research };
 }
 
 if (import.meta.main) import('./build.mjs');

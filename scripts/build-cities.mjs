@@ -6,6 +6,7 @@ import {
   esc, read, write, exists, parseCsv, ordinal, wordCount, fill, breadcrumbs,
   register, pageExists, shell, emit,
 } from './lib.mjs';
+import { markdown, plainText } from './build-pages.mjs';
 
 const NOTES = 'content/city_notes.csv';
 const NOTES_HEADER = 'slug,human_line,arterials,calm_areas,peers\n';
@@ -55,6 +56,40 @@ function checkAnswer(text, where) {
   const n = wordCount(text.replace(/<[^>]+>/g, ''));
   if (n < 40 || n > 60) throw new Error(`${where}: answer paragraph is ${n} words, must be 40–60`);
   return text;
+}
+
+// ---------- City drafts: approved Markdown that extends a generated city page ----------
+// The build keeps owning the answer checks, key numbers, limits, FAQ and sources; a draft adds its own sections
+// after the key numbers. A draft section can stand in for the template's peer table or its "starting out" block.
+const OWNED = /doesn.t tell you|frequently asked|^related questions$|^sources$/i;
+const REPLACES = { peers: /\bcompare\b/i, start: /new to cycling|where do i start|starting out/i };
+const DOI = /\b(10\.\d{4,9}\/[^\s"'<>)\],;]+[^\s"'<>)\],;.])/g;
+const indent = (html) => html.split('\n').map((l) => (l ? `      ${l}` : l)).join('\n');
+
+function extension(draft) {
+  if (!draft) return null;
+  const blocks = markdown(draft.body.replace(/^\s*#\s+.*\n/, ''));
+  const first = blocks[0]?.startsWith('<p>') ? blocks[0] : null;
+  const words = first ? wordCount(plainText(first)) : 0;
+  const answer = first && words >= 40 && words <= 60 ? first : null;
+  const sections = [];
+  let current = null;
+  for (const block of blocks.slice(answer ? 1 : 0)) {
+    const h = block.match(/^<h2>(.*)<\/h2>$/);
+    if (h) { current = { heading: plainText(h[1]).trim(), html: block, blocks: [] }; sections.push(current); continue; }
+    if (!current || /^<p><em>Updated\b/.test(block)) continue;
+    current.blocks.push(block);
+  }
+  const faq = [];
+  for (const block of sections.find((sec) => /frequently asked/i.test(sec.heading))?.blocks || []) {
+    const m = block.match(/^<p><strong>(.+?\?)<\/strong>\s*([\s\S]+)<\/p>$/);
+    if (m) faq.push([plainText(m[1]).trim(), plainText(m[2]).trim()]);
+  }
+  const kept = sections.filter((sec) => !OWNED.test(sec.heading));
+  const questions = kept.filter((sec) => /\?$/.test(sec.heading))
+    .map((sec) => [sec.heading, sec.blocks.map(plainText).join(' ').replace(/\s+/g, ' ').trim()]).filter(([, a]) => a);
+  const sources = [...new Set([].concat(draft.meta.sources || []).map((x) => (typeof x === 'string' ? x : x.from)).filter(Boolean))];
+  return { file: draft.file, answer, sections: kept, faq, questions, sources, replaces: (key) => kept.find((sec) => REPLACES[key].test(sec.heading)) };
 }
 
 const limitsHtml = (t) => `      <h2>${esc(t.limits.heading)}</h2>\n${t.limits.paragraphs.map((p) => `      <p>${esc(p)}</p>`).join('\n')}`;
@@ -124,7 +159,7 @@ ${rows.join('\n')}
 }
 
 /** Registers every page this module will write, and returns the function that writes them. */
-export function plan(texts) {
+export function plan(texts, cityDrafts = []) {
   const cities = loadCities();
   const bySlug = new Map(cities.map((c) => [c.slug, c]));
   if (!exists(NOTES)) write(NOTES, NOTES_HEADER);
@@ -143,6 +178,14 @@ export function plan(texts) {
       key: `index/${slug}`, group: 'cities', title: fill(texts.country.h1, { country_in: inName }), members,
     });
   });
+  const draftsByUrl = new Map();
+  const unusedDrafts = [];
+  for (const d of cityDrafts) {
+    const city = cities.find((c) => cityUrl(c) === d.url);
+    if (!city) unusedDrafts.push({ file: d.file, why: `no city in the index has the URL ${d.url}` });
+    else if (!notes.get(city.slug)?.human_line) unusedDrafts.push({ file: d.file, why: `${city.slug} has no human_line in ${NOTES}` });
+    else draftsByUrl.set(d.url, d);
+  }
   const cityPages = built.map((c) => register({
     url: cityUrl(c), file: `${cityUrl(c).slice(1)}index.html`, lang: 'en',
     key: cityUrl(c), group: 'cities', title: fill(texts.city.h1, { city: c.city }), city: c,
@@ -169,6 +212,10 @@ export function plan(texts) {
     const withRoute = `${base} ${t.answer_route}`;
     const answer = checkAnswer(wordCount(withRoute) <= 60 ? withRoute : base, page.url);
     const h1 = fill(t.h1, v), description = fill(t.description, v);
+    const ext = extension(draftsByUrl.get(page.url));
+    if (ext) page.extendedBy = ext.file;
+    const answerHtml = ext?.answer || `<p>${esc(answer)}</p>`;
+    const answerPlain = ext?.answer ? plainText(ext.answer).replace(/\s+/g, ' ').trim() : answer;
     const overlap = c.rank_lo <= peer.rank_hi && peer.rank_lo <= c.rank_hi;
     const peerAnswer = overlap ? t.faq_peer_tie : c.rank < peer.rank ? t.faq_peer_lower : t.faq_peer_higher;
     const faq = [
@@ -185,11 +232,33 @@ export function plan(texts) {
       [t.rows.population, Number(c.population).toLocaleString('en-GB')],
     ];
     const optional = (heading, cell) => (cell ? `      <h2>${esc(fill(heading, v))}</h2>\n      <p>${esc(cell)}</p>\n` : '');
+    const draftFaq = (ext?.faq || []).filter(([q]) => !faq.some(([q2]) => q2 === q));
+    const visibleFaq = [...faq, ...draftFaq];
+    const schemaFaq = [...visibleFaq, ...(ext?.questions || []).filter(([q]) => !visibleFaq.some(([q2]) => q2 === q))];
     const startLinks = [guide && `<a href="${guide.url}">${esc(t.start_guide)}: ${esc(guide.title)}</a>`,
       research && `<a href="${research.url}">${esc(t.start_research)}: ${esc(research.title)}</a>`].filter(Boolean);
+    const startSection = ext?.replaces('start');
+    const extSections = (ext?.sections || []).map((sec) => [sec.html, ...sec.blocks,
+      ...(sec === startSection && startLinks.length ? [`<p>${startLinks.join(' · ')}</p>`] : [])].join('\n'));
+    const extHtml = extSections.length ? `${indent(extSections.join('\n\n'))}\n\n` : '';
+    const peersHtml = ext?.replaces('peers') ? '' : `      <h2>${esc(fill(t.peers_heading, v))}</h2>
+      <p>${esc(t.peers_intro)}</p>
+${cityRowsTable([c, ...peers].sort((a, b) => a.rank - b.rank), texts)}
+
+`;
+    const startHtml = startSection ? '' : `      <h2>${esc(fill(t.start_heading, v))}</h2>
+      <p>${esc(t.start)}${startLinks.length ? ` ${startLinks.join(' · ')}` : ''}</p>
+
+`;
+    const sourcesHtml = ext?.sources.length ? `      <h2>${esc(texts.page.sources_heading)}</h2>
+      <ul>
+${ext.sources.map((x) => `        <li>${esc(x).replace(DOI, '<a href="https://doi.org/$1" target="_blank" rel="noopener">$1</a>')}</li>`).join('\n')}
+      </ul>
+
+` : '';
     const body = `      <nav class="answer-crumbs" aria-label="Breadcrumb"><a href="/pedalability-index/">Pedalability Index</a> › <a href="${countryUrl(c)}">${esc(country.name)}</a> › ${esc(c.city)}</nav>
       <h1>${esc(h1)}</h1>
-      <p>${esc(answer)}</p>
+${indent(answerHtml)}
       <p>${esc(note.human_line)}</p>
       <p class="meta">${fill(t.updated, { date: '<time datetime="@@MODIFIED@@">@@MODIFIED_HUMAN@@</time>' })}</p>
 
@@ -201,28 +270,21 @@ ${rows.map(([k, val]) => `          <tr><th scope="row">${esc(k)}</th><td>${esc(
       </table>
       <p>${esc(texts.scale_note)}</p>
 
-${optional(t.calm_heading, note.calm_areas)}${optional(t.arterials_heading, note.arterials)}      <h2>${esc(fill(t.peers_heading, v))}</h2>
-      <p>${esc(t.peers_intro)}</p>
-${cityRowsTable([c, ...peers].sort((a, b) => a.rank - b.rank), texts)}
+${extHtml}${optional(t.calm_heading, note.calm_areas)}${optional(t.arterials_heading, note.arterials)}${peersHtml}${startHtml}${limitsHtml(texts)}
 
-      <h2>${esc(fill(t.start_heading, v))}</h2>
-      <p>${esc(t.start)}${startLinks.length ? ` ${startLinks.join(' · ')}` : ''}</p>
+${faqHtml(fill(t.faq_heading, v), visibleFaq)}
 
-${limitsHtml(texts)}
-
-${faqHtml(fill(t.faq_heading, v), faq)}
-
-      <p class="meta">${t.source}</p>
+${sourcesHtml}      <p class="meta">${t.source}</p>
       <p class="meta">${fill(t.app, v)}</p>`;
     const graph = [
       ORG,
       webPageNode(page.url, h1, description),
       subsetNode(page.url, `Pedalability Index 2026: ${c.city}`, description,
         { '@type': 'Place', name: c.city, address: { '@type': 'PostalAddress', addressLocality: c.city, addressCountry: c.iso2 } }),
-      faqNode(page.url, [[h1, answer], ...faq]),
+      faqNode(page.url, [[h1, answerPlain], ...schemaFaq]),
       breadcrumbs(page.url, [['Home', '/'], ['Pedalability Index', '/pedalability-index/'], [country.name, countryUrl(c)], [c.city, page.url]]),
     ];
-    page.summary = answer;
+    page.summary = answerPlain;
     emit(page, shell({ page, title: `${h1} Pedalability Index 2026`, description, body, graph, ogImage: OG_IMAGE, texts }));
   }
 
@@ -311,7 +373,7 @@ ${faqHtml(fill(t.faq_heading, v), faq)}
     return { indexNodes: renderIndexPage() };
   }
 
-  return { cities, built, skipped, cityPages, countryPages, render, texts };
+  return { cities, built, skipped, cityPages, countryPages, unusedDrafts, render, texts };
 }
 
 if (import.meta.main) import('./build.mjs');
