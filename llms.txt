@@ -63,6 +63,11 @@
 - [Is it safe to cycle in Switzerland?](https://defensivepedal.tech/pedalability-index/switzerland/)
 - [Is it safe to cycle in the United Kingdom?](https://defensivepedal.tech/pedalability-index/united-kingdom/)
 
+### Cities
+
+- [Is it safe to cycle in Lyon?](https://defensivepedal.tech/pedalability-index/france/lyon/): Lyon ranks 26th of 300 European cities in the Pedalability Index 2026, with a score of 85.7 out of 100 (likely rank 13th–38th). Higher score = lower assessed risk. About 10.9% of its street length rates High risk for cyclists, against 7.0% in Montpellier (31st). Risk changes street by street, so the route you choose matters more than the city average.
+- [Is it safe to cycle in Paris?](https://defensivepedal.tech/pedalability-index/france/paris/): Paris ranks 13th of 300 European cities in the Pedalability Index 2026, with a score of 93.7 out of 100 (likely rank 6th–19th). Higher score = lower assessed risk. About 6.0% of its street length rates High risk for cyclists, against 10.9% in Lyon (26th). Risk changes street by street, so the route you choose matters more than the city average.
+
 ## Guides
 
 - [How do I start cycling to work if traffic scares me?](https://defensivepedal.tech/guides/start-cycling-to-work/): Start with the route, not the bike. Traffic is what holds most would-be cyclists back: for every person who rides, about six more would like to. A route on quieter streets is usually only a little longer (Defensive Pedal's routes average about 5% more than the shortest), so ride it on a weekend before your first workday.

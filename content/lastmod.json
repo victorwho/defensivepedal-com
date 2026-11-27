@@ -40,8 +40,8 @@
   "published": "2026-11-24"
  },
  "/pedalability-index/": {
-  "hash": "3bd1db04787c061f",
-  "modified": "2026-11-24",
+  "hash": "46e1cd2ccbd3d970",
+  "modified": "2026-11-27",
   "published": "2026-11-24"
  },
  "/pedalability-index/austria/": {
@@ -90,9 +90,19 @@
   "published": "2026-11-24"
  },
  "/pedalability-index/france/": {
-  "hash": "68b944209a5d9d94",
+  "hash": "8f1fd29cfcb131df",
   "modified": "2026-11-27",
   "published": "2026-11-24"
+ },
+ "/pedalability-index/france/lyon/": {
+  "hash": "20a5b893848d1843",
+  "modified": "2026-11-27",
+  "published": "2026-11-27"
+ },
+ "/pedalability-index/france/paris/": {
+  "hash": "2be88fb8aec4ea00",
+  "modified": "2026-11-27",
+  "published": "2026-11-27"
  },
  "/pedalability-index/germany/": {
   "hash": "051ab25d37655e28",
