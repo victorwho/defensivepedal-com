@@ -116,8 +116,7 @@ function loadDrafts(texts) {
       const [section] = rel.split('/');
       // City drafts extend a generated city page; build-cities.mjs decides whether that page exists.
       if (section === 'pedalability-index' && /^pedalability-index\/[a-z0-9-]+\/[a-z0-9-]+$/.test(rel)) {
-        if (language !== 'en') { reject('city pages are English-only for now'); continue; }
-        cityDrafts.push({ file, meta, body: draft.body, language, url: `/${rel}/` });
+        cityDrafts.push({ file, meta, body: draft.body, language, url: `${language === 'en' ? '' : `/${language}`}/${rel}/` });
         continue;
       }
       if (!SECTIONS.includes(section) || !/^[a-z0-9-]+(\/[a-z0-9-]+)+$/.test(rel)) { reject(`slug "${meta.slug}" must be lowercase letters, digits and hyphens under /guides/, /research/ or /apps/`); continue; }
@@ -142,8 +141,12 @@ export function plan(texts) {
     }
     const url = `${prefix(d.language)}/${d.rel}/`;
     if (built.some((p) => p.url === url)) { rejected.push({ file: d.file, why: `another draft already builds ${url}` }); continue; }
+    // A translation pairs with its English page through the draft's hreflang line, since the slugs differ.
+    const enSlug = String(d.meta.hreflang || '').replace(/https?:\/\/[^/\s,}]+/g, '').replace(/["']/g, '')
+      .match(/\ben:\s*\/?([^,}\s]+?)\/?(?=[,}\s]|$)/)?.[1];
+    if (d.language !== 'en' && !enSlug) console.log(`Draft has no English pair in its hreflang line: ${d.file}`);
     built.push(register({
-      url, file: `${url.slice(1)}index.html`, lang: d.language, key: d.rel, group: 'answers',
+      url, file: `${url.slice(1)}index.html`, lang: d.language, key: enSlug || d.rel, group: 'answers',
       section: d.section, title: d.meta.question, summary: plainText(first), draft: d, blocks,
     }));
   }
@@ -162,11 +165,13 @@ export function plan(texts) {
     const sectionName = local.sections[section].nav;
     // The build owns the date line, the related block and the sources list.
     const kept = [];
+    const owned = [t.related_heading, t.sources_heading, 'Related questions', 'Sources'].map((h) => h.toLowerCase());
+    const dateLine = /^<p><em>(Updated|Mis à jour|Actualizat)\b/;
     let skipping = false;
     for (const block of page.blocks.slice(1)) {
       const heading = block.match(/^<h2>(.*)<\/h2>$/);
-      if (heading) skipping = /^(related questions|sources)$/i.test(plainText(heading[1]).trim());
-      if (skipping || /^<p><em>Updated\b/.test(block)) continue;
+      if (heading) skipping = owned.includes(plainText(heading[1]).trim().toLowerCase());
+      if (skipping || dateLine.test(block)) continue;
       kept.push(block);
     }
     const related = [].concat(meta.internal_links || [])

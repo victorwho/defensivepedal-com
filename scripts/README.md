@@ -56,7 +56,14 @@ otherwise the build prints `City draft not used` and the page stays as generated
 - its `sources[].from` lines, printed under "Sources". Write them as public citations.
 
 Its "doesn't tell you", "Frequently asked questions", "Related questions" and "Sources" sections are not
-copied; the template keeps its own limits section. City drafts in other languages are rejected for now.
+copied; the template keeps its own limits section. Which headings count is set per language in
+`city.patterns` of `content/template_text.json`.
+
+A translated city draft (`/fr/pedalability-index/france/paris/`) builds a page of its own, paired with the
+English page by hreflang. It needs: the English city page to exist, the language's wording under `i18n` in
+`content/template_text.json`, a number format in `FORMAT` in `build-cities.mjs`, a 40–60-word answer
+paragraph (there is no template answer), and a `human_line:` in its front matter, approved by Victor.
+Translated drafts in other sections pair with their English page through the `hreflang:` front-matter line.
 
 ### Hand-written pages
 

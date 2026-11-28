@@ -10,7 +10,101 @@
     "feed": "Updates (RSS)"
   },
   "i18n": {
-    "_note": "Wording for translated pages, keyed by language (ro, de, fr, es), overlaid on the English strings above. A translated draft is built only when its language has an entry here with shell, sections and page. Each entry needs a native speaker's review."
+    "_note": "Wording for translated pages, keyed by language (ro, de, fr, es), overlaid on the English strings above. A translated draft is built only when its language has an entry here with shell, sections and page. Each entry needs a native speaker's review.",
+    "fr": {
+      "direction": "Plus le score est élevé, plus le risque évalué est faible.",
+      "shell": {
+        "app_button": "Télécharger l’application",
+        "home": "Accueil",
+        "methodology": "Méthodologie",
+        "privacy": "Confidentialité",
+        "terms": "Conditions d’utilisation",
+        "feed": "Actualités (RSS)"
+      },
+      "limits": {
+        "heading": "Ce que ce score ne dit pas",
+        "paragraphs": [
+          "Le score prédit la gravité des blessures en cas d’accident, pas la probabilité qu’un accident se produise.",
+          "Il a été confronté aux relevés officiels d’accidents de grandes villes européennes dans cinq pays. Cette vérification a trouvé un signal le long des rues, mais pas aux carrefours, où se produit une grande partie des blessures de cyclistes en ville.",
+          "Ce sont des associations, pas des causes. Rien ne montre encore qu’un cycliste qui change d’itinéraire modifie pour autant son propre risque.",
+          "Le score d’une ville est une moyenne sur l’ensemble de son réseau de rues. Le risque change d’une rue à l’autre."
+        ]
+      },
+      "scale_note": "L’indice va de 0 à 100 sur une échelle fixe. Plus le score est élevé, plus le risque évalué est faible. Un score de 0,0 correspond à la ville la moins bien classée des 300, et 100 à la mieux classée ; aucun des deux n’est un niveau de risque absolu.",
+      "tiers": {
+        "1": "Niveau 1 (risque évalué plus faible)",
+        "2": "Niveau 2 (intermédiaire)",
+        "3": "Niveau 3 (risque évalué plus élevé)"
+      },
+      "city": {
+        "description": "{city} se classe {rank_ord} sur 300 villes européennes au Pedalability Index 2026, avec un score de {score} sur 100. Environ {hr} % de ses rues (en longueur) sont classées à risque élevé pour les cyclistes.",
+        "numbers_heading": "Chiffres clés pour {city}",
+        "rows": {
+          "rank": "Rang parmi 300 villes européennes",
+          "range": "Fourchette de rang probable (90 % de 2 000 recalculs)",
+          "score": "Score de l’indice (0–100)",
+          "score_range": "Fourchette de score probable",
+          "tier": "Niveau",
+          "hr": "Part des rues (en longueur) classée à risque élevé",
+          "street_km": "Réseau de rues évalué",
+          "population": "Population"
+        },
+        "table_heads": [
+          "Rang sur 300",
+          "Ville",
+          "Score",
+          "Fourchette de rang probable",
+          "Rues classées à risque élevé (en longueur)",
+          "Niveau"
+        ],
+        "peers_heading": "Comparaison de {city} avec des villes similaires",
+        "peers_intro": "Chaque ville figure avec son rang parmi 300, son score et la part de ses rues (en longueur) classée à risque élevé.",
+        "start_heading": "Pour débuter à vélo à {city}",
+        "start": "Commencez par l’itinéraire, pas par le vélo. Un trajet par des rues plus calmes n’est en général qu’un peu plus long : essayez-le d’abord un week-end, puis refaites-le un jour de semaine.",
+        "start_guide": "Lire le guide",
+        "start_research": "Voir les données",
+        "faq_heading": "Questions sur le vélo à {city}",
+        "faq_peer_q": "Le vélo est-il moins risqué à {city} qu’à {peer} ?",
+        "faq_peer_lower": "Selon cette mesure, {city} présente un risque plus faible que {peer}. {city} se classe {rank_ord} sur 300 avec un score de {score}, et {peer} {peer_rank_ord} avec {peer_score}. Plus le score est élevé, plus le risque évalué est faible. Environ {hr} % des rues (en longueur) sont classées à risque élevé à {city}, contre {peer_hr} % à {peer}.",
+        "faq_peer_higher": "Selon cette mesure, {city} présente un risque plus élevé que {peer}. {city} se classe {rank_ord} sur 300 avec un score de {score}, et {peer} {peer_rank_ord} avec {peer_score}. Plus le score est élevé, plus le risque évalué est faible. Environ {hr} % des rues (en longueur) sont classées à risque élevé à {city}, contre {peer_hr} % à {peer}.",
+        "faq_peer_tie": "Les deux villes sont trop proches pour être départagées selon cette mesure, car leurs fourchettes de rang probable se chevauchent. {city} se classe {rank_ord} sur 300 avec un score de {score} (probablement entre la {lo_ord} et la {hi_ord} place), et {peer} {peer_rank_ord} avec {peer_score} (probablement entre la {peer_lo_ord} et la {peer_hi_ord} place). Plus le score est élevé, plus le risque évalué est faible.",
+        "faq_score_q": "Que signifie le score de {score} de {city} ?",
+        "faq_score_a": "Il place {city} au {rank_ord} rang des 300 villes européennes du Pedalability Index 2026. L’indice va de 0 à 100 sur une échelle fixe. Plus le score est élevé, plus le risque évalué est faible. Un score de 0,0 désigne la ville la moins bien classée des 300, pas une absence de sécurité, et aucun score ne signifie qu’une ville est sans risque.",
+        "faq_crash_q": "Le score indique-t-il la probabilité d’un accident à {city} ?",
+        "faq_crash_a": "Non. Le score prédit la gravité d’un accident, pas sa probabilité. Il ne montre pas non plus de signal aux carrefours, où se produit une grande partie des blessures de cyclistes en ville.",
+        "updated": "Mis à jour le {date} · Victor Rotariu · <a href=\"/methodology\">Comment le score est calculé</a> (en anglais)",
+        "source": "Données : <a href=\"/pedalability-index/data/eu300_city_index.csv\">fichier des villes du Pedalability Index 2026</a> (CSV, CC BY 4.0). Classement complet : <a href=\"/pedalability-index/\">Pedalability Index 2026</a> (en anglais).",
+        "app": "Defensive Pedal est une application de navigation à vélo qui contourne les rues les plus risquées. <a href=\"https://smartlinkg.vercel.app/get?utm_source=web&amp;utm_content={slug}\">Télécharger l’application</a>.",
+        "patterns": {
+          "owned": "ne dit pas|questions fréquentes|^questions liées$|^sources$",
+          "faq": "questions fréquentes",
+          "peers": "compar|se situe|par rapport",
+          "start": "débute|par où commencer"
+        }
+      },
+      "sections": {
+        "guides": {
+          "nav": "Guides",
+          "h1": "Guides : se mettre au vélo dans une ville européenne",
+          "intro": "Une question par page, et la réponse d’abord."
+        },
+        "research": {
+          "nav": "Recherche",
+          "h1": "Recherche : ce qui rend une rue risquée à vélo",
+          "intro": "Une question par page, la réponse d’abord, avec la source publiée."
+        },
+        "apps": {
+          "nav": "Applications",
+          "h1": "Applications : choisir un calculateur d’itinéraires vélo",
+          "intro": "Une question par page, et la réponse d’abord."
+        }
+      },
+      "page": {
+        "updated": "Mis à jour le {date} · Victor Rotariu · <a href=\"/methodology\">Comment le score est calculé</a> (en anglais)",
+        "related_heading": "Questions liées",
+        "sources_heading": "Sources"
+      }
+    }
   },
   "limits": {
     "heading": "What this score doesn't tell you",
@@ -62,7 +156,14 @@
     "faq_crash_a": "No. The score predicts how badly a crash ends, not whether one happens. It also has no signal at junctions, where much urban cycling harm happens.",
     "updated": "Updated {date} · Victor Rotariu · <a href=\"/methodology\">How the score works</a>",
     "source": "Data: <a href=\"/pedalability-index/data/eu300_city_index.csv\">Pedalability Index 2026 city file</a> (CSV, CC BY 4.0). Full ranking: <a href=\"/pedalability-index/\">Pedalability Index 2026</a>.",
-    "app": "Defensive Pedal is a cycling navigation app that routes around higher-risk streets. <a href=\"https://smartlinkg.vercel.app/get?utm_source=web&amp;utm_content={slug}\">Get the app</a>."
+    "app": "Defensive Pedal is a cycling navigation app that routes around higher-risk streets. <a href=\"https://smartlinkg.vercel.app/get?utm_source=web&amp;utm_content={slug}\">Get the app</a>.",
+    "patterns": {
+      "owned": "doesn.t tell you|frequently asked|^related questions$|^sources$",
+      "faq": "frequently asked",
+      "peers": "\\bcompare\\b",
+      "start": "new to cycling|where do i start|starting out"
+    },
+    "table_heads": ["Rank of 300","City","Score","Likely rank range","Street length rated High risk","Tier"]
   },
   "country": {
     "h1": "Is it safe to cycle in {country_in}?",

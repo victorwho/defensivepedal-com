@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {
   SITE, INDEX_CSV, INDEX_CSV_SRC, DATASET_ID, REPORT_DOI, COUNTRIES, ORG, FOUNDER,
   esc, read, write, exists, parseCsv, ordinal, wordCount, fill, breadcrumbs,
-  register, pageExists, shell, emit,
+  register, pageExists, shell, emit, textsFor, localized,
 } from './lib.mjs';
 import { markdown, plainText } from './build-pages.mjs';
 
@@ -26,7 +26,22 @@ const FOLD = { ł: 'l', ø: 'o', ß: 'ss', đ: 'd', æ: 'ae' };
 const pathSlug = (c) => c.city.toLowerCase().replace(/[łøßđæ]/g, (ch) => FOLD[ch]).normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const cityUrl = (c) => `${countryUrl(c)}${pathSlug(c)}/`;
-const linked = (c) => (pageExists(cityUrl(c)) ? `<a href="${cityUrl(c)}">${esc(c.city)}</a>` : esc(c.city));
+// Number formats per language. Translated pages exist only where a native draft extends them.
+const FORMAT = {
+  en: { locale: 'en-GB', ord: ordinal, pc: (x) => `${x}%` },
+  fr: { locale: 'fr-FR', ord: (n) => (n === 1 ? '1er' : `${n}e`), pc: (x) => `${x}\u00a0%` },
+};
+const fmt = (lang) => {
+  const f = FORMAT[lang];
+  if (!f) throw new Error(`No number format for "${lang}" in build-cities.mjs`);
+  const dec = (x) => (lang === 'en' ? x : x.replace('.', ','));
+  return { ...f, num: (x, d = 1) => dec(Number(x).toFixed(d)), pct: (share) => dec(pct(share)), score: (c) => dec(score(c)) };
+};
+const nameOf = (c, t) => t.city_names?.[c.slug] || c.city;
+const linked = (c, t = null, lang = 'en') => {
+  const name = esc(t ? nameOf(c, t) : c.city);
+  return pageExists(cityUrl(c)) ? `<a href="${localized(cityUrl(c), lang).url}">${name}</a>` : name;
+};
 
 function loadCities() {
   if (fs.existsSync(INDEX_CSV_SRC)) write(INDEX_CSV, fs.readFileSync(INDEX_CSV_SRC, 'utf8'));
@@ -39,15 +54,15 @@ function loadCities() {
   return rows.sort((a, b) => a.rank - b.rank);
 }
 
-function vars(c, peer) {
-  const country = countryOf(c);
+function vars(c, peer, lang = 'en', t = {}) {
+  const country = countryOf(c), f = fmt(lang);
   return {
-    city: c.city, slug: c.slug, country: country.name, country_in: country.inName,
-    rank_ord: ordinal(c.rank), score: score(c), lo_ord: ordinal(c.rank_lo), hi_ord: ordinal(c.rank_hi),
-    hr: pct(c.high_risk_share),
+    city: nameOf(c, t), slug: c.slug, country: t.countries?.[c.iso2] || country.name, country_in: country.inName,
+    rank_ord: f.ord(c.rank), score: f.score(c), lo_ord: f.ord(c.rank_lo), hi_ord: f.ord(c.rank_hi),
+    hr: f.pct(c.high_risk_share),
     ...(peer && {
-      peer: peer.city, peer_rank_ord: ordinal(peer.rank), peer_score: score(peer), peer_hr: pct(peer.high_risk_share),
-      peer_lo_ord: ordinal(peer.rank_lo), peer_hi_ord: ordinal(peer.rank_hi),
+      peer: nameOf(peer, t), peer_rank_ord: f.ord(peer.rank), peer_score: f.score(peer), peer_hr: f.pct(peer.high_risk_share),
+      peer_lo_ord: f.ord(peer.rank_lo), peer_hi_ord: f.ord(peer.rank_hi),
     }),
   };
 }
@@ -61,13 +76,13 @@ function checkAnswer(text, where) {
 // ---------- City drafts: approved Markdown that extends a generated city page ----------
 // The build keeps owning the answer checks, key numbers, limits, FAQ and sources; a draft adds its own sections
 // after the key numbers. A draft section can stand in for the template's peer table or its "starting out" block.
-const OWNED = /doesn.t tell you|frequently asked|^related questions$|^sources$/i;
-const REPLACES = { peers: /\bcompare\b/i, start: /new to cycling|where do i start|starting out/i };
+// Which headings the build owns or replaces is set per language in city.patterns of content/template_text.json.
 const DOI = /\b(10\.\d{4,9}\/[^\s"'<>)\],;]+[^\s"'<>)\],;.])/g;
 const indent = (html) => html.split('\n').map((l) => (l ? `      ${l}` : l)).join('\n');
 
-function extension(draft) {
+function extension(draft, t) {
   if (!draft) return null;
+  const re = Object.fromEntries(Object.entries(t.city.patterns).map(([k, v]) => [k, new RegExp(v, 'i')]));
   const blocks = markdown(draft.body.replace(/^\s*#\s+.*\n/, ''));
   const first = blocks[0]?.startsWith('<p>') ? blocks[0] : null;
   const words = first ? wordCount(plainText(first)) : 0;
@@ -81,15 +96,15 @@ function extension(draft) {
     current.blocks.push(block);
   }
   const faq = [];
-  for (const block of sections.find((sec) => /frequently asked/i.test(sec.heading))?.blocks || []) {
+  for (const block of sections.find((sec) => re.faq.test(sec.heading))?.blocks || []) {
     const m = block.match(/^<p><strong>(.+?\?)<\/strong>\s*([\s\S]+)<\/p>$/);
     if (m) faq.push([plainText(m[1]).trim(), plainText(m[2]).trim()]);
   }
-  const kept = sections.filter((sec) => !OWNED.test(sec.heading));
+  const kept = sections.filter((sec) => !re.owned.test(sec.heading));
   const questions = kept.filter((sec) => /\?$/.test(sec.heading))
     .map((sec) => [sec.heading, sec.blocks.map(plainText).join(' ').replace(/\s+/g, ' ').trim()]).filter(([, a]) => a);
   const sources = [...new Set([].concat(draft.meta.sources || []).map((x) => (typeof x === 'string' ? x : x.from)).filter(Boolean))];
-  return { file: draft.file, answer, sections: kept, faq, questions, sources, replaces: (key) => kept.find((sec) => REPLACES[key].test(sec.heading)) };
+  return { file: draft.file, answer, sections: kept, faq, questions, sources, replaces: (key) => kept.find((sec) => re[key].test(sec.heading)) };
 }
 
 const limitsHtml = (t) => `      <h2>${esc(t.limits.heading)}</h2>\n${t.limits.paragraphs.map((p) => `      <p>${esc(p)}</p>`).join('\n')}`;
@@ -102,13 +117,13 @@ const faqNode = (url, qa) => ({
   mainEntity: qa.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
 });
 
-const webPageNode = (url, name, description) => ({
+const webPageNode = (url, name, description, lang = 'en') => ({
   '@type': 'WebPage',
   '@id': `${SITE}${url}#webpage`,
   url: `${SITE}${url}`,
   name,
   description,
-  inLanguage: 'en',
+  inLanguage: lang,
   isPartOf: { '@id': `${SITE}/#website` },
   datePublished: '@@PUBLISHED@@',
   dateModified: '@@MODIFIED@@',
@@ -148,10 +163,11 @@ export const datasetNode = () => ({
   distribution: { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: `${SITE}/${INDEX_CSV}` },
 });
 
-function cityRowsTable(cities, t) {
-  const rows = cities.map((c) => `          <tr><td>${c.rank}</td><td>${linked(c)}</td><td>${score(c)}</td><td>${c.rank_lo}–${c.rank_hi}</td><td>${pct(c.high_risk_share)}%</td><td>${esc(t.tiers[c.tier])}</td></tr>`);
+function cityRowsTable(cities, t, lang = 'en') {
+  const f = fmt(lang);
+  const rows = cities.map((c) => `          <tr><td>${c.rank}</td><td>${linked(c, t, lang)}</td><td>${f.score(c)}</td><td>${c.rank_lo}–${c.rank_hi}</td><td>${esc(f.pc(f.pct(c.high_risk_share)))}</td><td>${esc(t.tiers[c.tier])}</td></tr>`);
   return `      <table>
-        <thead><tr><th>Rank of 300</th><th>City</th><th>Score</th><th>Likely rank range</th><th>Street length rated High risk</th><th>Tier</th></tr></thead>
+        <thead><tr>${t.city.table_heads.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>
         <tbody>
 ${rows.join('\n')}
         </tbody>
@@ -180,15 +196,28 @@ export function plan(texts, cityDrafts = []) {
   });
   const draftsByUrl = new Map();
   const unusedDrafts = [];
+  const translated = [];
   for (const d of cityDrafts) {
-    const city = cities.find((c) => cityUrl(c) === d.url);
-    if (!city) unusedDrafts.push({ file: d.file, why: `no city in the index has the URL ${d.url}` });
-    else if (!notes.get(city.slug)?.human_line) unusedDrafts.push({ file: d.file, why: `${city.slug} has no human_line in ${NOTES}` });
-    else draftsByUrl.set(d.url, d);
+    const enUrl = d.language === 'en' ? d.url : d.url.slice(d.language.length + 1);
+    const city = cities.find((c) => cityUrl(c) === enUrl);
+    const unused = (why) => unusedDrafts.push({ file: d.file, why });
+    if (!city) unused(`no city in the index has the URL ${enUrl}`);
+    else if (!notes.get(city.slug)?.human_line) unused(`${city.slug} has no human_line in ${NOTES}`);
+    else if (d.language === 'en') draftsByUrl.set(d.url, d);
+    else if (translated.some((x) => x.d.url === d.url)) unused(`another draft already builds ${d.url}`);
+    // A translated city page is the native draft plus its approved human line and the template numbers.
+    else if (!String(d.meta.human_line || '').trim()) unused('no approved human_line in its front matter');
+    else if (!FORMAT[d.language]) unused(`no number format for "${d.language}" in build-cities.mjs`);
+    else if (!extension(d, textsFor(texts, d.language)).answer) unused('first paragraph after the H1 must be the 40–60-word answer');
+    else translated.push({ city, d });
   }
   const cityPages = built.map((c) => register({
     url: cityUrl(c), file: `${cityUrl(c).slice(1)}index.html`, lang: 'en',
     key: cityUrl(c), group: 'cities', title: fill(texts.city.h1, { city: c.city }), city: c,
+  }));
+  const translatedPages = translated.map(({ city, d }) => register({
+    url: d.url, file: `${d.url.slice(1)}index.html`, lang: d.language,
+    key: cityUrl(city), group: 'cities', title: d.meta.question, city, draft: d,
   }));
 
   const allAvg = mean(cities.map((c) => Number(c.index))).toFixed(1);
@@ -206,13 +235,16 @@ export function plan(texts, cityDrafts = []) {
   }
 
   function renderCity(page, guide, research) {
-    const c = page.city, t = texts.city, note = notes.get(c.slug);
-    const peers = peersOf(c), peer = peers[0], v = vars(c, peer);
+    const lang = page.lang, en = lang === 'en', local = textsFor(texts, lang), f = fmt(lang);
+    const c = page.city, t = local.city, note = notes.get(c.slug);
+    const peers = peersOf(c), peer = peers[0], v = vars(c, peer, lang, local);
+    const ext = extension(en ? draftsByUrl.get(page.url) : page.draft, local);
     const base = fill(t.answer, v);
     const withRoute = `${base} ${t.answer_route}`;
-    const answer = checkAnswer(wordCount(withRoute) <= 60 ? withRoute : base, page.url);
-    const h1 = fill(t.h1, v), description = fill(t.description, v);
-    const ext = extension(draftsByUrl.get(page.url));
+    const answer = en ? checkAnswer(wordCount(withRoute) <= 60 ? withRoute : base, page.url) : null;
+    const h1 = en ? fill(t.h1, v) : page.draft.meta.question, description = fill(t.description, v);
+    const humanLine = en ? note.human_line : page.draft.meta.human_line;
+    const cityName = v.city, countryName = v.country;
     if (ext) page.extendedBy = ext.file;
     const answerHtml = ext?.answer || `<p>${esc(answer)}</p>`;
     const answerPlain = ext?.answer ? plainText(ext.answer).replace(/\s+/g, ' ').trim() : answer;
@@ -223,43 +255,45 @@ export function plan(texts, cityDrafts = []) {
       [fill(t.faq_score_q, v), fill(t.faq_score_a, v)],
       [fill(t.faq_crash_q, v), fill(t.faq_crash_a, v)],
     ];
-    const country = countryOf(c);
     const rows = [
-      [t.rows.rank, `${ordinal(c.rank)}`], [t.rows.range, `${ordinal(c.rank_lo)}–${ordinal(c.rank_hi)}`],
-      [t.rows.score, score(c)], [t.rows.score_range, `${Number(c.index_lo).toFixed(1)}–${Number(c.index_hi).toFixed(1)}`],
-      [t.rows.tier, texts.tiers[c.tier]], [t.rows.hr, `${pct(c.high_risk_share)}%`],
-      [t.rows.street_km, `${Math.round(Number(c.street_km)).toLocaleString('en-GB')} km`],
-      [t.rows.population, Number(c.population).toLocaleString('en-GB')],
+      [t.rows.rank, f.ord(c.rank)], [t.rows.range, `${f.ord(c.rank_lo)}–${f.ord(c.rank_hi)}`],
+      [t.rows.score, f.score(c)], [t.rows.score_range, `${f.num(c.index_lo)}–${f.num(c.index_hi)}`],
+      [t.rows.tier, local.tiers[c.tier]], [t.rows.hr, f.pc(f.pct(c.high_risk_share))],
+      [t.rows.street_km, `${Math.round(Number(c.street_km)).toLocaleString(f.locale)}${en ? ' ' : '\u00a0'}km`],
+      [t.rows.population, Number(c.population).toLocaleString(f.locale)],
     ];
-    const optional = (heading, cell) => (cell ? `      <h2>${esc(fill(heading, v))}</h2>\n      <p>${esc(cell)}</p>\n` : '');
+    // The calm-areas and arterials cells in city_notes.csv are English, so only English pages show them.
+    const optional = (heading, cell) => (cell && en ? `      <h2>${esc(fill(heading, v))}</h2>\n      <p>${esc(cell)}</p>\n` : '');
     const draftFaq = (ext?.faq || []).filter(([q]) => !faq.some(([q2]) => q2 === q));
     const visibleFaq = [...faq, ...draftFaq];
     const schemaFaq = [...visibleFaq, ...(ext?.questions || []).filter(([q]) => !visibleFaq.some(([q2]) => q2 === q))];
-    const startLinks = [guide && `<a href="${guide.url}">${esc(t.start_guide)}: ${esc(guide.title)}</a>`,
-      research && `<a href="${research.url}">${esc(t.start_research)}: ${esc(research.title)}</a>`].filter(Boolean);
+    const own = (p) => p && localized(p.key, lang);
+    const colon = en ? ':' : '\u00a0:';
+    const startLinks = [guide && `<a href="${own(guide).url}">${esc(t.start_guide)}${colon} ${esc(own(guide).title)}</a>`,
+      research && `<a href="${own(research).url}">${esc(t.start_research)}${colon} ${esc(own(research).title)}</a>`].filter(Boolean);
     const startSection = ext?.replaces('start');
     const extSections = (ext?.sections || []).map((sec) => [sec.html, ...sec.blocks,
       ...(sec === startSection && startLinks.length ? [`<p>${startLinks.join(' · ')}</p>`] : [])].join('\n'));
     const extHtml = extSections.length ? `${indent(extSections.join('\n\n'))}\n\n` : '';
     const peersHtml = ext?.replaces('peers') ? '' : `      <h2>${esc(fill(t.peers_heading, v))}</h2>
       <p>${esc(t.peers_intro)}</p>
-${cityRowsTable([c, ...peers].sort((a, b) => a.rank - b.rank), texts)}
+${cityRowsTable([c, ...peers].sort((a, b) => a.rank - b.rank), local, lang)}
 
 `;
     const startHtml = startSection ? '' : `      <h2>${esc(fill(t.start_heading, v))}</h2>
       <p>${esc(t.start)}${startLinks.length ? ` ${startLinks.join(' · ')}` : ''}</p>
 
 `;
-    const sourcesHtml = ext?.sources.length ? `      <h2>${esc(texts.page.sources_heading)}</h2>
+    const sourcesHtml = ext?.sources.length ? `      <h2>${esc(local.page.sources_heading)}</h2>
       <ul>
 ${ext.sources.map((x) => `        <li>${esc(x).replace(DOI, '<a href="https://doi.org/$1" target="_blank" rel="noopener">$1</a>')}</li>`).join('\n')}
       </ul>
 
 ` : '';
-    const body = `      <nav class="answer-crumbs" aria-label="Breadcrumb"><a href="/pedalability-index/">Pedalability Index</a> › <a href="${countryUrl(c)}">${esc(country.name)}</a> › ${esc(c.city)}</nav>
+    const body = `      <nav class="answer-crumbs" aria-label="Breadcrumb"><a href="/pedalability-index/">Pedalability Index</a> › <a href="${countryUrl(c)}">${esc(countryName)}</a> › ${esc(cityName)}</nav>
       <h1>${esc(h1)}</h1>
 ${indent(answerHtml)}
-      <p>${esc(note.human_line)}</p>
+      <p>${esc(humanLine)}</p>
       <p class="meta">${fill(t.updated, { date: '<time datetime="@@MODIFIED@@">@@MODIFIED_HUMAN@@</time>' })}</p>
 
       <h2>${esc(fill(t.numbers_heading, v))}</h2>
@@ -268,9 +302,9 @@ ${indent(answerHtml)}
 ${rows.map(([k, val]) => `          <tr><th scope="row">${esc(k)}</th><td>${esc(val)}</td></tr>`).join('\n')}
         </tbody>
       </table>
-      <p>${esc(texts.scale_note)}</p>
+      <p>${esc(local.scale_note)}</p>
 
-${extHtml}${optional(t.calm_heading, note.calm_areas)}${optional(t.arterials_heading, note.arterials)}${peersHtml}${startHtml}${limitsHtml(texts)}
+${extHtml}${optional(t.calm_heading, note.calm_areas)}${optional(t.arterials_heading, note.arterials)}${peersHtml}${startHtml}${limitsHtml(local)}
 
 ${faqHtml(fill(t.faq_heading, v), visibleFaq)}
 
@@ -278,14 +312,14 @@ ${sourcesHtml}      <p class="meta">${t.source}</p>
       <p class="meta">${fill(t.app, v)}</p>`;
     const graph = [
       ORG,
-      webPageNode(page.url, h1, description),
-      subsetNode(page.url, `Pedalability Index 2026: ${c.city}`, description,
-        { '@type': 'Place', name: c.city, address: { '@type': 'PostalAddress', addressLocality: c.city, addressCountry: c.iso2 } }),
+      webPageNode(page.url, h1, description, lang),
+      subsetNode(page.url, `Pedalability Index 2026: ${cityName}`, description,
+        { '@type': 'Place', name: cityName, address: { '@type': 'PostalAddress', addressLocality: cityName, addressCountry: c.iso2 } }),
       faqNode(page.url, [[h1, answerPlain], ...schemaFaq]),
-      breadcrumbs(page.url, [['Home', '/'], ['Pedalability Index', '/pedalability-index/'], [country.name, countryUrl(c)], [c.city, page.url]]),
+      breadcrumbs(page.url, [[local.shell.home, localized('home', lang).url], ['Pedalability Index', '/pedalability-index/'], [countryName, countryUrl(c)], [cityName, page.url]]),
     ];
     page.summary = answerPlain;
-    emit(page, shell({ page, title: `${h1} Pedalability Index 2026`, description, body, graph, ogImage: OG_IMAGE, texts }));
+    emit(page, shell({ page, title: `${h1} Pedalability Index 2026`, description, body, graph, ogImage: OG_IMAGE, texts: local }));
   }
 
   function renderCountry(page) {
@@ -368,12 +402,12 @@ ${faqHtml(fill(t.faq_heading, v), faq)}
   }
 
   function render({ guide, research } = {}) {
-    for (const page of cityPages) renderCity(page, guide, research);
+    for (const page of [...cityPages, ...translatedPages]) renderCity(page, guide, research);
     for (const page of countryPages) renderCountry(page);
     return { indexNodes: renderIndexPage() };
   }
 
-  return { cities, built, skipped, cityPages, countryPages, unusedDrafts, render, texts };
+  return { cities, built, skipped, cityPages, translatedPages, countryPages, unusedDrafts, render, texts };
 }
 
 if (import.meta.main) import('./build.mjs');

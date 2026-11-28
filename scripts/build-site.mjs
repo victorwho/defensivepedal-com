@@ -166,7 +166,7 @@ export function writeLlms({ cities, texts }) {
   const group = (test) => pages.filter(test).sort((a, b) => a.url.localeCompare(b.url));
   const top10 = cities.slice(0, 10).map((c) => `${c.rank}. ${c.city} (${COUNTRIES[c.iso2][0]}) ${Number(c.index).toFixed(1)}`).join(' · ');
   const countryPages = group((p) => p.group === 'cities' && p.members);
-  const cityPages = group((p) => p.group === 'cities' && p.city);
+  const cityPages = group((p) => p.group === 'cities' && p.city && p.lang === 'en');
   const section = (name) => {
     const members = group((p) => p.group === 'answers' && p.section === name && !p.hub && p.lang === 'en');
     return members.length ? `## ${texts.sections[name].nav}\n\n${members.map(link).join('\n')}\n` : '';

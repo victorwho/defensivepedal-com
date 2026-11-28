@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://defensivepedal.tech/fr/pedalability-index/france/lyon/</loc>
+    <lastmod>2026-11-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://defensivepedal.tech/pedalability-index/france/lyon/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://defensivepedal.tech/fr/pedalability-index/france/lyon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://defensivepedal.tech/pedalability-index/france/lyon/" />
+  </url>
+  <url>
+    <loc>https://defensivepedal.tech/fr/pedalability-index/france/paris/</loc>
+    <lastmod>2026-11-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://defensivepedal.tech/pedalability-index/france/paris/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://defensivepedal.tech/fr/pedalability-index/france/paris/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://defensivepedal.tech/pedalability-index/france/paris/" />
+  </url>
+  <url>
     <loc>https://defensivepedal.tech/pedalability-index/austria/</loc>
     <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://defensivepedal.tech/pedalability-index/austria/" />
@@ -65,12 +79,14 @@
     <loc>https://defensivepedal.tech/pedalability-index/france/lyon/</loc>
     <lastmod>2026-11-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://defensivepedal.tech/pedalability-index/france/lyon/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://defensivepedal.tech/fr/pedalability-index/france/lyon/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://defensivepedal.tech/pedalability-index/france/lyon/" />
   </url>
   <url>
     <loc>https://defensivepedal.tech/pedalability-index/france/paris/</loc>
     <lastmod>2026-11-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://defensivepedal.tech/pedalability-index/france/paris/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://defensivepedal.tech/fr/pedalability-index/france/paris/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://defensivepedal.tech/pedalability-index/france/paris/" />
   </url>
   <url>

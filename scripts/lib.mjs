@@ -109,10 +109,11 @@ export function ordinal(n) {
 const MONTHS = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   ro: ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'],
+  fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
 };
 export function humanDate(iso, lang = 'en') {
   const [y, m, d] = iso.split('-').map(Number);
-  return `${d} ${(MONTHS[lang] || MONTHS.en)[m - 1]} ${y}`;
+  return `${lang === 'fr' && d === 1 ? '1er' : d} ${(MONTHS[lang] || MONTHS.en)[m - 1]} ${y}`;
 }
 
 export const wordCount = (text) => text.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;

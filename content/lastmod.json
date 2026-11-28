@@ -19,14 +19,34 @@
   "modified": "2026-11-24",
   "published": "2026-11-24"
  },
+ "/fr/guides/": {
+  "hash": "2275f8507ad9897c",
+  "modified": "2026-11-28",
+  "published": "2026-11-28"
+ },
+ "/fr/guides/commencer-le-velotaf/": {
+  "hash": "65ddff7af7419628",
+  "modified": "2026-11-28",
+  "published": "2026-11-28"
+ },
+ "/fr/pedalability-index/france/lyon/": {
+  "hash": "448561bde06a3809",
+  "modified": "2026-11-28",
+  "published": "2026-11-28"
+ },
+ "/fr/pedalability-index/france/paris/": {
+  "hash": "536e863ebb2591e6",
+  "modified": "2026-11-28",
+  "published": "2026-11-28"
+ },
  "/guides/": {
-  "hash": "531d0a46e7e86be0",
-  "modified": "2026-11-27",
+  "hash": "0a4d22d723079a82",
+  "modified": "2026-11-28",
   "published": "2026-11-27"
  },
  "/guides/start-cycling-to-work/": {
-  "hash": "1fccfe824c02eb73",
-  "modified": "2026-11-27",
+  "hash": "af8a19b74d9f8216",
+  "modified": "2026-11-28",
   "published": "2026-11-27"
  },
  "/methodology": {
@@ -95,12 +115,12 @@
   "published": "2026-11-24"
  },
  "/pedalability-index/france/lyon/": {
-  "hash": "80412dcfff6c9177",
+  "hash": "e7eb8308d2f304fb",
   "modified": "2026-11-28",
   "published": "2026-11-27"
  },
  "/pedalability-index/france/paris/": {
-  "hash": "b639f5d3ca838d44",
+  "hash": "d81740ab034422a1",
   "modified": "2026-11-28",
   "published": "2026-11-27"
  },
