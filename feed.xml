@@ -5,10 +5,18 @@
     <link>https://defensivepedal.tech/</link>
     <description>What changed on defensivepedal.tech and in the Defensive Pedal cycling navigation app: new figures, new pages, new platforms.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://defensivepedal.tech/feed.xml" rel="self" type="application/rss+xml" />
 
     <!-- build:feed -->
+    <item>
+      <title>Is it safe to cycle in Lyon?</title>
+      <link>https://defensivepedal.tech/pedalability-index/france/lyon/</link>
+      <guid isPermaLink="false">https://defensivepedal.tech/pedalability-index/france/lyon/#2026-11-28</guid>
+      <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Lyon is one of Europe's lower-risk cities for cycling, by our measure. It ranks 26th of 300 in the Pedalability Index 2026, with a score of 85.7 out of 100 (higher means lower assessed risk), second in France after Paris. About 11% of its street length is rated High risk, almost twice Paris's 6%.</description>
+    </item>
+
     <item>
       <title>Guides: starting to cycle in a European city</title>
       <link>https://defensivepedal.tech/guides/</link>
@@ -103,14 +111,6 @@
       <guid isPermaLink="false">https://defensivepedal.tech/pedalability-index/france/#2026-11-27</guid>
       <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
       <description>The 25 ranked cities in France average 64.5 out of 100 in the Pedalability Index 2026, against 54.9 across all 300 European cities. Higher score = lower assessed risk. Paris ranks highest (13th of 300, score 93.7) and Dijon lowest (252nd, score 32.1). The average is a simple mean of the ranked cities, not weighted by population.</description>
-    </item>
-
-    <item>
-      <title>Is it safe to cycle in Lyon?</title>
-      <link>https://defensivepedal.tech/pedalability-index/france/lyon/</link>
-      <guid isPermaLink="false">https://defensivepedal.tech/pedalability-index/france/lyon/#2026-11-27</guid>
-      <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
-      <description>Lyon ranks 26th of 300 European cities in the Pedalability Index 2026, with a score of 85.7 out of 100 (likely rank 13th–38th). Higher score = lower assessed risk. About 10.9% of its street length rates High risk for cyclists, against 7.0% in Montpellier (31st). Risk changes street by street, so the route you choose matters more than the city average.</description>
     </item>
 
     <item>
