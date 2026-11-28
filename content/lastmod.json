@@ -30,8 +30,8 @@
   "published": "2026-11-27"
  },
  "/methodology": {
-  "hash": "62b823ca4300ce16",
-  "modified": "2026-11-24",
+  "hash": "c86925e28d8c57c4",
+  "modified": "2026-11-28",
   "published": "2026-10-12"
  },
  "/partners": {
@@ -95,7 +95,7 @@
   "published": "2026-11-24"
  },
  "/pedalability-index/france/lyon/": {
-  "hash": "83a023dfe3fe3907",
+  "hash": "c3fcbcb60e7c4e95",
   "modified": "2026-11-28",
   "published": "2026-11-27"
  },
@@ -220,8 +220,8 @@
   "published": "2026-11-24"
  },
  "/privacy": {
-  "hash": "dbcaedc2a4e10bb6",
-  "modified": "2026-11-24",
+  "hash": "c742d108bcacd757",
+  "modified": "2026-11-28",
   "published": "2026-11-24"
  },
  "/ro/": {
@@ -230,23 +230,23 @@
   "published": "2026-11-24"
  },
  "/ro/methodology": {
-  "hash": "9351add4380310b5",
-  "modified": "2026-11-24",
+  "hash": "b9d4fe5a5531a006",
+  "modified": "2026-11-28",
   "published": "2026-10-12"
  },
  "/ro/privacy": {
-  "hash": "49f7df5f1c395f74",
-  "modified": "2026-11-24",
+  "hash": "5e1d7236b2e06c9c",
+  "modified": "2026-11-28",
   "published": "2026-11-24"
  },
  "/ro/terms": {
-  "hash": "7b9ba968f2bbc480",
-  "modified": "2026-11-24",
+  "hash": "f804ef8228fec224",
+  "modified": "2026-11-28",
   "published": "2026-11-24"
  },
  "/terms": {
-  "hash": "18fa6a7f9ad5b286",
-  "modified": "2026-11-24",
+  "hash": "050f517c7bb11360",
+  "modified": "2026-11-28",
   "published": "2026-11-24"
  }
 }

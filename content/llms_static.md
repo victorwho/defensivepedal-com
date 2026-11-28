@@ -37,5 +37,5 @@
 
 ## Contact
 
-- General: hello@defensivepedal.com
+- General: contact@defensivepedal.com
 - Cities and partnerships: see the footer of the home page.

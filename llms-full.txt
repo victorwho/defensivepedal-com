@@ -104,7 +104,7 @@ The full analysis, including the method and the figures above, is published on Z
 
 ## About the author
 
-Victor Rotariu founded Defensive Pedal, built its routing engine and both apps, and wrote the validation study. He is a lifelong cyclist and previously shipped Romania’s largest chatbot. Contact: hello@defensivepedal.com.
+Victor Rotariu founded Defensive Pedal, built its routing engine and both apps, and wrote the validation study. He is a lifelong cyclist and previously shipped Romania’s largest chatbot. Contact: contact@defensivepedal.com.
 
 See also: Home · Methodology · Privacy Policy · Terms of Use · Updates feed · In Romanian: Acasă · Metodologie · Confidențialitate · Termeni
 
